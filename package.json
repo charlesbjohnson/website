@@ -1,0 +1,27 @@
+{
+  "name": "cbjohnson.info",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "prepare": "npm exec --yes -- check-node-version --package --print"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-xo": "^0.38.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-unicorn": "^35.0.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-packagejson": "^2.2.11"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
+}
