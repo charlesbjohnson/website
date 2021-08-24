@@ -2,6 +2,10 @@
 default:
     @just --list
 
+# Build site for production
+build:
+    @npx astro build
+
 # Remove dependencies
 clean:
     @rm -rf node_modules/
@@ -19,3 +23,7 @@ fmt:
 lint:
     @npx eslint .
     @npx prettier --check package.json
+
+# Start server for development
+start:
+    @npx astro dev
