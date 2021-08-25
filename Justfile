@@ -15,3 +15,13 @@ clean:
 # Run the formatter
 fmt:
     @just --unstable --fmt
+
+# Generate the site
+generate $JEKYLL_ENV="development":
+    @rm -rf _site/
+    @bin/jekyll build
+
+# Serve the site
+serve $JEKYLL_ENV="development":
+    @rm -rf _site/
+    @bin/jekyll server

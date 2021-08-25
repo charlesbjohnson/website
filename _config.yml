@@ -1,0 +1,8 @@
+---
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - Justfile
+  - bin/
+  - vendor/

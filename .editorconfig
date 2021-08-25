@@ -7,3 +7,7 @@ trim_trailing_whitespace = true
 [Justfile]
 indent_style = space
 indent_size = 4
+
+[*.{css,html,js,yml}]
+indent_style = space
+indent_size = 2
