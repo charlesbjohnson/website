@@ -1,0 +1,17 @@
+---
+layout: default
+title: Blog
+description: Charles B Johnson's blog
+favicon: ✍
+---
+
+<h1>Blog</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b %d, %Y" }}</time></p>
+    </li>
+  {% endfor %}
+</ul>

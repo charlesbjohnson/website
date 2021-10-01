@@ -1,6 +1,12 @@
 ---
+collections:
+  blog:
+    output: true
+    permalink: /:collection/:name/
+
 exclude:
   - README.md
+  - TODO.md
   - Gemfile
   - Gemfile.lock
   - Justfile
