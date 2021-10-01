@@ -6,3 +6,5 @@ exclude:
   - Justfile
   - bin/
   - vendor/
+
+url: https://cbjohnson.info

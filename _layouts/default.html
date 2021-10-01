@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Charles B Johnson</title>
+    {% if page.favicon %}
+      {% include favicon.liquid favicon=page.favicon %}
+    {% endif %}
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
+    <link
+      rel="stylesheet"
+      href="{{ '/stylesheets/style.css' | relative_url }}"
+    />
+
+    <link rel="canonical" href="{{ site.url }}" />
+    {% if page.description %}
+      <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+  </head>
+
+  <body>
+    {{ content }}
+  </body>
+</html>
