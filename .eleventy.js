@@ -1,13 +1,15 @@
 module.exports = (eleventy) => {
   const cfg = {
     dir: {
-      input: "./src",
+      input: ".",
       output: "./dist",
       layouts: "_layouts",
     },
   };
 
-  eleventy.addPassthroughCopy("./src/stylesheets");
+  eleventy.addPassthroughCopy("./stylesheets");
+
+  eleventy.ignores.add("README.md")
 
   return cfg;
 };

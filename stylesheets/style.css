@@ -1,0 +1,5 @@
+body {
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  width: min(80ch, 100vw - 2rem);
+}
