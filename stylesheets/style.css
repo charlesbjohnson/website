@@ -1,5 +1,251 @@
+:root {
+  /* Color */
+  --c-black: black;
+  --c-gray: whitesmoke;
+  --c-blue: steelblue;
+  --c-light-blue: lightblue;
+  --c-red: salmon;
+  --c-light-red: lightsalmon;
+  --c-yellow: palegoldenrod;
+  --c-light-yellow: lightgoldenrodyellow;
+
+  /* Font Size */
+  --f-sz-base: 1.125;
+  --f-sz-ratio: 1.25;
+  --f-sz-minify: 0.666;
+
+  /* Font Weight */
+  --f-w-bold: 600;
+  --f-w-bolder: 700;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  hyphens: auto;
+  margin-top: 0;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --h4-f-sz-max: var(--f-sz-base) * var(--f-sz-ratio);
+  --h3-f-sz-max: var(--h4-f-sz-max) * var(--f-sz-ratio);
+  --h2-f-sz-max: var(--h3-f-sz-max) * var(--f-sz-ratio);
+  --h1-f-sz-max: var(--h2-f-sz-max) * var(--f-sz-ratio);
+  line-height: calc(1em + 0.25rem);
+  margin-bottom: 0.65em;
+}
+
+h1 {
+  --h1-f-sz-min: max(
+    (var(--h1-f-sz-max) * var(--f-sz-minify)),
+    var(--f-sz-base)
+  );
+  --h1-f-sz-fluid: clamp(
+    (var(--h1-f-sz-min) * 1rem),
+    (((var(--h1-f-sz-min) * 1vw) + 4vw) + 1rem),
+    (var(--h1-f-sz-max) * 1rem)
+  );
+  font-size: calc(var(--h1-f-sz-max) * 1rem);
+  font-size: var(--h1-f-sz-fluid);
+}
+
+h2 {
+  --h2-f-sz-min: max(
+    (var(--h2-f-sz-max) * var(--f-sz-minify)),
+    var(--f-sz-base)
+  );
+  --h2-f-sz-fluid: clamp(
+    (var(--h2-f-sz-min) * 1rem),
+    (((var(--h2-f-sz-min) * 1vw) + 4vw) + 1rem),
+    (var(--h2-f-sz-max) * 1rem)
+  );
+  font-size: calc(var(--h2-f-sz-max) * 1rem);
+  font-size: var(--h2-f-sz-fluid);
+}
+
+h3 {
+  --h3-f-sz-min: max(
+    (var(--h3-f-sz-max) * var(--f-sz-minify)),
+    var(--f-sz-base)
+  );
+  --h3-f-sz-fluid: clamp(
+    (var(--h3-f-sz-min) * 1rem),
+    (((var(--h3-f-sz-min) * 1vw) + 4vw) + 1rem),
+    (var(--h3-f-sz-max) * 1rem)
+  );
+  font-size: calc(var(--h3-f-sz-max) * 1rem);
+  font-size: var(--h3-f-sz-fluid);
+}
+
+h4 {
+  --h4-f-sz-min: max(
+    (var(--h4-f-sz-max) * var(--f-sz-minify)),
+    var(--f-sz-base)
+  );
+  --h4-f-sz-fluid: clamp(
+    (var(--h4-f-sz-min) * 1rem),
+    (((var(--h4-f-sz-min) * 1vw) + 4vw) + 1rem),
+    (var(--h4-f-sz-max) * 1rem)
+  );
+  font-size: calc(var(--h4-f-sz-max) * 1rem);
+  font-size: var(--h4-f-sz-fluid);
+}
+
+body,
+h5,
+h6 {
+  font-size: calc(var(--f-sz-base) * 1rem);
+  line-height: 1.5;
+}
+
+/* Layout */
 body {
   margin: 0 auto;
   padding: 2.5rem 0;
   width: min(80ch, 100vw - 2rem);
+}
+
+/* Components */
+blockquote {
+  background-color: var(--background-color, var(--c-gray));
+  border-left: 0.5em solid var(--border-color, var(--c-black));
+  margin: 1em 0;
+  padding: 1em;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote[data-level="info"] {
+  --background-color: var(--c-light-blue);
+  --border-color: var(--c-blue);
+}
+
+blockquote[data-level="warning"] {
+  --background-color: var(--c-light-yellow);
+  --border-color: var(--c-yellow);
+}
+
+blockquote[data-level="error"] {
+  --background-color: var(--c-light-red);
+  --border-color: var(--c-red);
+}
+
+blockquote[cite] {
+  font-style: italic;
+}
+
+blockquote cite {
+  font-style: normal;
+  font-weight: var(--f-w-bold);
+}
+
+blockquote footer {
+  display: flex;
+  justify-content: right;
+}
+
+dl dt {
+  font-style: italic;
+  font-weight: var(--f-w-bold);
+  margin-top: 1em;
+}
+
+dl dt + dt {
+  margin-top: 0;
+}
+
+dl dd::marker {
+  content: "→ ";
+}
+
+code,
+kbd,
+samp {
+  background-color: var(--c-gray);
+  border: 1px solid var(--c-black);
+  font-size: 0.9em;
+  padding: 0.25em;
+}
+
+kbd {
+  border-bottom: 0.25em solid var(--c-black);
+}
+
+pre[data-name]::before,
+pre[data-lang]::before {
+  background-color: var(--background-color, inherit);
+  content: attr(data-name);
+  color: var(--color, inherit);
+  display: block;
+  font-size: 0.9em;
+  font-weight: var(--f-w-bold);
+  padding: 0.25em 0.5em;
+}
+
+pre[data-name$="rb"]::before,
+pre[data-lang="ruby"]::before {
+  --background-color: red;
+  --color: white;
+}
+
+pre:not([data-name])[data-lang]::before {
+  content: attr(data-lang);
+  text-transform: uppercase;
+}
+
+pre code,
+pre samp {
+  border: none;
+  display: block;
+  padding: 0.5em;
+  overflow-x: auto;
+}
+
+pre kbd {
+  border: none;
+  font-weight: var(--f-w-bold);
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+figure figcaption {
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: center;
+}
+
+hr {
+  background-color: black;
+  border: 0 none;
+  height: 0.25em;
+  margin: 2rem 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Utilities */
+strong,
+b {
+  font-weight: var(--f-w-bolder);
 }

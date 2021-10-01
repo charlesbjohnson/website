@@ -7,6 +7,7 @@ module.exports = (eleventy) => {
     },
   };
 
+  eleventy.addPassthroughCopy("./images");
   eleventy.addPassthroughCopy("./stylesheets");
 
   eleventy.ignores.add("README.md")
