@@ -13,5 +13,10 @@ clean:
     @rm -rf vendor/
 
 # Run the formatter
-fmt:
+fmt *OPTS:
     @just --unstable --fmt
+    @bin/rubocop --auto-correct {{ OPTS }}
+
+# Run the linter
+lint *OPTS:
+    @bin/rubocop {{ OPTS }}
