@@ -12,4 +12,8 @@ require "bundler/setup"
 # Pry.start
 
 require "irb"
+require "ssg"
+
+SSG::Site.boot(reloading: true)
+
 IRB.start(__FILE__)

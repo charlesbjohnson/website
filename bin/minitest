@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift(
+  File.expand_path("../ssg/lib", __dir__),
+  File.expand_path("../ssg/test", __dir__)
+)
+
+require "rubygems"
+require "bundler/setup"
+
+require "ssg"
+
+def main(args)
+  dir = Pathname.new(File.expand_path("../ssg/test", __dir__))
+
+  unless args.empty?
+    run(dir, args.first)
+    return
+  end
+
+  Dir.glob(File.join(dir, "**/*.rb")).each do |file|
+    run(dir, file)
+  end
+end
+
+def run(dir, file)
+  require Pathname.new(File.expand_path(file)).relative_path_from(dir).sub_ext("").to_s
+end
+
+main(ARGV)

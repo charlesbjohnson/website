@@ -1,0 +1,699 @@
+---
+#
+# Code
+#
+-
+  - |
+    a
+    <% if true %>
+      b
+    <% end %>
+    c
+  - |
+    a
+      b
+    c
+
+-
+  - |
+    a
+    <% if true %>
+      b
+    <% end %>
+  - |
+    a
+      b
+
+-
+  - |
+    <% if true %>
+    b
+    <% end %>
+      c
+  - |
+    b
+      c
+
+-
+  - |
+    <% if true %>
+    b
+    <% end %>
+  - |
+    b
+
+-
+  - |
+    a
+    <% if false %>
+      b
+    <% end %>
+    c
+  - |
+    a
+    c
+
+-
+  - |
+    a
+    <% if true %>  b<% end %>
+    c
+  - |
+    a
+      b
+    c
+
+-
+  - |
+    a
+    <% if true %>  b<% end %>
+  - |
+    a
+      b
+
+-
+  - |
+    <% if true %>b<% end %>
+      c
+  - |
+    b
+      c
+
+-
+  - <% if true %>  b  <% end %>
+  - "  b  "
+
+-
+  - a<% if true %> b <% end %>c
+  - a b c
+
+-
+  - a<% if false %>b<% end %>c
+  - ac
+
+-
+  - |
+    a
+    - <% %> -
+    c
+  - |
+    a
+    -  -
+    c
+
+-
+  - |
+    a
+    <% %>
+    c
+  - |
+    a
+    c
+
+-
+  - |
+    a
+    <% %>
+  - |
+    a
+
+-
+  - |
+    <% %>
+    c
+  - |
+    c
+
+-
+  - a <% %> b <% %> c
+  - a  b  c
+
+-
+  - <% %>c
+  - c
+
+#
+# Code with Stripping
+#
+-
+  - |
+    a
+    <%- -%>
+      b
+  - |
+    ab
+
+-
+  - |
+    a
+    <% -%>
+      b
+  - |
+    a
+    b
+
+-
+  - |
+    a
+    <%- %>
+      b
+  - |
+    a  b
+
+-
+  - a  <%- -%>  b
+  - ab
+
+-
+  - a <% -%>  b
+  - a b
+
+-
+  - a  <%- %> b
+  - a b
+
+-
+  - |
+    a
+    <%- -%>
+    <% %>
+    <%- -%>
+    b
+  - |
+    ab
+
+-
+  - |
+    a
+    <%- %>
+    <% %>
+    <% -%>
+    b
+  - |
+    ab
+
+-
+  - |
+    a
+    <%- %>
+    <% %>
+    <% -%>
+    b
+  - |
+    ab
+
+-
+  - |
+    a
+    <%- -%>
+  - a
+
+-
+  - |
+    <%- -%>
+    c
+  - |
+    c
+
+#
+# Code with Slurping
+#
+-
+  - |
+    a
+     <%_ _%> b
+    c
+  - |
+    a
+    b
+    c
+
+-
+  - |
+    a
+    b <%_ _%>
+    c
+  - |
+    a
+    b
+    c
+
+-
+  - |
+    a
+     <%_ %> b
+    c
+  - |
+    a
+     b
+    c
+
+-
+  - |
+    a
+     <% _%> b
+    c
+  - |
+    a
+     b
+    c
+
+-
+  - a  <%_ _%>  b
+  - ab
+
+-
+  - a  <%_ %> b
+  - a b
+
+-
+  - a <% _%>  b
+  - a b
+
+-
+  - a <%_ _%> b <%_ _%> c
+  - abc
+
+-
+  - <%_ %>c
+  - c
+
+-
+  - <%_ %>c
+  - c
+
+-
+  - |
+    a
+    <%_ _%>
+  - "a\n\n"
+
+-
+  - |
+    <%_ _%>
+    c
+  - |
+
+    c
+
+#
+# Expressions
+#
+-
+  - |
+    a
+      <%= "b" %>
+    c
+  - |
+    a
+      b
+    c
+
+-
+  - |
+    a
+      <%= "b" %>
+  - |
+    a
+      b
+
+-
+  - |
+    <%= "b" %>
+      c
+  - |
+    b
+      c
+
+-
+  - a <%= "b" %> c
+  - a b c
+
+-
+  - |
+    a
+      <%= %>
+    c
+  - "a\n  \nc\n"
+
+-
+  - a <%= %> c
+  - a  c
+
+-
+  - |
+    <%= "🌞" %>
+      🌎
+    <%= "🌚" %>
+  - |
+    🌞
+      🌎
+    🌚
+
+#
+# Expressions with Stripping
+#
+-
+  - a <%=- "b" -%> c
+  - abc
+
+-
+  - a <%=- "b" %> c
+  - ab c
+
+-
+  - a <%= "b" -%> c
+  - a bc
+
+-
+  - |
+    a
+    <%=- "b" -%>
+    c
+  - |
+    abc
+
+-
+  - |
+    a
+    <%=- "b" %>
+    c
+  - |
+    ab
+    c
+
+-
+  - |
+    a
+    <%= "b" -%>
+    c
+  - |
+    a
+    bc
+
+-
+  - |
+    a
+    <%=- "" -%>
+  - a
+
+-
+  - |
+    <%=- "" -%>
+    c
+  - |
+    c
+
+#
+# Expressions with Slurping
+#
+-
+  - |
+    a
+      <%=_ "b" _%>
+    c
+  - |
+    a
+    b
+    c
+
+-
+  - a <%=_ "b" _%> c
+  - abc
+
+-
+  - a <%=_ "b" %>c
+  - abc
+
+-
+  - a<%= "b" _%> c
+  - abc
+
+-
+  - a <%=_ "1" %> b <%= "2" _%> c
+  - a1 b 2c
+
+-
+  - |
+    a
+    <%=_ "" _%>
+  - "a\n\n"
+
+-
+  - |
+    <%=_ "" _%>
+    c
+  - |
+
+    c
+
+#
+# Capture Expressions
+#
+-
+  - |
+    a
+      <%= fixture do %>
+        b
+      <% end %>
+    c
+  - |
+    a
+      -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture { %>
+        b
+      <% } %>
+    c
+  - |
+    a
+      -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= (fixture do %>
+        b
+      <% end).indent(2) %>
+    c
+  - |
+    a
+        -
+          b
+        -
+    c
+
+-
+  - |
+    a
+    <%= fixture { %><% } %>
+    c
+  - |
+    a
+    --
+    c
+
+-
+  - |
+    a
+    <%= fixture do %>
+    <% end %>
+    c
+  - |
+    a
+    -
+    -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <% if true %>
+          b
+        <% end %>
+      <% end %>
+    c
+  - |
+    a
+      -
+          b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <% %>b
+      <% end %>
+    c
+  - |
+    a
+      -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <%= "b" %>
+      <% end %>
+    c
+  - |
+    a
+      -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <%=  %>b
+      <% end %>
+    c
+  - |
+    a
+      -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <%= fixture do %>
+          b
+        <% end %>
+      <% end %>
+    c
+  - |
+    a
+      -
+        -
+          b
+        -
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do %>
+        <% if false %>
+          1
+        <% end %>
+
+        <% %>
+        <%= fixture do %>
+          <%= "b" %>
+        <% end %>
+        <% %>
+
+        <% if false %>
+          2
+        <% end %>
+      <% end %>
+    c
+  - |
+    a
+      -
+
+        -
+          b
+        -
+
+      -
+    c
+
+-
+  - <%= fixture { %><% } %>
+  - "--"
+
+#
+# Capture Expressions with Stripping
+#
+-
+  - |
+    a
+    <%=- fixture { -%> b <%- } -%>
+    c
+  - |
+    a-b-c
+
+-
+  - |
+    a
+    <%=- fixture do %>
+      b
+    <% end -%>
+    c
+  - |
+    a-
+      b
+    -c
+
+-
+  - |
+    a
+    <%= fixture do -%>
+      b
+    <%- end %>
+    c
+  - |
+    a
+    -b-
+    c
+#
+# Capture Expressions with Slurping
+#
+-
+  - |
+    a
+      <%=_ fixture { _%> b <%_ } _%>
+    c
+  - |
+    a
+    -b-
+    c
+-
+  - |
+    a
+      <%=_ fixture do %>
+        b
+      <% end _%>
+    c
+  - |
+    a
+    -
+        b
+      -
+    c
+
+-
+  - |
+    a
+      <%= fixture do _%>
+        b
+      <%_ end %>
+    c
+  - |
+    a
+      -
+        b
+    -
+    c
