@@ -4,3 +4,21 @@ body {
   padding: calc(0.5rem + 2.5vw) 0;
   width: min(80ch, 100vw - 2rem);
 }
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+header nav ul {
+  column-gap: min(2.5vw, 2rem);
+  display: flex;
+  flex-grow: 1;
+  font-weight: var(--f-w-bold);
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  max-width: min(100%, 12rem);
+  padding: 0;
+}

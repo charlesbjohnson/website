@@ -2,7 +2,7 @@
 
 class Page < SSG::Page
   class << self
-    delegate :title, to: :new
+    delegate :title, :uri, to: :new
   end
 
   def title

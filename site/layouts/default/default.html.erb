@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title><%= page.title %> | CBJohnson</title>
+
+    <%= Components::Favicon.new(emoji: favicon || "👋").render %>
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
+    <link rel="stylesheet" href="<%= Stylesheets::Style.uri %>" />
+
+    <link rel="canonical" href="<%= ::Site.uri + page.uri %>" />
+    <% if description %>
+      <meta name="description" content="<%= description %>" />
+    <% end %>
+  </head>
+
+  <body data-page="<%= page.class %>">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="<%= Index.uri %>"><%= Index.title %></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>
