@@ -2,3 +2,5 @@
 
 require "debug"
 Bundler.require
+
+require_relative "./site"
