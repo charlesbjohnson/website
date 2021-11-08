@@ -1,0 +1,5 @@
+<%= Layouts::BlogPost.new(page: self, favicon: "💼").render do %>
+  <%= Components::Markdown.new.render do %>
+    <%= templates["new_manager_readme.md.erb"].render(self) %>
+  <% end %>
+<% end %>
