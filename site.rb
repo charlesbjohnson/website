@@ -2,6 +2,10 @@
 
 class Site
   class << self
+    def pages
+      SSG::Site.pages
+    end
+
     def uri
       production? ? URI::HTTPS.build(host: "cbjohnson.info") : SSG::Site.config.serve_uri
     end
