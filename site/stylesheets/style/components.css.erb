@@ -1,0 +1,63 @@
+/* Components */
+address {
+  font-style: normal;
+}
+
+dl dt {
+  font-style: italic;
+  font-weight: var(--f-w-bold);
+  margin-top: 1rem;
+}
+
+dl dt + dt {
+  margin-top: 0;
+}
+
+dl dd + dd {
+  margin-top: 0.5rem;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+hr {
+  background: repeating-linear-gradient(to right, var(--c-black) 0 0.5rem, transparent 0.5rem 1rem);
+  border: none;
+  height: 0.125rem;
+  margin: 2rem 0;
+}
+
+strong,
+b {
+  font-weight: var(--f-w-bolder);
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary:hover,
+details summary:focus {
+  text-decoration: underline;
+}
+
+details summary::marker,
+details summary::-webkit-details-marker {
+  color: var(--c-gray);
+}
+
+details summary ~ * {
+  border-left: 0.1rem dashed var(--c-gray);
+  margin-left: 0.5ch;
+  margin-top: 1rem;
+  padding: 0 1.5ch;
+}
+
+<%= Components::Code.styles %>
+<%= Components::Image.styles %>
+<%= Components::Quote.styles %>

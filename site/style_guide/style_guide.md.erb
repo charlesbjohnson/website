@@ -1,0 +1,211 @@
+# Style Guide
+
+## Headings
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+---
+
+## Emphasis
+
+- [Link](#)
+- **Strong** or <b>Bold</b>
+- _Emphasis_ or <i>Italic</i>
+- ~~Delete~~ or <s>Strikethrough</s>
+- <ins>Insert</ins> or <u>Underline</u>
+- <abbr title="Abbreviation">Abbrev</abbr>
+- <mark>Mark</mark>
+- <small>Small</small>
+
+---
+
+## Lists
+
+### Description
+
+Lorem
+: Ipsum dolor
+
+Lorem
+: Ipsum dolor
+: Sit amet
+
+Lorem
+Ipsum
+: Dolor
+
+### Ordered
+
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+### Unordered
+
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+---
+
+## Images
+
+### Captioned
+
+<%= Components::Image.new(src: files["placeholder_800x450-2.jpg"].uri, alt: "Placeholder image").render %>
+
+### Caption-less
+
+![Placeholder image](<%= files["placeholder_800x450-1.jpg"].uri %>)
+
+---
+
+## Blockquotes
+
+### Quote
+
+<%= Components::Quote.new(origin: "Lorem Ipsum Generator", href: "https://loremipsum.io").render do %>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna ac
+  placerat vestibulum lectus mauris ultrices. Vehicula ipsum a arcu
+  cursus. Rhoncus aenean vel elit scelerisque.
+<% end %>
+
+<%= Components::Quote.new(origin: "Lorem Ipsum Generator").render do %>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna ac
+  placerat vestibulum lectus mauris ultrices. Vehicula ipsum a arcu
+  cursus. Rhoncus aenean vel elit scelerisque.
+<% end %>
+
+<%= Components::Quote.new.render do %>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna ac
+  placerat vestibulum lectus mauris ultrices. Vehicula ipsum a arcu
+  cursus. Rhoncus aenean vel elit scelerisque.
+<% end %>
+
+### Call Out
+
+> This is a call out.
+
+{:data-level="info"}
+> This is an _info_ call out.
+
+{:data-level="warning"}
+> This is a _warning_ call out.
+
+{:data-level="error"}
+> This is an _error_ call out.
+
+---
+
+## Code
+
+### Inline
+
+`hello_world`
+
+### Block
+
+```
+hello world
+```
+
+<%= Components::Code.new(lang: "html").render do %>
+  <div class="thing">
+    <p>Hello</p>
+  </div>
+<% end %>
+
+<%= Components::Code.new(lang: "html", name: "code/index.html.erb").render do %>
+  <div class="thing">
+    <p>Goodbye</p>
+  </div>
+<% end %>
+
+<%= Components::Code.new(lang: "css").render do %>
+  .thing {
+    font-size: 14px;
+  }
+<% end %>
+
+<%= Components::Code.new(lang: "css", name: "code/styles.scss.css").render do %>
+  .thing {
+    font-size: 14px;
+  }
+<% end %>
+
+<%= Components::Code.new(lang: "js").render do %>
+  function hello() {
+    console.log("Hello World!")
+  }
+<% end %>
+
+<%= Components::Code.new(lang: "js", name: "code/hello.js").render do %>
+  function hello() {
+    console.log("Hello World!")
+  }
+<% end %>
+
+<%= Components::Code.new(lang: "ruby").render do %>
+  def hello
+    puts("Hello World!")
+  end
+<% end %>
+
+<%= Components::Code.new(name: "code/hello.rb").render do %>
+  def goodbye
+    puts("Goodbye World!")
+  end
+<% end %>
+
+<%= Components::Code.new(caption: "Some code that does stuff").render do %>
+  def stuff
+    puts("Stuff!")
+  end
+<% end %>
+
+### Keyboard
+
+<kbd>Ctrl-c</kbd>
+
+### Sample
+
+<%= Components::Code.new(tag: "samp").render do %>
+  foo@bar ~/baz &gt; <kbd>echo "Hello World"</kbd>
+  Hello World
+<% end %>
+
+<%= Components::Code.new(caption: "How to do stuff", tag: "samp").render do %>
+  foo@bar ~/baz &gt; <kbd>echo "Hello World"</kbd>
+  Hello World
+<% end %>
+
+---
+
+## Details
+
+<details open>
+  <summary>Lorem ipsum dolor.</summary>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</details>

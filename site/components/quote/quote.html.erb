@@ -1,0 +1,21 @@
+<div data-component="Quote">
+  <figure>
+    <%= Helpers.content_tag("blockquote", cite: href) do %>
+      <p><%=- yield.to_s.strip_heredoc.strip -%></p>
+    <% end %>
+
+    <% if origin %>
+      <figcaption>
+        <cite>
+          <%- if href -%>
+            <a href="<%= href %>">
+          <%- end -%>
+              <%= origin %>
+          <%- if href -%>
+            </a>
+          <%- end -%>
+        </cite>
+      </figcaption>
+    <% end %>
+  </figure>
+</div>

@@ -1,0 +1,57 @@
+/* Components::Quote */
+<%
+  quote_spacing = "1rem"
+%>
+
+blockquote,
+[data-component="Quote"] figure figcaption {
+  background-color: var(--background-color, var(--c-light-gray));
+  border-left: 0.5rem solid var(--border-color, var(--c-black));
+}
+
+blockquote {
+  margin: 0 0 <%= quote_spacing %>;
+  padding: <%= quote_spacing %>;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote[data-level="info"] {
+  --background-color: var(--c-light-blue);
+  --border-color: var(--c-blue);
+}
+
+blockquote[data-level="warning"] {
+  --background-color: var(--c-light-yellow);
+  --border-color: var(--c-yellow);
+}
+
+blockquote[data-level="error"] {
+  --background-color: var(--c-light-red);
+  --border-color: var(--c-red);
+}
+
+[data-component="Quote"] blockquote {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+[data-component="Quote"] blockquote p::before {
+  content: open-quote;
+}
+
+[data-component="Quote"] blockquote p::after {
+  content: close-quote;
+}
+
+[data-component="Quote"] figure figcaption {
+  font-weight: var(--f-w-bold);
+  padding: 0 <%= quote_spacing %> <%= quote_spacing %>;
+  text-align: right;
+}
+
+[data-component="Quote"] figure figcaption cite {
+  font-style: unset;
+}

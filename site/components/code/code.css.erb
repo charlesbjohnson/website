@@ -1,0 +1,100 @@
+/* Components::Code */
+<%
+  code_font_size = "0.9em"
+  code_padding = "0.5rem"
+%>
+
+code,
+kbd,
+samp {
+  background-color: var(--c-light-gray);
+  font-size: 0.9em;
+  padding: calc(<%= code_padding %> / 2)
+}
+
+kbd {
+  border: 0.0625rem solid var(--c-black);
+  border-bottom: calc(0.0625rem * 4) solid var(--c-black);
+}
+
+pre {
+  margin-top: unset;
+}
+
+pre code,
+pre samp {
+  border: none;
+  color: unset;
+  display: block;
+  padding: <%= code_padding %>;
+  overflow-x: auto;
+}
+
+pre kbd {
+  border: none;
+  font-weight: var(--f-w-bold);
+  padding: 0;
+}
+
+[data-component="Code"] code[data-name],
+[data-component="Code"] code[data-lang] {
+  position: relative;
+  padding-top: calc((<%= code_font_size %> + (<%= code_padding %> * 2)) + <%= code_padding %>);
+}
+
+[data-component="Code"] code[data-name]::before,
+[data-component="Code"] code[data-lang]::before {
+  background-color: var(--background-color, inherit);
+  color: var(--color, inherit);
+  content: attr(data-name);
+  display: block;
+  font-size: <%= code_font_size %>;
+  font-weight: var(--f-w-bold);
+  left: 0;
+  line-height: 1;
+  padding: <%= code_padding %>;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-component="Code"] code:not([data-name])[data-lang]::before {
+  content: attr(data-lang);
+  text-transform: uppercase;
+}
+
+[data-component="Code"] code[data-name$=".css"]::before,
+[data-component="Code"] code[data-lang="css"]::before {
+  --background-color: #563d7c;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".html"]::before,
+[data-component="Code"] code[data-lang="html"]::before {
+  --background-color: #e34c26;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".js"]::before,
+[data-component="Code"] code[data-lang="js"]::before {
+  --background-color: #f1e05a;
+  --color: var(--c-black);
+}
+
+[data-component="Code"] code[data-name$=".rb"]::before,
+[data-component="Code"] code[data-lang="ruby"]::before {
+  --background-color: #701516;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] figure pre {
+  margin-bottom: 0;
+}
+
+[data-component="Code"] figure figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+<%= Rouge::Themes::Github.render(scope: "[data-component=\"Code\"] code") %>

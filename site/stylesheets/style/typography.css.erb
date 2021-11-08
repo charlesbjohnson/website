@@ -1,0 +1,111 @@
+/* Typography */
+:root {
+  --f-sz-base: 1.125;
+  --f-sz-ratio: 1.2;
+  --f-sz-minify: 0.5;
+
+  --f-w-bold: 600;
+  --f-w-bolder: 700;
+
+  /* h4 */
+  --h4-f-sz-max-u: var(--f-sz-base) * var(--f-sz-ratio);
+  --h4-f-sz-min-u: max((var(--h4-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h4-f-sz-max: calc(var(--h4-f-sz-max-u) * 1rem);
+  --h4-f-sz-min: calc(var(--h4-f-sz-min-u) * 1rem);
+
+  --h4-f-sz-fluid: clamp(
+    var(--h4-f-sz-min),
+    (((var(--h4-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h4-f-sz-max)
+  );
+
+  /* h3 */
+  --h3-f-sz-max-u: var(--h4-f-sz-max-u) * var(--f-sz-ratio);
+  --h3-f-sz-min-u: max((var(--h3-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h3-f-sz-max: calc(var(--h3-f-sz-max-u) * 1rem);
+  --h3-f-sz-min: calc(var(--h3-f-sz-min-u) * 1rem);
+
+  --h3-f-sz-fluid: clamp(
+    var(--h3-f-sz-min),
+    (((var(--h3-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h3-f-sz-max)
+  );
+
+  /* h2 */
+  --h2-f-sz-max-u: var(--h3-f-sz-max-u) * var(--f-sz-ratio);
+  --h2-f-sz-min-u: max((var(--h2-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h2-f-sz-max: calc(var(--h2-f-sz-max-u) * 1rem);
+  --h2-f-sz-min: calc(var(--h2-f-sz-min-u) * 1rem);
+
+  --h2-f-sz-fluid: clamp(
+    var(--h2-f-sz-min),
+    (((var(--h2-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h2-f-sz-max)
+  );
+
+  /* h1 */
+  --h1-f-sz-max-u: var(--h2-f-sz-max-u) * var(--f-sz-ratio);
+  --h1-f-sz-min-u: max((var(--h1-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h1-f-sz-max: calc(var(--h1-f-sz-max-u) * 1rem);
+  --h1-f-sz-min: calc(var(--h1-f-sz-min-u) * 1rem);
+
+  --h1-f-sz-fluid: clamp(
+    var(--h1-f-sz-min),
+    (((var(--h1-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h1-f-sz-max)
+  );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  hyphens: auto;
+  margin-top: 0;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: calc(1em + 0.25rem);
+  margin-bottom: 0.65em;
+}
+
+h1 {
+  font-size: calc(var(--h1-f-sz-max) * 1rem);
+  font-size: var(--h1-f-sz-fluid);
+}
+
+h2 {
+  font-size: calc(var(--h2-f-sz-max) * 1rem);
+  font-size: var(--h2-f-sz-fluid);
+}
+
+h3 {
+  font-size: calc(var(--h3-f-sz-max) * 1rem);
+  font-size: var(--h3-f-sz-fluid);
+}
+
+h4 {
+  font-size: calc(var(--h4-f-sz-max) * 1rem);
+  font-size: var(--h4-f-sz-fluid);
+}
+
+body,
+h5,
+h6 {
+  font-size: calc(var(--f-sz-base) * 1rem);
+  line-height: 1.5;
+}

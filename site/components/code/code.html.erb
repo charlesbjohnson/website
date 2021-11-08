@@ -1,0 +1,11 @@
+<div data-component="Code">
+  <figure>
+    <pre>
+      <%=- Helpers.content_tag(tag, highlight(yield.to_s.strip_heredoc.strip), data: {lang: lang, name: name}) -%>
+    </pre>
+
+    <% if caption %>
+      <figcaption><%= caption %></figcaption>
+    <% end %>
+  </figure>
+</div>

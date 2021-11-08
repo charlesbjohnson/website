@@ -3,6 +3,14 @@
 ruby "3.0.2"
 source "https://rubygems.org"
 
+gem "actionview", "~> 6.1", require: "action_view"
+gem "activesupport", "~> 6.1", require: "active_support/all"
+
+gem "kramdown", "~> 2.3"
+gem "kramdown-parser-gfm", "~> 1.1"
+
+gem "rouge", "~> 3.26"
+
 gem "ssg", path: "ssg"
 
 group :development do
