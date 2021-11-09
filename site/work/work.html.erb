@@ -1,0 +1,498 @@
+<%= Layouts::Default.new(page: self, favicon: "💼", description: "Charles B Johnson's work history") do |c| %>
+  <%= c.styles do %>
+    <style><%= templates["work.css.erb"].render(self) %></style>
+  <% end %>
+
+  <%= c.main do %>
+    <h1><%= title %></h1>
+
+    <p>
+      I'm currently seeking opportunities as a full-stack or backend engineer.
+
+      My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
+    </p>
+
+    <ul>
+      <li>Open Communication</li>
+      <li>Remote OK</li>
+      <li>Flexible Work Arrangements</li>
+      <li>Work/Life Balance</li>
+    </ul>
+
+    <p>
+      Are you a manager considering hiring me? <a href="<%= Blog::NewManagerReadme.uri %>">Here's a post</a> to help you learn more about me.
+    </p>
+
+    <p>
+      Are you an engineer considering working with me? I <a href="<%= Blog::NewTeammateReadme.uri %>">have a post</a> for you
+      and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.
+    </p>
+
+    <!--
+       ██   ██ ███████ ██    ██ ██
+       ██   ██ ██       ██  ██  ██
+       ███████ █████     ████   ██
+       ██   ██ ██         ██
+       ██   ██ ███████    ██    ██
+
+      If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
+    -->
+
+    <hr/>
+
+    <section>
+      <h2>Experience</h2>
+
+      <article id="experience-firesqueak">
+        <h3><a href="#experience-firesqueak">Firesqueak</a></h3>
+
+        <header>
+          <span data-emoji="💼">Senior Software Engineer</span>
+          <time data-emoji="📅" datetime="2017/2021">2017 - 2021</time>
+          <address data-emoji="🗺">Remote</address>
+        </header>
+
+        <%= Components::Markdown.new.render do %>
+          <%= templates["firesqueak.md.erb"].render(self) %>
+        <% end %>
+
+        <article id="experience-firesqueak-1">
+          <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
+
+          <details>
+            <summary>Description</summary>
+            <div>
+              <%= Components::Markdown.new.render do %>
+                <%= templates["firesqueak_1.md.erb"].render(self) %>
+              <% end %>
+            </div>
+          </details>
+
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Designed and built an e-commerce product for a software consultancy.</p>
+          </details>
+
+          <details open>
+            <summary>Tech</summary>
+            <dl>
+              <div>
+                <dt>Frontend (Front)</dt>
+                <dd>JavaScript</dd>
+                <dd>React</dd>
+                <dd>GraphQL</dd>
+              </div>
+
+              <div>
+                <dt>Frontend (Back)</dt>
+                <dd>JavaScript</dd>
+                <dd>Node</dd>
+                <dd>Next</dd>
+              </div>
+
+              <div>
+                <dt>Backend</dt>
+                <dd>Ruby</dd>
+                <dd>Rails</dd>
+                <dd>Sidekiq</dd>
+              </div>
+
+              <div>
+                <dt>Data</dt>
+                <dd>PostgreSQL</dd>
+                <dd>Redis</dd>
+              </div>
+
+              <div>
+                <dt>Platform</dt>
+                <dd>Shopify</dd>
+                <dd>Heroku</dd>
+              </div>
+            </dl>
+          </details>
+        </article>
+
+        <article id="experience-firesqueak-2">
+          <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
+
+          <details>
+            <summary>Description</summary>
+            <div>
+              <%= Components::Markdown.new.render do %>
+                <%= templates["firesqueak_2.md.erb"].render(self) %>
+              <% end %>
+            </div>
+          </details>
+
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Built the frontend of a new e-commerce site for a footwear brand.</p>
+          </details>
+
+          <details open>
+            <summary>Tech</summary>
+            <dl>
+              <div>
+                <dt>Frontend (Front)</dt>
+                <dd>HTML</dd>
+                <dd>SCSS</dd>
+                <dd>JavaScript</dd>
+                <dd>Stimulus</dd>
+                <dd>MobX</dd>
+              </div>
+
+              <div>
+                <dt>Frontend (Back)</dt>
+                <dd>JavaScript</dd>
+                <dd>Node</dd>
+                <dd>Rollup</dd>
+              </div>
+
+              <div>
+                <dt>Platform</dt>
+                <dd>Shopify</dd>
+                <dd>AWS</dd>
+              </div>
+            </dl>
+          </details>
+        </article>
+
+        <article id="experience-firesqueak-3">
+          <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
+
+          <details>
+            <summary>Description</summary>
+            <div>
+              <%= Components::Markdown.new.render do %>
+                <%= templates["firesqueak_3.md.erb"].render(self) %>
+              <% end %>
+            </div>
+          </details>
+
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Built an ETL pipeline for a footwear brand.</p>
+          </details>
+
+          <details open>
+            <summary>Tech</summary>
+            <dl>
+              <div>
+                <dt>Backend</dt>
+                <dd>JavaScript</dd>
+                <dd>Node</dd>
+              </div>
+
+              <div>
+                <dt>Platform</dt>
+                <dd>Shopify</dd>
+                <dd>AWS</dd>
+              </div>
+            </dl>
+          </details>
+        </article>
+      </article>
+
+      <article id="experience-blue-apron">
+        <h3><a href="#experience-blue-apron">Blue Apron</a></h3>
+
+        <header>
+          <span data-emoji="💼">Senior Software Engineer</span>
+          <time data-emoji="📅" datetime="2018/2019">2018 - 2019</time>
+          <address data-emoji="🗺">
+            <span>Austin</span>
+            <span>TX</span>
+          </address>
+        </header>
+
+        <details>
+          <summary>Description</summary>
+          <div>
+            <%= Components::Markdown.new.render do %>
+              <%= templates["blue_apron.md.erb"].render(self) %>
+            <% end %>
+          </div>
+        </details>
+
+        <details open>
+          <summary>TL;DR</summary>
+          <p>Maintained a large, proprietary e-commerce codebase for a popular meal-kit delivery company.</p>
+        </details>
+
+        <details open>
+          <summary>Tech</summary>
+          <dl>
+            <div>
+              <dt>Frontend</dt>
+              <dd>JavaScript</dd>
+              <dd>React</dd>
+              <dd>Redux</dd>
+              <dd>Backbone</dd>
+            </div>
+
+            <div>
+              <dt>Frontend (Back)</dt>
+              <dd>JavaScript</dd>
+              <dd>Node</dd>
+              <dd>Webpack</dd>
+            </div>
+
+            <div>
+              <dt>Backend</dt>
+              <dd>Ruby</dd>
+              <dd>Rails</dd>
+              <dd>Sidekiq</dd>
+            </div>
+
+            <div>
+              <dt>Data</dt>
+              <dd>PostgreSQL</dd>
+              <dd>Redis</dd>
+              <dd>Kafka</dd>
+            </div>
+
+            <div>
+              <dt>Platform</dt>
+              <dd>K8S</dd>
+              <dd>GCP</dd>
+            </div>
+          </dl>
+        </details>
+      </article>
+
+      <article id="experience-lob">
+        <h3><a href="#experience-lob">Lob</a></h3>
+
+        <header>
+          <span data-emoji="💼">Senior Software Engineer</span>
+          <time data-emoji="📅" datetime="2016/2017">2016 - 2017</time>
+          <address data-emoji="🗺">
+            <span>San Francisco</span>
+            <span>CA</span>
+          </address>
+        </header>
+
+        <details>
+          <summary>Description</summary>
+          <div>
+            <%= Components::Markdown.new.render do %>
+              <%= templates["lob.md.erb"].render(self) %>
+            <% end %>
+          </div>
+        </details>
+
+        <details open>
+          <summary>TL;DR</summary>
+          <p>Led DevOps and optimized the fulfillment backend for a startup focused on direct mail.</p>
+        </details>
+
+        <details open>
+          <summary>Tech</summary>
+          <dl>
+            <div>
+              <dt>Backend</dt>
+              <dd>JavaScript</dd>
+              <dd>Node</dd>
+              <dd>Hapi</dd>
+            </div>
+
+            <div>
+              <dt>Data</dt>
+              <dd>PostgreSQL</dd>
+              <dd>Redis</dd>
+              <dd>Elasticsearch</dd>
+            </div>
+
+            <div>
+              <dt>Platform</dt>
+              <dd>Docker</dd>
+              <dd>Terraform</dd>
+              <dd>AWS</dd>
+            </div>
+          </dl>
+        </details>
+      </article>
+
+      <article id="experience-walmartlabs">
+        <h3><a href="#experience-walmartlabs">@WalmartLabs</a></h3>
+
+        <header>
+          <span data-emoji="💼">Software Engineer</span>
+          <time data-emoji="📅" datetime="2014/2016">2014 - 2016</time>
+          <address data-emoji="🗺">
+            <span>Sunnyvale</span>
+            <span>CA</span>
+          </address>
+        </header>
+
+        <details>
+          <summary>Description</summary>
+          <div>
+            <%= Components::Markdown.new.render do %>
+              <%= templates["walmart_labs.md.erb"].render(self) %>
+            <% end %>
+          </div>
+        </details>
+
+        <details open>
+          <summary>TL;DR</summary>
+          <p>Maintained an application that managed product listing pages on <code>walmart.com</code>.</p>
+        </details>
+
+        <details open>
+          <summary>Tech</summary>
+          <dl>
+            <div>
+              <dt>Frontend</dt>
+              <dd>JavaScript</dd>
+              <dd>Angular</dd>
+              <dd>Backbone</dd>
+            </div>
+
+            <div>
+              <dt>Backend</dt>
+              <dd>JavaScript</dd>
+              <dd>Node</dd>
+              <dd>Hapi</dd>
+              <dd>Express</dd>
+            </div>
+
+            <div>
+              <dt>Data</dt>
+              <dd>MongoDB</dd>
+              <dd>Cassandra</dd>
+              <dd>MySQL</dd>
+            </div>
+          </dl>
+        </details>
+      </article>
+
+      <article id="experience-sendicate">
+        <h3><a href="#experience-sendicate">Sendicate</a></h3>
+
+        <header>
+          <span data-emoji="💼">Software Engineer</span>
+          <time data-emoji="📅" datetime="2014">2014</time>
+          <address data-emoji="🗺">
+            <span>New York</span>
+            <span>NY</span>
+          </address>
+        </header>
+
+        <details>
+          <summary>Description</summary>
+          <div>
+            <%= Components::Markdown.new.render do %>
+              <%= templates["sendicate.md.erb"].render(self) %>
+            <% end %>
+          </div>
+        </details>
+
+        <details open>
+          <summary>TL;DR</summary>
+          <p>Extended and maintained an e-commerce product for a startup focused on email marketing.</p>
+        </details>
+
+        <details open>
+          <summary>Tech</summary>
+          <dl>
+            <div>
+              <dt>Frontend</dt>
+              <dd>JavaScript</dd>
+              <dd>Backbone</dd>
+              <dd>Vue</dd>
+            </div>
+
+            <div>
+              <dt>Backend</dt>
+              <dd>Ruby</dd>
+              <dd>Rails</dd>
+              <dd>Sidekiq</dd>
+            </div>
+
+            <div>
+              <dt>Data</dt>
+              <dd>PostgreSQL</dd>
+              <dd>Redis</dd>
+              <dd>InfluxDB</dd>
+            </div>
+
+            <div>
+              <dt>Platform</dt>
+              <dd>Mailgun</dd>
+              <dd>Shopify</dd>
+              <dd>Heroku</dd>
+              <dd>AWS</dd>
+            </div>
+          </dl>
+        </details>
+      </article>
+
+      <article id="experience-compuweigh">
+        <h3><a href="#experience-compuweigh">CompuWeigh</a></h3>
+
+        <header>
+          <span data-emoji="💼">Junior Software Engineer</span>
+          <time data-emoji="📅" datetime="2012/2013">2012 - 2013</time>
+          <address data-emoji="🗺">
+            <span>Woodbury</span>
+            <span>CT</span>
+          </address>
+        </header>
+
+        <details>
+          <summary>Description</summary>
+          <div>
+            <%= Components::Markdown.new.render do %>
+              <%= templates["compuweigh.md.erb"].render(self) %>
+            <% end %>
+          </div>
+        </details>
+
+        <details open>
+          <summary>TL;DR</summary>
+          <p>Learned real world software engineering at a (hard/soft)ware company in the grain industry.</p>
+        </details>
+
+        <details open>
+          <summary>Tech</summary>
+          <dl>
+            <div>
+              <dt>Frontend</dt>
+              <dd>Silverlight</dd>
+            </div>
+
+            <div>
+              <dt>Backend</dt>
+              <dd>C#</dd>
+              <dd>VB.NET</dd>
+              <dd>.NET 4</dd>
+            </div>
+
+            <div>
+              <dt>Data</dt>
+              <dd>SQL Server</dd>
+            </div>
+          </dl>
+        </details>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+
+      <article id="education-bachelors">
+        <h3><a href="#education-bachelors">Computer Science, B.S.</a></h3>
+
+        <header>
+          <span data-emoji="🎓">Fairfield University</span>
+          <time data-emoji="📅" datetime="2008/2012">2008 - 2012</time>
+          <address data-emoji="🗺">
+            <span>Fairfield</span>
+            <span>CT</span>
+          </address>
+        </header>
+      </article>
+    </section>
+  <% end %>
+<% end.render %>

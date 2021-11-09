@@ -1,0 +1,37 @@
+Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
+The company offers a SAAS product in the form of RESTful APIs for sending physical mail and validating addresses.
+The Print & Mail API handled several million requests per month.
+
+The engineering team was small and without defined roles so we self-assigned responsibilities based on interest and capability.
+I had more experience with cloud infrastructure, so I took DevOps responsibilities.
+
+One of the first projects I worked on was to setup auto-scaling for the Print & Mail API infrastructure.
+This turned out to be a larger than expected task given that everything was manually managed through the AWS web interface.
+My approach was to:
+
+- Introduce Terraform to get a handle on the critical infrastructure.
+- Dockerize the application to automate provisioning.
+- Setup a parallel set of infrastructure to use AWS ECS for scheduling containers.
+- Cut-over from the old infrastructure to the new infrastructure.
+
+The migration completed without any issues and we were able to leverage AWS features to manage auto-scaling with almost no custom code.
+There were other benefits and improvements from this approach, including:
+
+- Codified infrastructure.
+- Explicit, documented provisioning.
+- Automated deployments with immediate rollbacks.
+
+Aside from leading DevOps initiatives, I also became the team lead for the _Partner Operations_ team.
+The Partner Operations team was responsible for optimally routing requests on the backend to the Partners that fulfilled them.
+Geographic proximity, capability, and available capacity were some of the factors considered when routing to a Partner.
+
+My role on the Partner Operations team was to increase throughput and reduce failure rates.
+This involved:
+
+- Handling and resolving routing failures as part of an on-call schedule.
+- Identifying and reducing bottlenecks in the codebase, infrastructure, and manual procedures.
+- Researching, designing, and prototyping a V2 of the backend architecture.
+
+This was a difficult role since the on-call burden was high.
+I departed the company before I could deliver the V2 of the backend,
+    but I left the team with my blueprints and I had already exhausted the optimizations to the existing code and infrastructure.

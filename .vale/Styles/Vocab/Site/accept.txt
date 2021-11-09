@@ -9,4 +9,12 @@ charlesbjohnson
 (?i)middleman
 (?i)npm
 (?i)posthtml
+(?i)vue
 (?i)webpack
+
+Bigcommerce
+Firesqueak
+Mailchimp
+Sendicate
+Shopify
+Twilio
