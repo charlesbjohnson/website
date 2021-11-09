@@ -1,0 +1,116 @@
+In the [previous post](<%= Blog::NewManagerReadme.uri %>) I wrote about how I share a personal `README` with any new manager that I report to.
+What I'll be discussing here is a similar idea but targeted towards new teammates.
+
+Admittedly, I have not sent personal `README`s to teammates in the past since most will understand how I work after enough time seeing it in practice.
+That said, I can't think of a good reason not to front-load information like this.
+
+I think that a code style guide is semi-analogous to a personal `README`.
+Even when a team doesn't have an explicit style guide, each developer will still have their own style preferences.
+If a team of developers are working on the same codebase, then, they will organically form a style "equilibrium" for the codebase (assuming that the team stays the same over time).
+
+A gradual process is fine for most teams, but it has potential for optimization.
+If the developers can agree, upfront, to a style guide then it can save time in code review.
+Explicit consensus for conventions is also the basis for automation.
+
+My hypothesis is that the benefits of personal `README`s are comparable to the benefits of code style guides.
+Obviously it would be difficult to automate the details that are more abstract, but having these discussions ahead-of-time can save time through fewer meetings or discussions.
+
+Here's my first draft…
+
+---
+
+Hello! I’m excited to be part of `${COMPANY}` and I'm delighted to be working with you on the `${TEAM}` team.
+Thanks for bringing me on board!
+
+I'm looking forward to rummaging through documents, spelunking into the depths of version control history, and the sideways looks that are to come.
+Before I get carried away with that, though, I wanted to share a bit about myself that you might find helpful when working with me.
+
+Half of this information is about specific things you'll see me do on a routine basis.
+I won't describe everything that I do, just the subset that might seem uncommon or unusual.
+
+The other half is more philosophical and opinionated.
+I've focused on strongly-held opinions, but none of it's prescriptive.
+
+## As a Reviewer 🔎
+
+On a day-to-day basis, I expect to spend most of my time reviewing code.
+I have a lot of experience in this capacity and I think that code review is a great place for knowledge transfer, among other things.
+
+When I review code, I:
+
+Scale thoroughness according to impact:
+: I spend more time reviewing changes that could introduce breakages.
+: I spend less time reviewing changes that are trivial.
+
+Include justifications for my suggestions:
+: I want the author to understand and agree with requested changes.
+
+Use a [comment convention](https://conventionalcomments.org/):
+: I include metadata to help the author determine the priority of each of my comments.
+
+Prefer small and focused changes:
+: It's easier to detect issues when there is less code to review.
+: It's easier to follow along when the changes have fewer goals.
+
+## As a Contributor 🏗
+
+I won't get into low-level details about how I write code since there are better resources available on the subject.
+Furthermore, writing code is just one part of the challenge of working on a shared codebase.
+
+A bigger challenge, I think, is how to effectively _package_ code changes.
+_Packaging_ refers to the work that goes into making code changes reviewable and understandable.
+
+When I contribute code, I:
+
+Arrange commits to show an incremental, linear series of events:
+: Each commit is a singular, focused change so that the reviewer can assess scope and impact with less effort.
+: Each commit is a checkpoint along the way to the reviewer's complete understanding of the changes.
+
+Differentiate between behavioral and non-behavioral changes:
+: It's easier to verify that isolated, non-behavioral changes **do not change** behavior.
+: It's easier to verify that isolated, behavioral changes **specifically change** behavior in expected ways.
+: It's harder to verify that non-behavioral and behavioral, together, are correct.
+
+Annotate changes using code review comments:
+: I write comments on my own pull/merge requests to direct the reviewer's attention and to provide context for specific changes.
+
+Specify manual test cases in the absence of automated tests:
+: I test every line of code that I write.
+: I write down every test that I run, but I don't write every test using code.
+
+## As a Thinker 🤔
+
+If I'm not reading or writing code then it's because I'm thinking about how to create some software.
+This is sometimes referred to as software design or architecture.
+
+As software people, I think that we underestimate how much subjective factors such as ideals and fashion influence our work.
+This isn't necessarily a bad thing, but it's at least something to be conscious of.
+To that end, I'll share the opinions that influence how I build things.
+
+As someone that thinks about software, I:
+
+Believe that knowledge maintenance is a significant challenge for teams:
+: Even small amounts of code in critical paths that no one understands can drag down the productivity of an entire team.
+: Documentation helps to fill in gaps, but understandable and self-evident software designs are best.
+
+Place more value on prototypes than design documents:
+: Working software allows stakeholders to interact with their ideas and lets developers prove an initial design. Evidence is better than theory.
+
+Prefer [boring technology](http://boringtechnology.club/):
+: Boring tools have fewer unexpected issues.
+: Fewer unexpected issues means more time spent on your own codebase and less time reporting bugs to someone else's.
+
+## (END)
+
+My way of doing software is not exclusive, you don't have to agree with me on everything (or anything!).
+My hope is that this will inspire you to reflect on the things _you do_ and the things _you think about_ in the context of software.
+
+Thanks for reading! I’m looking forward to doing great work with you.
+
+-- _Charlie_
+
+---
+
+I haven't formally shared this with any team yet, but when I do then I'll return to this post to add an update with my findings.
+
+In the meantime, please let me know what you think and if you have tried something like this before.
