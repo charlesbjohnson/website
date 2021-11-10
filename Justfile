@@ -12,14 +12,27 @@ build:
 clean:
     @rm -rf vendor/
 
-# Run the formatter
-fmt *OPTS:
-    @just --unstable --fmt
+# Run the formatters
+fmt: fmt-just fmt-rb
+
+# Run the formatter for Just
+fmt-just *OPTS:
+    @just --unstable --fmt {{ OPTS }}
+
+# Run the formatter for Ruby
+fmt-rb *OPTS:
     @bin/rubocop --auto-correct {{ OPTS }}
 
-# Run the linter
-lint *OPTS:
+# Run the linters
+lint: lint-rb lint-md
+
+# Run the linter for Ruby
+lint-rb *OPTS:
     @bin/rubocop {{ OPTS }}
+
+# Run the linter for Markdown
+lint-md *OPTS=".":
+    @vale {{ OPTS }}
 
 # Generate the site
 site-gen:
