@@ -1,7 +1,9 @@
 <%= Layouts::Default.new(page: self, favicon: "✍", description: "Charles B Johnson's blog") do |c| %>
-  <%= c.main do %>
+  <%= c.styles do %>
     <style><%= templates["blog.css.erb"].render(self) %></style>
+  <% end %>
 
+  <%= c.main do %>
     <h1>Posts</h1>
     <ul>
       <% posts.each do |post| %>

@@ -1,7 +1,9 @@
 <%= Layouts::Default.new(page: self, description: "Charles B Johnson's internet presence") do |c| %>
-  <%= c.main do %>
+  <%= c.styles do %>
     <style><%= templates["index.css.erb"].render(self) %></style>
+  <% end %>
 
+  <%= c.main do %>
     <h1>Hi.</h1>
     <p><strong>I'm Charles B Johnson.</strong></p>
     <p>... But you can call me Charlie. Just don't call me Chuck.</p>

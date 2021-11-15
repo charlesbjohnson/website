@@ -15,9 +15,13 @@ module Layouts
       block_given? ? self.main = yield : @main
     end
 
+    def styles
+      block_given? ? self.styles = yield : @styles
+    end
+
     private
 
     attr_accessor :favicon, :description
-    attr_writer :main
+    attr_writer :main, :styles
   end
 end
