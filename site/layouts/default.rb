@@ -15,6 +15,10 @@ module Layouts
       block_given? ? self.main = yield : @main
     end
 
+    def scripts
+      block_given? ? self.scripts = yield : @scripts
+    end
+
     def styles
       block_given? ? self.styles = yield : @styles
     end
@@ -22,6 +26,6 @@ module Layouts
     private
 
     attr_accessor :favicon, :description
-    attr_writer :main, :styles
+    attr_writer :main, :scripts, :styles
   end
 end
