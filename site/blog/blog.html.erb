@@ -1,14 +1,16 @@
-<%= Layouts::Default.new(page: self, favicon: "✍", description: "Charles B Johnson's blog").render do %>
-  <style><%= templates["blog.css.erb"].render(self) %></style>
+<%= Layouts::Default.new(page: self, favicon: "✍", description: "Charles B Johnson's blog") do |c| %>
+  <%= c.main do %>
+    <style><%= templates["blog.css.erb"].render(self) %></style>
 
-  <h1>Posts</h1>
-  <ul>
-    <% posts.each do |post| %>
-      <li>
-        <a href="<%= post.uri %>"><%= post.title %></a>
-        <time datetime="<%= post.date %>"><%= post.date %></time>
-        <p><%= post.preview %></p>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+    <h1>Posts</h1>
+    <ul>
+      <% posts.each do |post| %>
+        <li>
+          <a href="<%= post.uri %>"><%= post.title %></a>
+          <time datetime="<%= post.date %>"><%= post.date %></time>
+          <p><%= post.preview %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end.render %>

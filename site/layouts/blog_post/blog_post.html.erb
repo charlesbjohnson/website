@@ -1,10 +1,12 @@
-<%= Layouts::Default.new(page: page, description: opts.fetch(:description, page.preview), **opts).render do %>
-  <style><%= templates["blog_post.css.erb"].render(self) %></style>
+<%= Layouts::Default.new(page: page, description: opts.fetch(:description, page.preview), **opts) do |c| %>
+  <%= c.main do %>
+    <style><%= templates["blog_post.css.erb"].render(self) %></style>
 
-  <time datetime="<%= page.date %>"><%= page.date.strftime("%B %-d, %Y") %></time>
-  <h1><%= page.title %></h1>
+    <time datetime="<%= page.date %>"><%= page.date.strftime("%B %-d, %Y") %></time>
+    <h1><%= page.title %></h1>
 
-  <article>
-    <%= yield %>
-  </article>
-<% end %>
+    <article>
+      <%= yield %>
+    </article>
+  <% end %>
+<% end.render %>
