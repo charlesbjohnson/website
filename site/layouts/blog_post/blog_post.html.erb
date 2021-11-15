@@ -11,4 +11,8 @@
       <%= yield %>
     </article>
   <% end %>
+
+  <%= c.scripts do %>
+    <script type="module"><%= templates["blog_post.js.erb"].render(self) %></script>
+  <% end %>
 <% end.render %>

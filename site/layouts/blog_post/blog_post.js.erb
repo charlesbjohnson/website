@@ -1,0 +1,40 @@
+class BlogPost {
+  static REGEXP =
+    /(?<text>\P{Extended_Pictographic}+)(?<emoji>\p{Extended_Pictographic}+)?/u;
+
+  static setup() {
+    for (const $heading of this.$headings) {
+      if (!$heading.id || $heading.childElementCount > 0) {
+        continue;
+      }
+
+      const match = this.REGEXP.exec($heading.textContent);
+
+      const $fragment = document.createDocumentFragment();
+      const $anchor = document.createElement("a");
+
+      $anchor.href = `#${$heading.id}`;
+      $anchor.textContent = match.groups.text.trim();
+
+      $fragment.append($anchor);
+      if (match.groups.emoji) {
+        const $span = document.createElement("span");
+        $span.textContent = match.groups.emoji;
+        $fragment.append($span);
+      }
+
+      $heading.textContent = null;
+      $heading.append($fragment);
+    }
+  }
+
+  static get $headings() {
+    return this.$page.querySelectorAll("h2, h3, h4, h5, h6");
+  }
+
+  static get $page() {
+    return document.querySelector(`[data-page^="Blog::"]`);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => BlogPost.setup());
