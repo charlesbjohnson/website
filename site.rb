@@ -2,6 +2,10 @@
 
 class Site
   class << self
+    def configure(&block)
+      block.call(SSG::Site.config)
+    end
+
     def pages
       SSG::Site.pages
     end
