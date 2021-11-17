@@ -1,0 +1,75 @@
+Let me share a story about this website.
+
+## Decay 🧟‍♂️
+
+[Eight years ago] I built a personal website with a blog.
+I had just learned Ruby and had a limited understanding of web development.
+The site looked bad and my writing was even worse.
+I didn't keep up with it.
+
+Some years later I stopped writing Ruby and picked up JavaScript instead.
+I rebuilt my website using a Node toolchain of [Webpack], [PostCSS], [PostHTML], and [Atomizer].
+I made the site look nicer but had to scale it down to a single page.
+
+Fast forward to the present day and I'm, once again, revisiting my website.
+As an aside, it's fun to see that I was ahead of the curve with utility-first CSS adoption (aka "Atomic" CSS).
+TailwindCSS JIT is great, but [I already did it in 2018](https://github.com/posthtml/posthtml-atomizer) 😉
+
+Beyond the nostalgia, though, I realized that I couldn't pick up the site from where I left off.
+Even with just a single page, the site was more complicated than the statically generated version that preceded it.
+
+Why was this the case? Well…
+
+- I couldn't install dependencies. `npm install` logged dozens of deprecation warnings before ultimately failing.
+- My Webpack configuration splayed out over seven files but was also stitched back together through a complicated set of `webpack-merge` rules.
+- I used 16 different PostCSS plugins. I don't remember what most of them were for.
+
+The Node version of the site was smaller in scope but denser in implementation.
+I hadn't written much code, but decay had set in as a result of enormous dependency on code downloaded off the internet.
+
+## Starting Over 🔁
+
+Once again, I've rebuilt my site.
+In some ways I've returned to the mindset I had when I built my site the first time.
+
+My first site was necessarily simple because I didn't know how to make it look pretty or be fancy.
+I'm still not great at either of those things, but the difference now is that I embrace [Spartan Web] design.
+[Perfect MF'ing Website] is actually usable compared to 90% of [the web today].
+My new site doesn't try to look pretty or be fancy, it just looks decent and loads fast.
+
+I didn't write much Ruby code with my first site, but I stayed within Ruby's ecosystem.
+I used [Middleman] to be close to the experience of Rails, which was popular at the time.
+I've since returned to Ruby with a different perspective, one that led me to build my own static site generator.
+Ruby is no longer trendy and my static site generator has a userbase of one, but I'm more confident that I'll be able to keep this going several years from now.
+**No more rewrites.**
+
+## Personal Touch ✍
+
+In rebuilding this site, I've also renewed my commitment to write on my personal, technical blog.
+
+Eight years ago I had the intuition that it would be important to write.
+I didn't know what to write about and I didn't know why I needed to write, though, so I didn't follow through.
+
+Now I understand that writing is a super power, even for people that work in software and live in code.
+At every software job where I've worked, the majority of the challenges are a result of inadequate communication between people.
+Being a good communicator doesn't necessarily make you a good software engineer,
+    but it's harder to be a good software engineer if you're not a good communicator.
+The logic is simple:
+
+➡ Better writing
+\
+➡ Better communication
+\
+➡ Better software
+
+Here's to trying to write a less cringe-y blog 🥂
+
+[Eight years ago]: https://github.com/charlesbjohnson/cbjohnson.info/commit/66f645b22b06e9e6eedbe52bcf01951205fbc4a9
+[Webpack]: https://webpack.js.org/
+[PostCSS]: https://postcss.org/
+[PostHTML]: https://posthtml.org/#/
+[Atomizer]: https://acss.io/
+[Spartan Web]: https://beza1e1.tuxen.de/spartan_web.html
+[Perfect MF'ing Website]: https://perfectmotherfuckingwebsite.com/
+[the web today]: https://how-i-experience-web-today.com/
+[Middleman]: https://middlemanapp.com/basics/install/
