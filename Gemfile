@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby "3.0.2"
+ruby "3.0.3"
 source "https://rubygems.org"
 
 gem "actionview", "~> 6.1", require: "action_view"
@@ -15,9 +15,9 @@ gem "ssg", path: "ssg"
 
 group :development do
   gem "debug", "~> 1.3", require: false
-  gem "rubocop", "~> 1.22", require: false
-  gem "rubocop-minitest", "~> 0.16", require: false
-  gem "standard", "~> 1.4", require: false
+  gem "rubocop", "~> 1.23", require: false
+  gem "rubocop-minitest", "~> 0.17", require: false
+  gem "standard", "~> 1.5", require: false
 end
 
 group :development, :test do
