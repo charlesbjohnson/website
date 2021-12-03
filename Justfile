@@ -25,11 +25,15 @@ fmt-rb *OPTS:
 
 # Run the formatter for CSS
 fmt-css *OPTS:
-    @npx prettier site/**/*.css.* --parser css --write {{ OPTS }}
+    @npx --yes prettier site/**/*.css.* --parser css --write {{ OPTS }}
 
 # Run the formatter for JavaScript
 fmt-js *OPTS:
-    @npx prettier site/**/*.js.* --parser typescript --write {{ OPTS }}
+    @npx --yes prettier site/**/*.js.* --parser typescript --write {{ OPTS }}
+
+# Generate the site
+generate *OPTS:
+    @bin/ssg {{ OPTS }}
 
 # Run the linters
 lint: lint-rb lint-css lint-js lint-md
@@ -40,23 +44,15 @@ lint-rb *OPTS:
 
 # Run the linter for CSS
 lint-css *OPTS:
-    @npx prettier site/**/*.css.* --parser css --check {{ OPTS }}
+    @npx --yes prettier site/**/*.css.* --parser css --check {{ OPTS }}
 
 # Run the linter for JavaScript
 lint-js *OPTS:
-    @npx prettier site/**/*.js.* --parser typescript --check {{ OPTS }}
+    @npx --yes prettier site/**/*.js.* --parser typescript --check {{ OPTS }}
 
 # Run the linter for Markdown
 lint-md *OPTS=".":
     @vale {{ OPTS }}
-
-# Generate the site
-site-gen:
-    @bin/ssg
-
-# Serve the site
-site-srv:
-    @bin/ssg serve
 
 # Run the tests
 test *OPTS:
