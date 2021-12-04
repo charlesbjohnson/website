@@ -5,9 +5,25 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 [Justfile]
-indent_style = space
 indent_size = 4
+indent_style = space
 
 [{*.rb,Gemfile}]
 indent_size = 2
+indent_style = space
+
+[{*.css,*.css.*}]
+indent_size = 2
+indent_style = space
+
+[{*.html,*.html.*}]
+indent_size = 2
+indent_style = space
+
+[{*.js,*.js.*}]
+indent_size = 2
+indent_style = space
+
+[{*.md,*.md.*}]
+indent_size = 4
 indent_style = space
