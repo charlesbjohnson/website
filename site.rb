@@ -11,7 +11,7 @@ class Site
     end
 
     def uri
-      production? ? URI::HTTPS.build(host: "cbjohnson.info") : SSG::Site.config.serve_uri
+      production? ? URI::HTTPS.build(host: File.read("site/CNAME").strip) : SSG::Site.config.serve_uri
     end
 
     def development?
