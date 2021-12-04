@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello World | CBJohnson</title>
+
+    <link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌎</text></svg>"
+/>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    
+    <style>[data-page^="Blog::"] main time {
+  font-size: 0.9em;
+}
+
+[data-page^="Blog::"] h2 a,
+[data-page^="Blog::"] h3 a,
+[data-page^="Blog::"] h4 a,
+[data-page^="Blog::"] h5 a,
+[data-page^="Blog::"] h6 a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 0.5ch;
+}
+
+[data-page^="Blog::"] h2 a:hover,
+[data-page^="Blog::"] h3 a:hover,
+[data-page^="Blog::"] h4 a:hover,
+[data-page^="Blog::"] h5 a:hover,
+[data-page^="Blog::"] h6 a:hover,
+[data-page^="Blog::"] h2 a:focus,
+[data-page^="Blog::"] h3 a:focus,
+[data-page^="Blog::"] h4 a:focus,
+[data-page^="Blog::"] h5 a:focus,
+[data-page^="Blog::"] h6 a:focus {
+  text-decoration: underline;
+}
+
+[data-page^="Blog::"] h2 span,
+[data-page^="Blog::"] h3 span,
+[data-page^="Blog::"] h4 span,
+[data-page^="Blog::"] h5 span,
+[data-page^="Blog::"] h6 span {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+</style>
+  
+
+    <link rel="canonical" href="https://cbjohnson.io/blog/hello-world/" />
+      <meta name="description" content="On the subject of (re)building my personal website." />
+  </head>
+
+  <body data-page="Blog::HelloWorld">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/work/">Work</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+    <time datetime="2021-11-01">November 1, 2021</time>
+    <h1>Hello World</h1>
+
+    <article>
+      
+  <p>Let me share a story about this website.</p>
+
+<h2 id="decay-️">Decay 🧟‍♂️</h2>
+
+<p><a href="https://github.com/charlesbjohnson/cbjohnson.info/commit/66f645b22b06e9e6eedbe52bcf01951205fbc4a9">Eight years ago</a> I built a personal website with a blog.
+I had just learned Ruby and had a limited understanding of web development.
+The site looked bad and my writing was even worse.
+I didn’t keep up with it.</p>
+
+<p>Some years later I stopped writing Ruby and picked up JavaScript instead.
+I rebuilt my website using a Node toolchain of <a href="https://webpack.js.org/">Webpack</a>, <a href="https://postcss.org/">PostCSS</a>, <a href="https://posthtml.org/#/">PostHTML</a>, and <a href="https://acss.io/">Atomizer</a>.
+I made the site look nicer but had to scale it down to a single page.</p>
+
+<p>Fast forward to the present day and I’m, once again, revisiting my website.
+As an aside, it’s fun to see that I was ahead of the curve with utility-first CSS adoption (aka “Atomic” CSS).
+TailwindCSS JIT is great, but <a href="https://github.com/posthtml/posthtml-atomizer">I already did it in 2018</a> 😉</p>
+
+<p>Beyond the nostalgia, though, I realized that I couldn’t pick up the site from where I left off.
+Even with just a single page, the site was more complicated than the statically generated version that preceded it.</p>
+
+<p>Why was this the case? Well…</p>
+
+<ul>
+  <li>I couldn’t install dependencies. <code>npm install</code> logged dozens of deprecation warnings before ultimately failing.</li>
+  <li>My Webpack configuration splayed out over seven files but was also stitched back together through a complicated set of <code>webpack-merge</code> rules.</li>
+  <li>I used 16 different PostCSS plugins. I don’t remember what most of them were for.</li>
+</ul>
+
+<p>The Node version of the site was smaller in scope but denser in implementation.
+I hadn’t written much code, but decay had set in as a result of enormous dependency on code downloaded off the internet.</p>
+
+<h2 id="starting-over-">Starting Over 🔁</h2>
+
+<p>Once again, I’ve rebuilt my site.
+In some ways I’ve returned to the mindset I had when I built my site the first time.</p>
+
+<p>My first site was necessarily simple because I didn’t know how to make it look pretty or be fancy.
+I’m still not great at either of those things, but the difference now is that I embrace <a href="https://beza1e1.tuxen.de/spartan_web.html">Spartan Web</a> design.
+<a href="https://perfectmotherfuckingwebsite.com/">Perfect MF’ing Website</a> is actually usable compared to 90% of <a href="https://how-i-experience-web-today.com/">the web today</a>.
+My new site doesn’t try to look pretty or be fancy, it just looks decent and loads fast.</p>
+
+<p>I didn’t write much Ruby code with my first site, but I stayed within Ruby’s ecosystem.
+I used <a href="https://middlemanapp.com/basics/install/">Middleman</a> to be close to the experience of Rails, which was popular at the time.
+I’ve since returned to Ruby with a different perspective, one that led me to build my own static site generator.
+Ruby is no longer trendy and my static site generator has a userbase of one, but I’m more confident that I’ll be able to keep this going several years from now.
+<strong>No more rewrites.</strong></p>
+
+<h2 id="personal-touch-">Personal Touch ✍</h2>
+
+<p>In rebuilding this site, I’ve also renewed my commitment to write on my personal, technical blog.</p>
+
+<p>Eight years ago I had the intuition that it would be important to write.
+I didn’t know what to write about and I didn’t know why I needed to write, though, so I didn’t follow through.</p>
+
+<p>Now I understand that writing is a super power, even for people that work in software and live in code.
+At every software job where I’ve worked, the majority of the challenges are a result of inadequate communication between people.
+Being a good communicator doesn’t necessarily make you a good software engineer,
+  but it’s harder to be a good software engineer if you’re not a good communicator.
+The logic is simple:</p>
+
+<p>➡ Better writing
+<br />
+➡ Better communication
+<br />
+➡ Better software</p>
+
+<p>Here’s to trying to write a less cringe-y blog 🥂</p>
+
+
+
+    </article>
+  
+    </main>
+
+    
+    <script type="module">class BlogPost {
+  static REGEXP =
+    /(?<text>\P{Extended_Pictographic}+)(?<emoji>\p{Extended_Pictographic}+)?/u;
+
+  static setup() {
+    for (const $heading of this.$headings) {
+      if (!$heading.id || $heading.childElementCount > 0) {
+        continue;
+      }
+
+      const match = this.REGEXP.exec($heading.textContent);
+
+      const $fragment = document.createDocumentFragment();
+      const $anchor = document.createElement("a");
+
+      $anchor.href = `#${$heading.id}`;
+      $anchor.textContent = match.groups.text.trim();
+
+      $fragment.append($anchor);
+      if (match.groups.emoji) {
+        const $span = document.createElement("span");
+        $span.textContent = match.groups.emoji;
+        $fragment.append($span);
+      }
+
+      $heading.textContent = null;
+      $heading.append($fragment);
+    }
+  }
+
+  static get $headings() {
+    return this.$page.querySelectorAll("h2, h3, h4, h5, h6");
+  }
+
+  static get $page() {
+    return document.querySelector(`[data-page^="Blog::"]`);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => BlogPost.setup());
+</script>
+  
+  </body>
+</html>
+
+
