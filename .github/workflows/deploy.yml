@@ -1,0 +1,44 @@
+---
+name: Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to deploy to
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      just: 0.10.4
+      ruby: 3.0
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: cache-just
+        uses: actions/cache@v2
+        with:
+          path: /usr/local/bin/just
+          key: ${{ runner.os }}-${{ env.just }}
+
+      - if: steps.cache-just.outputs.cache-hit != 'true'
+        uses: ./.github/actions/setup-just
+        with:
+          version: ${{ env.just }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.ruby }}
+          bundler-cache: true
+
+      - run: just generate
+        env:
+          SSG_ENV: production
+
+      - uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: ${{ github.event.inputs.branch }}
+          folder: _site
