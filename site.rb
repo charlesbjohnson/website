@@ -10,8 +10,16 @@ class Site
       SSG::Site.pages
     end
 
+    def domain
+      @domain ||= File.read("site/CNAME").strip
+    end
+
+    def email
+      "mail@#{domain}"
+    end
+
     def uri
-      production? ? URI::HTTPS.build(host: File.read("site/CNAME").strip) : SSG::Site.config.serve_uri
+      production? ? URI::HTTPS.build(host: domain) : SSG::Site.config.serve_uri
     end
 
     def development?
