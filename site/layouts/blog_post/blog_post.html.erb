@@ -1,6 +1,6 @@
 <%= Layouts::Default.new(page: page, description: opts.fetch(:description, page.preview), **opts) do |c| %>
   <%= c.styles do %>
-    <style><%= templates["blog_post.css.erb"].render(self) %></style>
+    <link rel="stylesheet" href="<%= Stylesheets::Blog.uri %>" />
   <% end %>
 
   <%= c.main do %>

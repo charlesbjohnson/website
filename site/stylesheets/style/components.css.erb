@@ -1,38 +1,9 @@
-/* Components */
+/* Components::Address */
 address {
   font-style: normal;
 }
 
-dl dt {
-  font-style: italic;
-  font-weight: var(--f-w-bold);
-  margin-top: 1rem;
-}
-
-dl dt + dt {
-  margin-top: 0;
-}
-
-dl dd + dd {
-  margin-top: 0.5rem;
-}
-
-figure {
-  margin: 0 0 1rem;
-}
-
-hr {
-  background: repeating-linear-gradient(to right, var(--c-black) 0 0.5rem, transparent 0.5rem 1rem);
-  border: none;
-  height: 0.125rem;
-  margin: 2rem 0;
-}
-
-strong,
-b {
-  font-weight: var(--f-w-bolder);
-}
-
+/* Components::Details */
 details {
   margin-bottom: 1rem;
 }
@@ -58,6 +29,10 @@ details summary ~ * {
   padding: 0 1.5ch;
 }
 
-<%= Components::Code.styles %>
-<%= Components::Image.styles %>
-<%= Components::Quote.styles %>
+/* Components::HorizontalRule */
+hr {
+  background: repeating-linear-gradient(to right, var(--c-black) 0 0.5rem, transparent 0.5rem 1rem);
+  border: none;
+  height: 0.125rem;
+  margin: 2rem 0;
+}

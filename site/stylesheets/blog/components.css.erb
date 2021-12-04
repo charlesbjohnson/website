@@ -1,0 +1,23 @@
+/* Components::DefinitionList */
+dl dt {
+  font-style: italic;
+  font-weight: var(--f-w-bold);
+  margin-top: 1rem;
+}
+
+dl dt + dt {
+  margin-top: 0;
+}
+
+dl dd + dd {
+  margin-top: 0.5rem;
+}
+
+/* Components::Code, Components::Image, Components::Quote */
+figure {
+  margin: 0 0 1rem;
+}
+
+<%= Components::Code.styles %>
+<%= Components::Image.styles %>
+<%= Components::Quote.styles %>
