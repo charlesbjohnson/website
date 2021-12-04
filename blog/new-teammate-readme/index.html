@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Personal README: Teammate Edition | CBJohnson</title>
+
+    <link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>"
+/>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    
+    <style>[data-page^="Blog::"] main time {
+  font-size: 0.9em;
+}
+
+[data-page^="Blog::"] h2 a,
+[data-page^="Blog::"] h3 a,
+[data-page^="Blog::"] h4 a,
+[data-page^="Blog::"] h5 a,
+[data-page^="Blog::"] h6 a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 0.5ch;
+}
+
+[data-page^="Blog::"] h2 a:hover,
+[data-page^="Blog::"] h3 a:hover,
+[data-page^="Blog::"] h4 a:hover,
+[data-page^="Blog::"] h5 a:hover,
+[data-page^="Blog::"] h6 a:hover,
+[data-page^="Blog::"] h2 a:focus,
+[data-page^="Blog::"] h3 a:focus,
+[data-page^="Blog::"] h4 a:focus,
+[data-page^="Blog::"] h5 a:focus,
+[data-page^="Blog::"] h6 a:focus {
+  text-decoration: underline;
+}
+
+[data-page^="Blog::"] h2 span,
+[data-page^="Blog::"] h3 span,
+[data-page^="Blog::"] h4 span,
+[data-page^="Blog::"] h5 span,
+[data-page^="Blog::"] h6 span {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+</style>
+  
+
+    <link rel="canonical" href="http://0.0.0.0:8080/blog/new-teammate-readme/" />
+      <meta name="description" content="The introductory email I send to my new teammates at any job." />
+  </head>
+
+  <body data-page="Blog::NewTeammateReadme">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/work/">Work</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      
+    <time datetime="2021-11-03">November 3, 2021</time>
+    <h1>Personal README: Teammate Edition</h1>
+
+    <article>
+      
+  <p>In the <a href="/blog/new-manager-readme/">previous post</a> I wrote about how I share a personal <code>README</code> with any new manager that I report to.
+What I’ll be discussing here is a similar idea but targeted towards new teammates.</p>
+
+<p>Admittedly, I have not sent personal <code>README</code>s to teammates in the past since most will understand how I work after enough time seeing it in practice.
+That said, I can’t think of a good reason not to front-load information like this.</p>
+
+<p>I think that a code style guide is semi-analogous to a personal <code>README</code>.
+Even when a team doesn’t have an explicit style guide, each developer will still have their own style preferences.
+If a team of developers are working on the same codebase, then, they will organically form a style “equilibrium” for the codebase (assuming that the team stays the same over time).</p>
+
+<p>A gradual process is fine for most teams, but it has potential for optimization.
+If the developers can agree, upfront, to a style guide then it can save time in code review.
+Explicit consensus for conventions is also the basis for automation.</p>
+
+<p>My hypothesis is that the benefits of personal <code>README</code>s are comparable to the benefits of code style guides.
+Obviously it would be difficult to automate the details that are more abstract, but having these discussions ahead-of-time can save time through fewer meetings or discussions.</p>
+
+<p>Here’s my first draft…</p>
+
+<hr />
+
+<p>Hello! I’m excited to be part of <code>${COMPANY}</code> and I’m delighted to be working with you on the <code>${TEAM}</code> team.
+Thanks for bringing me on board!</p>
+
+<p>I’m looking forward to rummaging through documents, spelunking into the depths of version control history, and the sideways looks that are to come.
+Before I get carried away with that, though, I wanted to share a bit about myself that you might find helpful when working with me.</p>
+
+<p>Half of this information is about specific things you’ll see me do on a routine basis.
+I won’t describe everything that I do, just the subset that might seem uncommon or unusual.</p>
+
+<p>The other half is more philosophical and opinionated.
+I’ve focused on strongly-held opinions, but none of it’s prescriptive.</p>
+
+<h2 id="as-a-reviewer-">As a Reviewer 🔎</h2>
+
+<p>On a day-to-day basis, I expect to spend most of my time reviewing code.
+I have a lot of experience in this capacity and I think that code review is a great place for knowledge transfer, among other things.</p>
+
+<p>When I review code, I:</p>
+
+<dl>
+  <dt>Scale thoroughness according to impact:</dt>
+  <dd>I spend more time reviewing changes that could introduce breakages.</dd>
+  <dd>I spend less time reviewing changes that are trivial.</dd>
+  <dt>Include justifications for my suggestions:</dt>
+  <dd>I want the author to understand and agree with requested changes.</dd>
+  <dt>Use a <a href="https://conventionalcomments.org/">comment convention</a>:</dt>
+  <dd>I include metadata to help the author determine the priority of each of my comments.</dd>
+  <dt>Prefer small and focused changes:</dt>
+  <dd>It’s easier to detect issues when there is less code to review.</dd>
+  <dd>It’s easier to follow along when the changes have fewer goals.</dd>
+</dl>
+
+<h2 id="as-a-contributor-">As a Contributor 🏗</h2>
+
+<p>I won’t get into low-level details about how I write code since there are better resources available on the subject.
+Furthermore, writing code is just one part of the challenge of working on a shared codebase.</p>
+
+<p>A bigger challenge, I think, is how to effectively <em>package</em> code changes.
+<em>Packaging</em> refers to the work that goes into making code changes reviewable and understandable.</p>
+
+<p>When I contribute code, I:</p>
+
+<dl>
+  <dt>Arrange commits to show an incremental, linear series of events:</dt>
+  <dd>Each commit is a singular, focused change so that the reviewer can assess scope and impact with less effort.</dd>
+  <dd>Each commit is a checkpoint along the way to the reviewer’s complete understanding of the changes.</dd>
+  <dt>Differentiate between behavioral and non-behavioral changes:</dt>
+  <dd>It’s easier to verify that isolated, non-behavioral changes <strong>do not change</strong> behavior.</dd>
+  <dd>It’s easier to verify that isolated, behavioral changes <strong>specifically change</strong> behavior in expected ways.</dd>
+  <dd>It’s harder to verify that non-behavioral and behavioral, together, are correct.</dd>
+  <dt>Annotate changes using code review comments:</dt>
+  <dd>I write comments on my own pull/merge requests to direct the reviewer’s attention and to provide context for specific changes.</dd>
+  <dt>Specify manual test cases in the absence of automated tests:</dt>
+  <dd>I test every line of code that I write.</dd>
+  <dd>I write down every test that I run, but I don’t write every test using code.</dd>
+</dl>
+
+<h2 id="as-a-thinker-">As a Thinker 🤔</h2>
+
+<p>If I’m not reading or writing code then it’s because I’m thinking about how to create some software.
+This is sometimes referred to as software design or architecture.</p>
+
+<p>As software people, I think that we underestimate how much subjective factors such as ideals and fashion influence our work.
+This isn’t necessarily a bad thing, but it’s at least something to be conscious of.
+To that end, I’ll share the opinions that influence how I build things.</p>
+
+<p>As someone that thinks about software, I:</p>
+
+<dl>
+  <dt>Believe that knowledge maintenance is a significant challenge for teams:</dt>
+  <dd>Even small amounts of code in critical paths that no one understands can drag down the productivity of an entire team.</dd>
+  <dd>Documentation helps to fill in gaps, but understandable and self-evident software designs are best.</dd>
+  <dt>Place more value on prototypes than design documents:</dt>
+  <dd>Working software allows stakeholders to interact with their ideas and lets developers prove an initial design. Evidence is better than theory.</dd>
+  <dt>Prefer <a href="http://boringtechnology.club/">boring technology</a>:</dt>
+  <dd>Boring tools have fewer unexpected issues.</dd>
+  <dd>Fewer unexpected issues means more time spent on your own codebase and less time reporting bugs to someone else’s.</dd>
+</dl>
+
+<h2 id="end">END</h2>
+
+<p>My way of doing software is not exclusive, you don’t have to agree with me on everything (or anything!).
+My hope is that this will inspire you to reflect on the things <em>you do</em> and the things <em>you think about</em> in the context of software.</p>
+
+<p>Thanks for reading! I’m looking forward to doing great work with you.</p>
+
+<p>– <em>Charlie</em></p>
+
+<hr />
+
+<p>I haven’t formally shared this with any team yet, but when I do then I’ll return to this post to add an update with my findings.</p>
+
+<p>In the meantime, please let me know what you think and if you have tried something like this before.</p>
+
+
+    </article>
+  
+    </main>
+
+    
+    <script type="module">class BlogPost {
+  static REGEXP =
+    /(?<text>\P{Extended_Pictographic}+)(?<emoji>\p{Extended_Pictographic}+)?/u;
+
+  static setup() {
+    for (const $heading of this.$headings) {
+      if (!$heading.id || $heading.childElementCount > 0) {
+        continue;
+      }
+
+      const match = this.REGEXP.exec($heading.textContent);
+
+      const $fragment = document.createDocumentFragment();
+      const $anchor = document.createElement("a");
+
+      $anchor.href = `#${$heading.id}`;
+      $anchor.textContent = match.groups.text.trim();
+
+      $fragment.append($anchor);
+      if (match.groups.emoji) {
+        const $span = document.createElement("span");
+        $span.textContent = match.groups.emoji;
+        $fragment.append($span);
+      }
+
+      $heading.textContent = null;
+      $heading.append($fragment);
+    }
+  }
+
+  static get $headings() {
+    return this.$page.querySelectorAll("h2, h3, h4, h5, h6");
+  }
+
+  static get $page() {
+    return document.querySelector(`[data-page^="Blog::"]`);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => BlogPost.setup());
+</script>
+  
+  </body>
+</html>
+
+

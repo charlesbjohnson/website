@@ -1,0 +1,589 @@
+/* Color */
+:root {
+  --c-black: black;
+  --c-white: white;
+  --c-gray: lightgray;
+  --c-light-gray: whitesmoke;
+  --c-blue: steelblue;
+  --c-light-blue: lightblue;
+  --c-red: salmon;
+  --c-light-red: lightsalmon;
+  --c-yellow: palegoldenrod;
+  --c-light-yellow: lightgoldenrodyellow;
+}
+
+/* Typography */
+:root {
+  --f-sz-base: 1.125;
+  --f-sz-ratio: 1.2;
+  --f-sz-minify: 0.5;
+
+  --f-w-bold: 600;
+  --f-w-bolder: 700;
+
+  /* h4 */
+  --h4-f-sz-max-u: var(--f-sz-base) * var(--f-sz-ratio);
+  --h4-f-sz-min-u: max((var(--h4-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h4-f-sz-max: calc(var(--h4-f-sz-max-u) * 1rem);
+  --h4-f-sz-min: calc(var(--h4-f-sz-min-u) * 1rem);
+
+  --h4-f-sz-fluid: clamp(
+    var(--h4-f-sz-min),
+    (((var(--h4-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h4-f-sz-max)
+  );
+
+  /* h3 */
+  --h3-f-sz-max-u: var(--h4-f-sz-max-u) * var(--f-sz-ratio);
+  --h3-f-sz-min-u: max((var(--h3-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h3-f-sz-max: calc(var(--h3-f-sz-max-u) * 1rem);
+  --h3-f-sz-min: calc(var(--h3-f-sz-min-u) * 1rem);
+
+  --h3-f-sz-fluid: clamp(
+    var(--h3-f-sz-min),
+    (((var(--h3-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h3-f-sz-max)
+  );
+
+  /* h2 */
+  --h2-f-sz-max-u: var(--h3-f-sz-max-u) * var(--f-sz-ratio);
+  --h2-f-sz-min-u: max((var(--h2-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h2-f-sz-max: calc(var(--h2-f-sz-max-u) * 1rem);
+  --h2-f-sz-min: calc(var(--h2-f-sz-min-u) * 1rem);
+
+  --h2-f-sz-fluid: clamp(
+    var(--h2-f-sz-min),
+    (((var(--h2-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h2-f-sz-max)
+  );
+
+  /* h1 */
+  --h1-f-sz-max-u: var(--h2-f-sz-max-u) * var(--f-sz-ratio);
+  --h1-f-sz-min-u: max((var(--h1-f-sz-max-u) * var(--f-sz-minify)), var(--f-sz-base));
+
+  --h1-f-sz-max: calc(var(--h1-f-sz-max-u) * 1rem);
+  --h1-f-sz-min: calc(var(--h1-f-sz-min-u) * 1rem);
+
+  --h1-f-sz-fluid: clamp(
+    var(--h1-f-sz-min),
+    (((var(--h1-f-sz-min-u) * 1vw) + 4vw) + 1rem),
+    var(--h1-f-sz-max)
+  );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  hyphens: auto;
+  margin-top: 0;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: calc(1em + 0.25rem);
+  margin-bottom: 0.65em;
+}
+
+h1 {
+  font-size: calc(var(--h1-f-sz-max) * 1rem);
+  font-size: var(--h1-f-sz-fluid);
+}
+
+h2 {
+  font-size: calc(var(--h2-f-sz-max) * 1rem);
+  font-size: var(--h2-f-sz-fluid);
+}
+
+h3 {
+  font-size: calc(var(--h3-f-sz-max) * 1rem);
+  font-size: var(--h3-f-sz-fluid);
+}
+
+h4 {
+  font-size: calc(var(--h4-f-sz-max) * 1rem);
+  font-size: var(--h4-f-sz-fluid);
+}
+
+body,
+h5,
+h6 {
+  font-size: calc(var(--f-sz-base) * 1rem);
+  line-height: 1.5;
+}
+
+/* Global */
+body {
+  margin: 0 auto;
+  padding: calc(0.5rem + 2.5vw) 0;
+  width: min(80ch, 100vw - 2rem);
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+header nav ul {
+  column-gap: min(2.5vw, 2rem);
+  display: flex;
+  flex-grow: 1;
+  font-weight: var(--f-w-bold);
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  max-width: min(100%, 12rem);
+  padding: 0;
+}
+
+/* Components */
+address {
+  font-style: normal;
+}
+
+dl dt {
+  font-style: italic;
+  font-weight: var(--f-w-bold);
+  margin-top: 1rem;
+}
+
+dl dt + dt {
+  margin-top: 0;
+}
+
+dl dd + dd {
+  margin-top: 0.5rem;
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+hr {
+  background: repeating-linear-gradient(to right, var(--c-black) 0 0.5rem, transparent 0.5rem 1rem);
+  border: none;
+  height: 0.125rem;
+  margin: 2rem 0;
+}
+
+strong,
+b {
+  font-weight: var(--f-w-bolder);
+}
+
+details {
+  margin-bottom: 1rem;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary:hover,
+details summary:focus {
+  text-decoration: underline;
+}
+
+details summary::marker,
+details summary::-webkit-details-marker {
+  color: var(--c-gray);
+}
+
+details summary ~ * {
+  border-left: 0.1rem dashed var(--c-gray);
+  margin-left: 0.5ch;
+  margin-top: 1rem;
+  padding: 0 1.5ch;
+}
+
+/* Components::Code */
+
+code,
+kbd,
+samp {
+  background-color: var(--c-light-gray);
+  font-size: 0.9em;
+  padding: calc(0.5rem / 2)
+}
+
+kbd {
+  border: 0.0625rem solid var(--c-black);
+  border-bottom: calc(0.0625rem * 4) solid var(--c-black);
+}
+
+pre {
+  margin-top: unset;
+}
+
+pre code,
+pre samp {
+  border: none;
+  color: unset;
+  display: block;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+pre kbd {
+  border: none;
+  font-weight: var(--f-w-bold);
+  padding: 0;
+}
+
+[data-component="Code"] code[data-name],
+[data-component="Code"] code[data-lang] {
+  position: relative;
+  padding-top: calc((0.9em + (0.5rem * 2)) + 0.5rem);
+}
+
+[data-component="Code"] code[data-name]::before,
+[data-component="Code"] code[data-lang]::before {
+  background-color: var(--background-color, inherit);
+  color: var(--color, inherit);
+  content: attr(data-name);
+  display: block;
+  font-size: 0.9em;
+  font-weight: var(--f-w-bold);
+  left: 0;
+  line-height: 1;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-component="Code"] code:not([data-name])[data-lang]::before {
+  content: attr(data-lang);
+  text-transform: uppercase;
+}
+
+[data-component="Code"] code[data-name$=".css"]::before,
+[data-component="Code"] code[data-lang="css"]::before {
+  --background-color: #563d7c;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".html"]::before,
+[data-component="Code"] code[data-lang="html"]::before {
+  --background-color: #e34c26;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".js"]::before,
+[data-component="Code"] code[data-lang="js"]::before {
+  --background-color: #f1e05a;
+  --color: var(--c-black);
+}
+
+[data-component="Code"] code[data-name$=".rb"]::before,
+[data-component="Code"] code[data-lang="ruby"]::before {
+  --background-color: #701516;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] figure pre {
+  margin-bottom: 0;
+}
+
+[data-component="Code"] figure figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+code table td { padding: 5px; }
+code table pre { margin: 0; }
+code .cm {
+  color: #999988;
+  font-style: italic;
+}
+code .cp {
+  color: #999999;
+  font-weight: bold;
+}
+code .c1 {
+  color: #999988;
+  font-style: italic;
+}
+code .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+code .c, code .ch, code .cd, code .cpf {
+  color: #999988;
+  font-style: italic;
+}
+code .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+code .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+code .ge {
+  color: #000000;
+  font-style: italic;
+}
+code .gr {
+  color: #aa0000;
+}
+code .gh {
+  color: #999999;
+}
+code .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+code .go {
+  color: #888888;
+}
+code .gp {
+  color: #555555;
+}
+code .gs {
+  font-weight: bold;
+}
+code .gu {
+  color: #aaaaaa;
+}
+code .gt {
+  color: #aa0000;
+}
+code .kc {
+  color: #000000;
+  font-weight: bold;
+}
+code .kd {
+  color: #000000;
+  font-weight: bold;
+}
+code .kn {
+  color: #000000;
+  font-weight: bold;
+}
+code .kp {
+  color: #000000;
+  font-weight: bold;
+}
+code .kr {
+  color: #000000;
+  font-weight: bold;
+}
+code .kt {
+  color: #445588;
+  font-weight: bold;
+}
+code .k, code .kv {
+  color: #000000;
+  font-weight: bold;
+}
+code .mf {
+  color: #009999;
+}
+code .mh {
+  color: #009999;
+}
+code .il {
+  color: #009999;
+}
+code .mi {
+  color: #009999;
+}
+code .mo {
+  color: #009999;
+}
+code .m, code .mb, code .mx {
+  color: #009999;
+}
+code .sa {
+  color: #000000;
+  font-weight: bold;
+}
+code .sb {
+  color: #d14;
+}
+code .sc {
+  color: #d14;
+}
+code .sd {
+  color: #d14;
+}
+code .s2 {
+  color: #d14;
+}
+code .se {
+  color: #d14;
+}
+code .sh {
+  color: #d14;
+}
+code .si {
+  color: #d14;
+}
+code .sx {
+  color: #d14;
+}
+code .sr {
+  color: #009926;
+}
+code .s1 {
+  color: #d14;
+}
+code .ss {
+  color: #990073;
+}
+code .s, code .dl {
+  color: #d14;
+}
+code .na {
+  color: #008080;
+}
+code .bp {
+  color: #999999;
+}
+code .nb {
+  color: #0086B3;
+}
+code .nc {
+  color: #445588;
+  font-weight: bold;
+}
+code .no {
+  color: #008080;
+}
+code .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+code .ni {
+  color: #800080;
+}
+code .ne {
+  color: #990000;
+  font-weight: bold;
+}
+code .nf, code .fm {
+  color: #990000;
+  font-weight: bold;
+}
+code .nl {
+  color: #990000;
+  font-weight: bold;
+}
+code .nn {
+  color: #555555;
+}
+code .nt {
+  color: #000080;
+}
+code .vc {
+  color: #008080;
+}
+code .vg {
+  color: #008080;
+}
+code .vi {
+  color: #008080;
+}
+code .nv, code .vm {
+  color: #008080;
+}
+code .ow {
+  color: #000000;
+  font-weight: bold;
+}
+code .o {
+  color: #000000;
+  font-weight: bold;
+}
+code .w {
+  color: #bbbbbb;
+}
+code {
+  background-color: #f8f8f8;
+}
+
+/* Components::Image */
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+[data-component="Image"] figure figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Components::Quote */
+
+blockquote,
+[data-component="Quote"] figure figcaption {
+  background-color: var(--background-color, var(--c-light-gray));
+  border-left: 0.5rem solid var(--border-color, var(--c-black));
+}
+
+blockquote {
+  margin: 0 0 1rem;
+  padding: 1rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote[data-level="info"] {
+  --background-color: var(--c-light-blue);
+  --border-color: var(--c-blue);
+}
+
+blockquote[data-level="warning"] {
+  --background-color: var(--c-light-yellow);
+  --border-color: var(--c-yellow);
+}
+
+blockquote[data-level="error"] {
+  --background-color: var(--c-light-red);
+  --border-color: var(--c-red);
+}
+
+[data-component="Quote"] blockquote {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+[data-component="Quote"] blockquote p::before {
+  content: open-quote;
+}
+
+[data-component="Quote"] blockquote p::after {
+  content: close-quote;
+}
+
+[data-component="Quote"] figure figcaption {
+  font-weight: var(--f-w-bold);
+  padding: 0 1rem 1rem;
+  text-align: right;
+}
+
+[data-component="Quote"] figure figcaption cite {
+  font-style: unset;
+}
+
+
