@@ -12,23 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      just: 0.10.4
       ruby: 3.0
 
     steps:
       - uses: actions/checkout@v2
 
-      - id: cache-just
-        uses: actions/cache@v2
-        with:
-          path: /usr/local/bin/just
-          key: ${{ runner.os }}-${{ env.just }}
-
-      - if: steps.cache-just.outputs.cache-hit != 'true'
-        uses: ./.github/actions/setup-just
-        with:
-          version: ${{ env.just }}
-
+      - uses: extractions/setup-just@v1
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.ruby }}
