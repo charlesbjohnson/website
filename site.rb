@@ -18,6 +18,10 @@ class Site
       "mail@#{domain}"
     end
 
+    def github_url
+      @github ||= URI::HTTPS.build(host: "github.com", path: "/charlesbjohnson")
+    end
+
     def uri
       production? ? URI::HTTPS.build(host: domain) : SSG::Site.config.serve_uri
     end
