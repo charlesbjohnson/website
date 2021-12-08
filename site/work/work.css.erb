@@ -139,3 +139,35 @@
     flex-basis: 100%;
   }
 }
+
+@media screen {
+  [hidden="print"] {
+    display: block;
+  }
+
+  [hidden="screen"] {
+    display: none;
+  }
+}
+
+@media print {
+  [hidden="print"] {
+    display: none;
+  }
+
+  [hidden="screen"] {
+    display: block;
+  }
+
+  [data-page="Work"] header {
+    display: none;
+  }
+
+  [data-page="Work"] main > div + div > h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  [data-page="Work"] main > div + div > address {
+    margin: 1rem 0;
+  }
+}

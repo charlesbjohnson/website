@@ -4,45 +4,73 @@
   <% end %>
 
   <%= c.main do %>
-    <h1><%= title %></h1>
+    <div hidden="print">
+      <h1><%= title %></h1>
 
-    <p>
-      I'm currently seeking opportunities as a full-stack or backend engineer.
+      <p>
+        I'm currently seeking opportunities as a full-stack or backend engineer.
 
-      My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
-    </p>
+        My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
+      </p>
 
-    <ul>
-      <li>Open Communication</li>
-      <li>Remote OK</li>
-      <li>Flexible Work Arrangements</li>
-      <li>Work/Life Balance</li>
-    </ul>
+      <ul>
+        <li>Open Communication</li>
+        <li>Remote OK</li>
+        <li>Flexible Work Arrangements</li>
+        <li>Work/Life Balance</li>
+      </ul>
 
-    <p>
-      Are you a manager considering hiring me? <a href="<%= Blog::NewManagerReadme.uri %>">Here's a post</a> to help you learn more about me.
-    </p>
+      <p>
+        Are you a manager considering hiring me? <a href="<%= Blog::NewManagerReadme.uri %>">Here's a post</a> to help you learn more about me.
+      </p>
 
-    <p>
-      Are you an engineer considering working with me? I <a href="<%= Blog::NewTeammateReadme.uri %>">have a post</a> for you
-      and a <a href="<%= ::Site.github_url %>">GitHub profile</a> that you can take a look at.
-    </p>
+      <p>
+        Are you an engineer considering working with me? I <a href="<%= Blog::NewTeammateReadme.uri %>">have a post</a> for you
+        and a <a href="<%= ::Site.github_url %>">GitHub profile</a> that you can take a look at.
+      </p>
 
-    <p>
-      Please <a href="mailto:<%= ::Site.email %>">email me</a> for more information.
-    </p>
+      <p>
+        Please <a href="mailto:<%= ::Site.email %>">email me</a> for more information.
+      </p>
 
-    <!--
-       ██   ██ ███████ ██    ██ ██
-       ██   ██ ██       ██  ██  ██
-       ███████ █████     ████   ██
-       ██   ██ ██         ██
-       ██   ██ ███████    ██    ██
+      <!--
+         ██   ██ ███████ ██    ██ ██
+         ██   ██ ██       ██  ██  ██
+         ███████ █████     ████   ██
+         ██   ██ ██         ██
+         ██   ██ ███████    ██    ██
 
-      If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
-    -->
+        If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
+      -->
 
-    <hr/>
+      <hr/>
+    </div>
+
+    <div hidden="screen">
+      <h1>Charles B Johnson</h1>
+      <strong>Engineer of Soft Wares</strong>
+
+      <address>
+        <div>
+          <span>📭</span>
+          <a href="mailto:<%= :: Site.email %>"><%= ::Site.email %></a>
+        </div>
+
+        <div>
+          <span>🌐</span>
+          <a href="https://<%= ::Site.domain %>"><%= ::Site.domain %></a>
+        </div>
+
+        <div>
+          <span>💻</span>
+          <a href="<%= ::Site.github_url %>"><%= ::Site.github_url.to_s.gsub("https://", "") %></a>
+        </div>
+      </address>
+
+      <%= Components::Markdown.new.render do %>
+        <%= templates["introduction.md.erb"].render(self) %>
+      <% end %>
+    </div>
 
     <section>
       <h2>Experience</h2>
@@ -63,7 +91,7 @@
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <%= Components::Markdown.new.render do %>
@@ -119,7 +147,7 @@
         <article id="experience-firesqueak-2">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <%= Components::Markdown.new.render do %>
@@ -164,7 +192,7 @@
         <article id="experience-firesqueak-3">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <%= Components::Markdown.new.render do %>
@@ -209,7 +237,7 @@
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <%= Components::Markdown.new.render do %>
@@ -276,7 +304,7 @@
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <%= Components::Markdown.new.render do %>
@@ -329,7 +357,7 @@
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <%= Components::Markdown.new.render do %>
@@ -383,7 +411,7 @@
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <%= Components::Markdown.new.render do %>
@@ -444,7 +472,7 @@
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <%= Components::Markdown.new.render do %>
