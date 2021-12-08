@@ -1,0 +1,435 @@
+/* Blog::Global */
+[data-page^="Blog::"] main time {
+  font-size: 0.9em;
+}
+
+[data-page^="Blog::"] h2 a,
+[data-page^="Blog::"] h3 a,
+[data-page^="Blog::"] h4 a,
+[data-page^="Blog::"] h5 a,
+[data-page^="Blog::"] h6 a {
+  color: inherit;
+  text-decoration: none;
+  margin-right: 0.5ch;
+}
+
+[data-page^="Blog::"] h2 a:hover,
+[data-page^="Blog::"] h3 a:hover,
+[data-page^="Blog::"] h4 a:hover,
+[data-page^="Blog::"] h5 a:hover,
+[data-page^="Blog::"] h6 a:hover,
+[data-page^="Blog::"] h2 a:focus,
+[data-page^="Blog::"] h3 a:focus,
+[data-page^="Blog::"] h4 a:focus,
+[data-page^="Blog::"] h5 a:focus,
+[data-page^="Blog::"] h6 a:focus {
+  text-decoration: underline;
+}
+
+[data-page^="Blog::"] h2 span,
+[data-page^="Blog::"] h3 span,
+[data-page^="Blog::"] h4 span,
+[data-page^="Blog::"] h5 span,
+[data-page^="Blog::"] h6 span {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+/* Components::DefinitionList */
+dl dt {
+  font-style: italic;
+  font-weight: var(--f-w-bold);
+  margin-top: 1rem;
+}
+
+dl dt + dt {
+  margin-top: 0;
+}
+
+dl dd + dd {
+  margin-top: 0.5rem;
+}
+
+/* Components::Code, Components::Image, Components::Quote */
+figure {
+  margin: 0 0 1rem;
+}
+
+/* Components::Code */
+
+code,
+kbd,
+samp {
+  background-color: var(--c-light-gray);
+  font-size: 0.9em;
+  padding: calc(0.5rem / 2)
+}
+
+kbd {
+  border: 0.0625rem solid var(--c-black);
+  border-bottom: calc(0.0625rem * 4) solid var(--c-black);
+}
+
+pre {
+  margin-top: unset;
+}
+
+pre code,
+pre samp {
+  border: none;
+  color: unset;
+  display: block;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+pre kbd {
+  border: none;
+  font-weight: var(--f-w-bold);
+  padding: 0;
+}
+
+[data-component="Code"] code[data-name],
+[data-component="Code"] code[data-lang] {
+  position: relative;
+  padding-top: calc((0.9em + (0.5rem * 2)) + 0.5rem);
+}
+
+[data-component="Code"] code[data-name]::before,
+[data-component="Code"] code[data-lang]::before {
+  background-color: var(--background-color, inherit);
+  color: var(--color, inherit);
+  content: attr(data-name);
+  display: block;
+  font-size: 0.9em;
+  font-weight: var(--f-w-bold);
+  left: 0;
+  line-height: 1;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+[data-component="Code"] code:not([data-name])[data-lang]::before {
+  content: attr(data-lang);
+  text-transform: uppercase;
+}
+
+[data-component="Code"] code[data-name$=".css"]::before,
+[data-component="Code"] code[data-lang="css"]::before {
+  --background-color: #563d7c;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".html"]::before,
+[data-component="Code"] code[data-lang="html"]::before {
+  --background-color: #e34c26;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] code[data-name$=".js"]::before,
+[data-component="Code"] code[data-lang="js"]::before {
+  --background-color: #f1e05a;
+  --color: var(--c-black);
+}
+
+[data-component="Code"] code[data-name$=".rb"]::before,
+[data-component="Code"] code[data-lang="ruby"]::before {
+  --background-color: #701516;
+  --color: var(--c-white);
+}
+
+[data-component="Code"] figure pre {
+  margin-bottom: 0;
+}
+
+[data-component="Code"] figure figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+[data-component="Code"] code table td { padding: 5px; }
+[data-component="Code"] code table pre { margin: 0; }
+[data-component="Code"] code .cm {
+  color: #999988;
+  font-style: italic;
+}
+[data-component="Code"] code .cp {
+  color: #999999;
+  font-weight: bold;
+}
+[data-component="Code"] code .c1 {
+  color: #999988;
+  font-style: italic;
+}
+[data-component="Code"] code .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+[data-component="Code"] code .c, [data-component="Code"] code .ch, [data-component="Code"] code .cd, [data-component="Code"] code .cpf {
+  color: #999988;
+  font-style: italic;
+}
+[data-component="Code"] code .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+[data-component="Code"] code .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+[data-component="Code"] code .ge {
+  color: #000000;
+  font-style: italic;
+}
+[data-component="Code"] code .gr {
+  color: #aa0000;
+}
+[data-component="Code"] code .gh {
+  color: #999999;
+}
+[data-component="Code"] code .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+[data-component="Code"] code .go {
+  color: #888888;
+}
+[data-component="Code"] code .gp {
+  color: #555555;
+}
+[data-component="Code"] code .gs {
+  font-weight: bold;
+}
+[data-component="Code"] code .gu {
+  color: #aaaaaa;
+}
+[data-component="Code"] code .gt {
+  color: #aa0000;
+}
+[data-component="Code"] code .kc {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .kd {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .kn {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .kp {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .kr {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .kt {
+  color: #445588;
+  font-weight: bold;
+}
+[data-component="Code"] code .k, [data-component="Code"] code .kv {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .mf {
+  color: #009999;
+}
+[data-component="Code"] code .mh {
+  color: #009999;
+}
+[data-component="Code"] code .il {
+  color: #009999;
+}
+[data-component="Code"] code .mi {
+  color: #009999;
+}
+[data-component="Code"] code .mo {
+  color: #009999;
+}
+[data-component="Code"] code .m, [data-component="Code"] code .mb, [data-component="Code"] code .mx {
+  color: #009999;
+}
+[data-component="Code"] code .sa {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .sb {
+  color: #d14;
+}
+[data-component="Code"] code .sc {
+  color: #d14;
+}
+[data-component="Code"] code .sd {
+  color: #d14;
+}
+[data-component="Code"] code .s2 {
+  color: #d14;
+}
+[data-component="Code"] code .se {
+  color: #d14;
+}
+[data-component="Code"] code .sh {
+  color: #d14;
+}
+[data-component="Code"] code .si {
+  color: #d14;
+}
+[data-component="Code"] code .sx {
+  color: #d14;
+}
+[data-component="Code"] code .sr {
+  color: #009926;
+}
+[data-component="Code"] code .s1 {
+  color: #d14;
+}
+[data-component="Code"] code .ss {
+  color: #990073;
+}
+[data-component="Code"] code .s, [data-component="Code"] code .dl {
+  color: #d14;
+}
+[data-component="Code"] code .na {
+  color: #008080;
+}
+[data-component="Code"] code .bp {
+  color: #999999;
+}
+[data-component="Code"] code .nb {
+  color: #0086B3;
+}
+[data-component="Code"] code .nc {
+  color: #445588;
+  font-weight: bold;
+}
+[data-component="Code"] code .no {
+  color: #008080;
+}
+[data-component="Code"] code .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+[data-component="Code"] code .ni {
+  color: #800080;
+}
+[data-component="Code"] code .ne {
+  color: #990000;
+  font-weight: bold;
+}
+[data-component="Code"] code .nf, [data-component="Code"] code .fm {
+  color: #990000;
+  font-weight: bold;
+}
+[data-component="Code"] code .nl {
+  color: #990000;
+  font-weight: bold;
+}
+[data-component="Code"] code .nn {
+  color: #555555;
+}
+[data-component="Code"] code .nt {
+  color: #000080;
+}
+[data-component="Code"] code .vc {
+  color: #008080;
+}
+[data-component="Code"] code .vg {
+  color: #008080;
+}
+[data-component="Code"] code .vi {
+  color: #008080;
+}
+[data-component="Code"] code .nv, [data-component="Code"] code .vm {
+  color: #008080;
+}
+[data-component="Code"] code .ow {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .o {
+  color: #000000;
+  font-weight: bold;
+}
+[data-component="Code"] code .w {
+  color: #bbbbbb;
+}
+[data-component="Code"] code {
+  background-color: #f8f8f8;
+}
+
+/* Components::Image */
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+[data-component="Image"] figure figcaption {
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Components::Quote */
+
+blockquote,
+[data-component="Quote"] figure figcaption {
+  background-color: var(--background-color, var(--c-light-gray));
+  border-left: 0.5rem solid var(--border-color, var(--c-black));
+}
+
+blockquote {
+  margin: 0 0 1rem;
+  padding: 1rem;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote[data-level="info"] {
+  --background-color: var(--c-light-blue);
+  --border-color: var(--c-blue);
+}
+
+blockquote[data-level="warning"] {
+  --background-color: var(--c-light-yellow);
+  --border-color: var(--c-yellow);
+}
+
+blockquote[data-level="error"] {
+  --background-color: var(--c-light-red);
+  --border-color: var(--c-red);
+}
+
+[data-component="Quote"] blockquote {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+[data-component="Quote"] blockquote p::before {
+  content: open-quote;
+}
+
+[data-component="Quote"] blockquote p::after {
+  content: close-quote;
+}
+
+[data-component="Quote"] figure figcaption {
+  font-weight: var(--f-w-bold);
+  padding: 0 1rem 1rem;
+  text-align: right;
+}
+
+[data-component="Quote"] figure figcaption cite {
+  font-style: unset;
+}
+
+
