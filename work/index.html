@@ -22,8 +22,8 @@
 [data-page="Work"] h5 a,
 [data-page="Work"] h6 a {
   color: inherit;
-  text-decoration: none;
   margin-right: 0.5rem;
+  text-decoration: none;
 }
 
 [data-page="Work"] h2 a:hover,
@@ -43,6 +43,7 @@
   font-style: italic;
   text-align: center;
   text-decoration: underline;
+  margin: 1.5em 0;
 }
 
 [data-page="Work"] section > :last-child {
@@ -157,6 +158,38 @@
     flex-basis: 100%;
   }
 }
+
+@media screen {
+  [hidden="print"] {
+    display: block;
+  }
+
+  [hidden="screen"] {
+    display: none;
+  }
+}
+
+@media print {
+  [hidden="print"] {
+    display: none;
+  }
+
+  [hidden="screen"] {
+    display: block;
+  }
+
+  [data-page="Work"] header {
+    display: none;
+  }
+
+  [data-page="Work"] main > div + div > h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  [data-page="Work"] main > div + div > address {
+    margin: 1rem 0;
+  }
+}
 </style>
   
 
@@ -177,45 +210,77 @@
 
     <main>
       
-    <h1>Work</h1>
+    <div hidden="print">
+      <h1>Work</h1>
 
-    <p>
-      I'm currently seeking opportunities as a full-stack or backend engineer.
+      <p>
+        I'm currently seeking opportunities as a full-stack or backend engineer.
 
-      My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
-    </p>
+        My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
+      </p>
 
-    <ul>
-      <li>Open Communication</li>
-      <li>Remote OK</li>
-      <li>Flexible Work Arrangements</li>
-      <li>Work/Life Balance</li>
-    </ul>
+      <ul>
+        <li>Open Communication</li>
+        <li>Remote OK</li>
+        <li>Flexible Work Arrangements</li>
+        <li>Work/Life Balance</li>
+      </ul>
 
-    <p>
-      Are you a manager considering hiring me? <a href="/blog/new-manager-readme/">Here's a post</a> to help you learn more about me.
-    </p>
+      <p>
+        Are you a manager considering hiring me? <a href="/blog/new-manager-readme/">Here's a post</a> to help you learn more about me.
+      </p>
 
-    <p>
-      Are you an engineer considering working with me? I <a href="/blog/new-teammate-readme/">have a post</a> for you
-      and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.
-    </p>
+      <p>
+        Are you an engineer considering working with me? I <a href="/blog/new-teammate-readme/">have a post</a> for you
+        and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.
+      </p>
 
-    <p>
-      Please <a href="mailto:mail@cbjohnson.io">email me</a> for more information.
-    </p>
+      <p>
+        Please <a href="mailto:mail@cbjohnson.io">email me</a> for more information.
+      </p>
 
-    <!--
-       ██   ██ ███████ ██    ██ ██
-       ██   ██ ██       ██  ██  ██
-       ███████ █████     ████   ██
-       ██   ██ ██         ██
-       ██   ██ ███████    ██    ██
+      <!--
+         ██   ██ ███████ ██    ██ ██
+         ██   ██ ██       ██  ██  ██
+         ███████ █████     ████   ██
+         ██   ██ ██         ██
+         ██   ██ ███████    ██    ██
 
-      If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
-    -->
+        If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
+      -->
 
-    <hr/>
+      <hr/>
+    </div>
+
+    <div hidden="screen">
+      <h1>Charles B Johnson</h1>
+      <strong>Engineer of Soft Wares</strong>
+
+      <address>
+        <div>
+          <span>📭</span>
+          <a href="mailto:mail@cbjohnson.io">mail@cbjohnson.io</a>
+        </div>
+
+        <div>
+          <span>🌐</span>
+          <a href="https://cbjohnson.io">cbjohnson.io</a>
+        </div>
+
+        <div>
+          <span>💻</span>
+          <a href="https://github.com/charlesbjohnson">github.com/charlesbjohnson</a>
+        </div>
+      </address>
+
+      <p>Hi, I&#8217;m Charlie. I&#8217;m a software engineer with nearly 10 years of experience.</p>
+
+<p>I build things for the web often in the e-commerce space, but I care about making <em>good software</em> and <em>making software</em> good.
+I&#8217;m looking for a team that shares these values.</p>
+
+<p>Please <a href="https://cbjohnson.io">visit my website</a> to learn more about me and consider <a href="mailto:mail@cbjohnson.io">sending me an email</a>.</p>
+
+    </div>
 
     <section>
       <h2>Experience</h2>
@@ -236,7 +301,7 @@ I was a consultant for two of their clients and I also built one of the company&
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.
@@ -316,7 +381,7 @@ The product was a V1, but the technical foundation was mature.</p>
         <article id="experience-firesqueak-2">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.
@@ -391,7 +456,7 @@ The project was a success and we exceeded the client&#8217;s expectations with t
         <article id="experience-firesqueak-3">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details>
+          <details hidden="print">
             <summary>Description</summary>
             <div>
               <p>I built an <abbr title="Extract, Transform, Load">ETL</abbr> pipeline for the finance team of a popular, eco-friendly footwear brand.
@@ -442,7 +507,7 @@ The client saved tens of thousands of dollars that they would have otherwise nee
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <p>Blue Apron is a meal-kit delivery company.
@@ -538,7 +603,7 @@ I shifted between several projects that started and stopped as the company&#8217
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <p>Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
@@ -632,7 +697,7 @@ I departed the company before I could deliver the V2 of the backend,
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <p>@WalmartLabs was the largest organization that I have worked for.
@@ -717,7 +782,7 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <p>Sendicate was a startup with a team consisting of just the two co-founders and myself.
@@ -806,7 +871,7 @@ During that time, I:</p>
           </address>
         </header>
 
-        <details>
+        <details hidden="print">
           <summary>Description</summary>
           <div>
             <p>CompuWeigh is a small, though mature, company that specializes in integrated hardware and software for the grain industry.
