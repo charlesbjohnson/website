@@ -152,12 +152,21 @@
 }
 
 @media print {
+  :root {
+    --f-sz-base: 0.7;
+  }
+
   [hidden="print"] {
     display: none;
   }
 
   [hidden="screen"] {
     display: block;
+  }
+
+  [data-page="Work"] {
+    margin: 0;
+    width: 100%;
   }
 
   [data-page="Work"] header {
