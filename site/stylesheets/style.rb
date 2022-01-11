@@ -2,6 +2,8 @@
 
 module Stylesheets
   class Style < Page
+    fingerprint
+
     def template
       templates["style.css.erb"]
     end

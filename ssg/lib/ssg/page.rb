@@ -23,6 +23,16 @@ module SSG
       @created_at
     end
 
+    # @return [String]
+    def extension
+      template.type
+    end
+
+    # @return [String]
+    def slug
+      self.class.name.underscore.dasherize
+    end
+
     # @return [Time]
     def updated_at
       @updated_at ||= ::File.ctime(source.abs_path)
@@ -32,8 +42,8 @@ module SSG
     def uri
       return @uri if defined?(@uri)
 
-      @uri = URI.parse(self.class.name.casecmp("index").zero? ? "" : "/#{self.class.name.underscore.dasherize}")
-      @uri.path += template.type == "html" ? "/" : ".#{template.type}"
+      @uri = URI.parse(self.class.name.casecmp("index").zero? ? "" : "/#{slug}")
+      @uri.path += extension == "html" ? "/" : ".#{extension}"
 
       @uri
     end

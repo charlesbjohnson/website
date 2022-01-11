@@ -2,6 +2,8 @@
 
 module Stylesheets
   class Blog < Page
+    fingerprint
+
     def template
       templates["blog.css.erb"]
     end
