@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      vale: 2.13.0
-      ruby: 3.0
-      node: 16
+      vale: '2.13.0'
+      ruby: '3.0'
+      node: '16'
 
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: /usr/local/bin/vale
-          key: ${{ runner.os }}-${{ env.vale }}
+          key: setup-vale-cache-${{ runner.os }}-${{ env.vale }}
 
       - if: steps.cache-vale.outputs.cache-hit != 'true'
         uses: ./.github/actions/setup-vale
@@ -28,11 +28,11 @@ jobs:
       - uses: extractions/setup-just@v1
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: ${{ env.ruby }}
           bundler-cache: true
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: ${{ env.node }}
 
       - run: just lint
       - run: just test
