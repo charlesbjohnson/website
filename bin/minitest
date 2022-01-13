@@ -2,30 +2,32 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift(
-  File.expand_path("../ssg/lib", __dir__),
-  File.expand_path("../ssg/test", __dir__)
+  File.expand_path("../lib", __dir__),
+  File.expand_path("../test", __dir__)
 )
+
+TEST_DIRS = [
+  "../test",
+  "../ssg/test"
+]
 
 require "rubygems"
 require "bundler/setup"
 
-require "ssg"
+require "minitest/autorun"
 
 def main(args)
-  dir = Pathname.new(File.expand_path("../ssg/test", __dir__))
-
-  unless args.empty?
-    run(dir, args.first)
-    return
-  end
-
-  Dir.glob(File.join(dir, "**/*.rb")).each do |file|
-    run(dir, file)
+  if !args.empty?
+    args.each { |file| run(file) unless file.start_with?("-") }
+  else
+    TEST_DIRS.each do |test_dir|
+      Dir.glob(Pathname.new(test_dir).expand_path(__dir__).join("**/test_*.rb")).each { |file| run(file) }
+    end
   end
 end
 
-def run(dir, file)
-  require Pathname.new(File.expand_path(file)).relative_path_from(dir).sub_ext("").to_s
+def run(file)
+  require(Pathname.new(file).expand_path.sub_ext("").to_s)
 end
 
 main(ARGV)
