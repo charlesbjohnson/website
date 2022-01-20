@@ -8,16 +8,11 @@
   text-decoration: none;
 }
 
-[data-page="Work"] h2 a:hover,
-[data-page="Work"] h3 a:hover,
-[data-page="Work"] h4 a:hover,
-[data-page="Work"] h5 a:hover,
-[data-page="Work"] h6 a:hover,
-[data-page="Work"] h2 a:focus,
-[data-page="Work"] h3 a:focus,
-[data-page="Work"] h4 a:focus,
-[data-page="Work"] h5 a:focus,
-[data-page="Work"] h6 a:focus {
+[data-page="Work"] h2 a:is(:hover, :focus),
+[data-page="Work"] h3 a:is(:hover, :focus),
+[data-page="Work"] h4 a:is(:hover, :focus),
+[data-page="Work"] h5 a:is(:hover, :focus),
+[data-page="Work"] h6 a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
