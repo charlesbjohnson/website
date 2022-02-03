@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir.glob(["lib/**/*"])
   s.executables = ["ssg"]
 
-  s.add_runtime_dependency "activesupport", "~> 6.1"
+  s.add_runtime_dependency "activesupport", "~> 7.0"
   s.add_runtime_dependency "concurrent-ruby", "~> 1.1"
   s.add_runtime_dependency "listen", "~> 3.7"
   s.add_runtime_dependency "webrick", "~> 1.7"

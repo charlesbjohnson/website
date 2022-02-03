@@ -3,23 +3,23 @@
 ruby "3.1.0"
 source "https://rubygems.org"
 
-gem "actionview", "~> 6.1", require: "action_view"
-gem "activesupport", "~> 6.1", require: "active_support/all"
+gem "actionview", "~> 7.0", require: "action_view"
+gem "activesupport", "~> 7.0", require: "active_support/all"
 
 gem "kramdown", "~> 2.3"
 gem "kramdown-parser-gfm", "~> 1.1"
 
-gem "rouge", "~> 3.26"
+gem "rouge", "~> 3.27"
 
 gem "ssg", path: "ssg"
 
 group :development do
-  gem "debug", "~> 1.3", require: false
-  gem "rubocop", "~> 1.23", require: false
+  gem "debug", "~> 1.4", require: false
+  gem "rubocop", "~> 1.25", require: false
   gem "rubocop-minitest", "~> 0.17", require: false
-  gem "standard", "~> 1.5", require: false
+  gem "standard", "~> 1.7", require: false
 end
 
 group :development, :test do
-  gem "minitest", "~> 5.14", require: false
+  gem "minitest", "~> 5.15", require: false
 end
