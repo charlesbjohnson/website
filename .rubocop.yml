@@ -17,12 +17,10 @@ inherit_mode:
     - Exclude
 
 inherit_gem:
-  standard: config/base.yml
+  standard: config/ruby-3.0.yml
 
 AllCops:
-  DisabledByDefault: false
   NewCops: enable
-  TargetRubyVersion: 3.0
   Exclude:
     - bin/{bundle,rubocop,ssg}
     - vendor/*

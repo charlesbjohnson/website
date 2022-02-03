@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ruby "3.0.3"
+ruby "3.1.0"
 source "https://rubygems.org"
 
 gem "actionview", "~> 6.1", require: "action_view"
