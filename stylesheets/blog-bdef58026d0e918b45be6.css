@@ -22,16 +22,11 @@
   text-decoration: none;
 }
 
-[data-page^="Blog::"] h2 a:hover,
-[data-page^="Blog::"] h3 a:hover,
-[data-page^="Blog::"] h4 a:hover,
-[data-page^="Blog::"] h5 a:hover,
-[data-page^="Blog::"] h6 a:hover,
-[data-page^="Blog::"] h2 a:focus,
-[data-page^="Blog::"] h3 a:focus,
-[data-page^="Blog::"] h4 a:focus,
-[data-page^="Blog::"] h5 a:focus,
-[data-page^="Blog::"] h6 a:focus {
+[data-page^="Blog::"] h2 a:is(:hover, :focus),
+[data-page^="Blog::"] h3 a:is(:hover, :focus),
+[data-page^="Blog::"] h4 a:is(:hover, :focus),
+[data-page^="Blog::"] h5 a:is(:hover, :focus),
+[data-page^="Blog::"] h6 a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
