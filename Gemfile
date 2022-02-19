@@ -9,7 +9,7 @@ gem "activesupport", "~> 7.0", require: "active_support/all"
 gem "kramdown", "~> 2.3"
 gem "kramdown-parser-gfm", "~> 1.1"
 
-gem "rouge", "~> 3.27"
+gem "rouge", "~> 3.28"
 
 gem "ssg", path: "ssg"
 
