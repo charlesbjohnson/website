@@ -26,16 +26,11 @@
   text-decoration: none;
 }
 
-[data-page="Work"] h2 a:hover,
-[data-page="Work"] h3 a:hover,
-[data-page="Work"] h4 a:hover,
-[data-page="Work"] h5 a:hover,
-[data-page="Work"] h6 a:hover,
-[data-page="Work"] h2 a:focus,
-[data-page="Work"] h3 a:focus,
-[data-page="Work"] h4 a:focus,
-[data-page="Work"] h5 a:focus,
-[data-page="Work"] h6 a:focus {
+[data-page="Work"] h2 a:is(:hover, :focus),
+[data-page="Work"] h3 a:is(:hover, :focus),
+[data-page="Work"] h4 a:is(:hover, :focus),
+[data-page="Work"] h5 a:is(:hover, :focus),
+[data-page="Work"] h6 a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
@@ -316,7 +311,7 @@ I was a consultant for two of their clients and I also built one of the company&
               <p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.
 Inspired by the shops that sold out of remote work equipment at the start of the COVID-19 pandemic,
     we decided to build a product that would provide stores with in-stock notification behavior.
-We started with support for Shopify stores first, but we designed it to work with any e-commerce platform.</p>
+We started with support for Shopify stores first, but we designed the app to work with any e-commerce platform.</p>
 
 <p>I researched, designed, and developed the app. The core features were:</p>
 
@@ -328,7 +323,7 @@ We started with support for Shopify stores first, but we designed it to work wit
     <ul>
       <li>Templating to customize the notification messaging.</li>
       <li>Previewing to trial the app and to verify template customizations.</li>
-      <li>Reporting to highlight the most sought after products.</li>
+      <li>Reporting to highlight the most in-demand products.</li>
       <li>Charting to display the number of messages sent per day.</li>
       <li><abbr title="JSON Web Token">JWT</abbr> authentication to embed the UI within Shopify&#8217;s admin dashboard.</li>
     </ul>
@@ -395,7 +390,7 @@ The product was a V1, but the technical foundation was mature.</p>
             <div>
               <p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.
 The client had an existing e-commerce site but, due to the limitations of their platform,
-    they had issues with content management and developing new campaigns.
+    they had issues with content management when developing new campaigns.
 I worked with one other Firesqueak engineer to build the Shopify theme frontend and to help the client setup their integration between Shopify and SAP on the backend.</p>
 
 <p>This project was a test of my frontend development skills, but my teammate and I divided work based on front-of-the-frontend vs back-of-the-frontend lines.
@@ -404,13 +399,13 @@ I focused on the back-of-the-frontend by:</p>
 <ul>
   <li>Configuring the build toolchain to enable the use of modern web development features while still supporting <abbr title="Internet Explorer 11">IE11</abbr>.</li>
   <li>Selecting a minimal set of dependencies to support complex interactions without sacrificing performance.</li>
-  <li>Implementing the site features that required non-trivial algorithms and extensive data manipulation such as:
+  <li>Implementing the site features that required non-trivial algorithms and data manipulation such as:
     <ul>
       <li>Multi-select filtering on the <abbr title="Product Listing Page">PLP</abbr>.</li>
       <li>Dynamically displaying inventory status depending on selected options on the PDP.</li>
     </ul>
   </li>
-  <li>Creating a command-line tools to automate tasks.</li>
+  <li>Creating command-line tools to automate tasks.</li>
   <li>Setting up CI/CD pipelines.</li>
 </ul>
 
@@ -535,7 +530,7 @@ I worked on:</p>
   <li>Fixing design issues and bugs that had been the cause of frequent meal-kit mis-deliveries.</li>
 </ul>
 
-<p>Temporary Address Change was a conceptually simple feature, it allowed customers to change the delivery address of a single order.
+<p>Temporary Address Change was a conceptually simple feature, it allowed customers to change the delivery address of a single order without having to change their subscription.
 I implemented the backend of the feature and I was also the tech lead for the Web, iOS, and Android frontend implementations.</p>
 
 <p>Aside from Address Management, I acted as a technical leader by:</p>
@@ -657,7 +652,7 @@ This involved:</p>
 
 <p>This was a difficult role since the on-call burden was high.
 I departed the company before I could deliver the V2 of the backend,
-    but I left the team with my blueprints and I had already exhausted the optimizations to the existing code and infrastructure.</p>
+    but I left the team with my blueprints after having already exhausted the optimizations to the existing code and infrastructure.</p>
 
           </div>
         </details>
@@ -732,7 +727,7 @@ As part of the porting effort, I:</p>
 <ul>
   <li>Cleared the backlog of reported and unreported bugs.</li>
   <li>Simplified the UI/UX to improve usability.</li>
-  <li>Handled support requests.</li>
+  <li>Handled support requests from users.</li>
   <li>Created user documentation to reduce the rate of support requests.</li>
   <li>Demoed features to the Site Merchandising team to grow usage.</li>
   <li>Migrated from <em>pet</em> servers to automated, internal cloud hosting.</li>
@@ -801,7 +796,7 @@ Sellout was an automated email marketing app for Shopify and Bigcommerce stores.
 <p>The headline feature I delivered was <em>Manual Emails</em>.
 I built a WYSIWYG editor that could design emails using a set of predefined content blocks; essentially a CMS for email campaigns.</p>
 
-<p>The CTO built the backend but gave me total freedom to build the frontend since I had more experience.
+<p>The CTO built the backend but gave me free reign to build the frontend since I had more recent experience with JavaScript.
 With this project, I:</p>
 
 <ul>
