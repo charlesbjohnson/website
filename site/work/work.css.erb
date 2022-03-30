@@ -137,11 +137,11 @@
 }
 
 @media screen {
-  [hidden="print"] {
-    display: block;
+  [data-hidden-for="print"] {
+    display: revert;
   }
 
-  [hidden="screen"] {
+  [data-hidden-for="screen"] {
     display: none;
   }
 }
@@ -151,12 +151,12 @@
     --f-sz-base: 0.7;
   }
 
-  [hidden="print"] {
+  [data-hidden-for="print"] {
     display: none;
   }
 
-  [hidden="screen"] {
-    display: block;
+  [data-hidden-for="screen"] {
+    display: revert;
   }
 
   [data-page="Work"] {
