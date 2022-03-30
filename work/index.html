@@ -13,7 +13,7 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
-    <link rel="stylesheet" href="/stylesheets/style-d8cc553ec646c9036c739.css" />
+    <link rel="stylesheet" href="/stylesheets/style-c2a46872829fe10e2274a.css" />
 
     
     <style>[data-page="Work"] h2 a,
@@ -36,9 +36,9 @@
 
 [data-page="Work"] h2 {
   font-style: italic;
+  margin-bottom: 1.5em;
   text-align: center;
   text-decoration: underline;
-  margin: 1.5em 0;
 }
 
 [data-page="Work"] section > :last-child {
@@ -49,7 +49,7 @@
   margin-bottom: 2rem;
 }
 
-[data-page="Work"] article > * {
+[data-page="Work"] article > *:not(article) {
   margin-bottom: 1rem;
 }
 
@@ -155,30 +155,35 @@
 }
 
 @media screen {
-  [hidden="print"] {
-    display: block;
+  [data-hidden-for="print"] {
+    display: revert;
   }
 
-  [hidden="screen"] {
+  [data-hidden-for="screen"] {
     display: none;
   }
 }
 
 @media print {
   :root {
-    --f-sz-base: 0.7;
+    --f-sz-base: 0.8;
   }
 
-  [hidden="print"] {
+  [data-hidden-for="print"] {
     display: none;
   }
 
-  [hidden="screen"] {
-    display: block;
+  [data-hidden-for="screen"] {
+    display: revert;
+  }
+
+  [data-page-break] {
+    page-break-after: always;
   }
 
   [data-page="Work"] {
     margin: 0;
+    padding: 0;
     width: 100%;
   }
 
@@ -186,12 +191,25 @@
     display: none;
   }
 
-  [data-page="Work"] main > div + div > h1 {
-    margin-bottom: 0.5rem;
+  [data-page="Work"] h1,
+  [data-page="Work"] p {
+    margin-bottom: 0.5em;
   }
 
-  [data-page="Work"] main > div + div > address {
-    margin: 1rem 0;
+  [data-page="Work"] h1 ~ address {
+    margin: 0.5rem 0;
+  }
+
+  [data-page="Work"] h2 {
+    margin: 0.75em 0;
+  }
+
+  [data-page="Work"] article {
+    margin-bottom: 1rem;
+  }
+
+  [data-page="Work"] article > *:not(article) {
+    margin-bottom: 0.5rem;
   }
 }
 </style>
@@ -214,7 +232,7 @@
 
     <main>
       
-    <div hidden="print">
+    <div data-hidden-for="print">
       <h1>Work</h1>
 
       <p>
@@ -256,7 +274,7 @@
       <hr/>
     </div>
 
-    <div hidden="screen">
+    <div data-hidden-for="screen">
       <h1>Charles B Johnson</h1>
       <strong>Engineer of Soft Wares</strong>
 
@@ -298,20 +316,22 @@ I&#8217;m looking for a team that shares these values.</p>
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
+        <div data-hidden-for="print">
+          <p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
 I was a consultant for two of their clients and I also built one of the company&#8217;s products.</p>
 
+        </div>
 
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.
 Inspired by the shops that sold out of remote work equipment at the start of the COVID-19 pandemic,
     we decided to build a product that would provide stores with in-stock notification behavior.
-We started with support for Shopify stores first, but we designed it to work with any e-commerce platform.</p>
+We started with support for Shopify stores first, but we designed the app to work with any e-commerce platform.</p>
 
 <p>I researched, designed, and developed the app. The core features were:</p>
 
@@ -323,7 +343,7 @@ We started with support for Shopify stores first, but we designed it to work wit
     <ul>
       <li>Templating to customize the notification messaging.</li>
       <li>Previewing to trial the app and to verify template customizations.</li>
-      <li>Reporting to highlight the most sought after products.</li>
+      <li>Reporting to highlight the most in-demand products.</li>
       <li>Charting to display the number of messages sent per day.</li>
       <li><abbr title="JSON Web Token">JWT</abbr> authentication to embed the UI within Shopify&#8217;s admin dashboard.</li>
     </ul>
@@ -339,7 +359,10 @@ The product was a V1, but the technical foundation was mature.</p>
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Designed and built an e-commerce product for a software consultancy.</p>
           </details>
 
@@ -385,12 +408,12 @@ The product was a V1, but the technical foundation was mature.</p>
         <article id="experience-firesqueak-2">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.
 The client had an existing e-commerce site but, due to the limitations of their platform,
-    they had issues with content management and developing new campaigns.
+    they had issues with content management when developing new campaigns.
 I worked with one other Firesqueak engineer to build the Shopify theme frontend and to help the client setup their integration between Shopify and SAP on the backend.</p>
 
 <p>This project was a test of my frontend development skills, but my teammate and I divided work based on front-of-the-frontend vs back-of-the-frontend lines.
@@ -399,13 +422,13 @@ I focused on the back-of-the-frontend by:</p>
 <ul>
   <li>Configuring the build toolchain to enable the use of modern web development features while still supporting <abbr title="Internet Explorer 11">IE11</abbr>.</li>
   <li>Selecting a minimal set of dependencies to support complex interactions without sacrificing performance.</li>
-  <li>Implementing the site features that required non-trivial algorithms and extensive data manipulation such as:
+  <li>Implementing the site features that required non-trivial algorithms and data manipulation such as:
     <ul>
       <li>Multi-select filtering on the <abbr title="Product Listing Page">PLP</abbr>.</li>
       <li>Dynamically displaying inventory status depending on selected options on the PDP.</li>
     </ul>
   </li>
-  <li>Creating a command-line tools to automate tasks.</li>
+  <li>Creating command-line tools to automate tasks.</li>
   <li>Setting up CI/CD pipelines.</li>
 </ul>
 
@@ -425,7 +448,10 @@ The project was a success and we exceeded the client&#8217;s expectations with t
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built the frontend of a new e-commerce site for a footwear brand.</p>
           </details>
 
@@ -460,7 +486,7 @@ The project was a success and we exceeded the client&#8217;s expectations with t
         <article id="experience-firesqueak-3">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built an <abbr title="Extract, Transform, Load">ETL</abbr> pipeline for the finance team of a popular, eco-friendly footwear brand.
@@ -476,7 +502,10 @@ The client saved tens of thousands of dollars that they would have otherwise nee
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built an ETL pipeline for a footwear brand.</p>
           </details>
 
@@ -499,6 +528,8 @@ The client saved tens of thousands of dollars that they would have otherwise nee
         </article>
       </article>
 
+      <div data-hidden-for="screen" data-page-break></div>
+
       <article id="experience-blue-apron">
         <h3><a href="#experience-blue-apron">Blue Apron</a></h3>
 
@@ -511,7 +542,7 @@ The client saved tens of thousands of dollars that they would have otherwise nee
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Blue Apron is a meal-kit delivery company.
@@ -530,7 +561,7 @@ I worked on:</p>
   <li>Fixing design issues and bugs that had been the cause of frequent meal-kit mis-deliveries.</li>
 </ul>
 
-<p>Temporary Address Change was a conceptually simple feature, it allowed customers to change the delivery address of a single order.
+<p>Temporary Address Change was a conceptually simple feature, it allowed customers to change the delivery address of a single order without having to change their subscription.
 I implemented the backend of the feature and I was also the tech lead for the Web, iOS, and Android frontend implementations.</p>
 
 <p>Aside from Address Management, I acted as a technical leader by:</p>
@@ -550,7 +581,10 @@ I shifted between several projects that started and stopped as the company&#8217
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained a large, proprietary e-commerce codebase for a popular meal-kit delivery company.</p>
         </details>
 
@@ -607,7 +641,7 @@ I shifted between several projects that started and stopped as the company&#8217
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
@@ -652,13 +686,16 @@ This involved:</p>
 
 <p>This was a difficult role since the on-call burden was high.
 I departed the company before I could deliver the V2 of the backend,
-    but I left the team with my blueprints and I had already exhausted the optimizations to the existing code and infrastructure.</p>
+    but I left the team with my blueprints after having already exhausted the optimizations to the existing code and infrastructure.</p>
 
           </div>
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Led DevOps and optimized the fulfillment backend for a startup focused on direct mail.</p>
         </details>
 
@@ -701,7 +738,7 @@ I departed the company before I could deliver the V2 of the backend,
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>@WalmartLabs was the largest organization that I have worked for.
@@ -727,7 +764,7 @@ As part of the porting effort, I:</p>
 <ul>
   <li>Cleared the backlog of reported and unreported bugs.</li>
   <li>Simplified the UI/UX to improve usability.</li>
-  <li>Handled support requests.</li>
+  <li>Handled support requests from users.</li>
   <li>Created user documentation to reduce the rate of support requests.</li>
   <li>Demoed features to the Site Merchandising team to grow usage.</li>
   <li>Migrated from <em>pet</em> servers to automated, internal cloud hosting.</li>
@@ -742,7 +779,10 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained an application that managed product listing pages on <code>walmart.com</code>.</p>
         </details>
 
@@ -786,7 +826,7 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Sendicate was a startup with a team consisting of just the two co-founders and myself.
@@ -796,7 +836,7 @@ Sellout was an automated email marketing app for Shopify and Bigcommerce stores.
 <p>The headline feature I delivered was <em>Manual Emails</em>.
 I built a WYSIWYG editor that could design emails using a set of predefined content blocks; essentially a CMS for email campaigns.</p>
 
-<p>The CTO built the backend but gave me total freedom to build the frontend since I had more experience.
+<p>The CTO built the backend but gave me free reign to build the frontend since I had more recent experience with JavaScript.
 With this project, I:</p>
 
 <ul>
@@ -824,7 +864,10 @@ During that time, I:</p>
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Extended and maintained an e-commerce product for a startup focused on email marketing.</p>
         </details>
 
@@ -863,6 +906,8 @@ During that time, I:</p>
         </details>
       </article>
 
+      <div data-hidden-for="screen" data-page-break></div>
+
       <article id="experience-compuweigh">
         <h3><a href="#experience-compuweigh">CompuWeigh</a></h3>
 
@@ -875,7 +920,7 @@ During that time, I:</p>
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>CompuWeigh is a small, though mature, company that specializes in integrated hardware and software for the grain industry.
@@ -892,7 +937,10 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Learned real world software engineering at a (hard/soft)ware company in the grain industry.</p>
         </details>
 
