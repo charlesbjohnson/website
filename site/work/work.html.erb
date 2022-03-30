@@ -84,9 +84,11 @@
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <%= Components::Markdown.new.render do %>
-          <%= templates["firesqueak.md.erb"].render(self) %>
-        <% end %>
+        <div data-hidden-for="print">
+          <%= Components::Markdown.new.render do %>
+            <%= templates["firesqueak.md.erb"].render(self) %>
+          <% end %>
+        </div>
 
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
@@ -101,7 +103,10 @@
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Designed and built an e-commerce product for a software consultancy.</p>
           </details>
 
@@ -157,7 +162,10 @@
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built the frontend of a new e-commerce site for a footwear brand.</p>
           </details>
 
@@ -202,7 +210,10 @@
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built an ETL pipeline for a footwear brand.</p>
           </details>
 
@@ -247,7 +258,10 @@
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained a large, proprietary e-commerce codebase for a popular meal-kit delivery company.</p>
         </details>
 
@@ -314,7 +328,10 @@
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Led DevOps and optimized the fulfillment backend for a startup focused on direct mail.</p>
         </details>
 
@@ -367,7 +384,10 @@
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained an application that managed product listing pages on <code>walmart.com</code>.</p>
         </details>
 
@@ -421,7 +441,10 @@
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Extended and maintained an e-commerce product for a startup focused on email marketing.</p>
         </details>
 
@@ -482,7 +505,10 @@
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Learned real world software engineering at a (hard/soft)ware company in the grain industry.</p>
         </details>
 
