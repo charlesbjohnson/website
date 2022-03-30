@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      vale: '2.13.0'
+      vale: '2.15.4'
       ruby: '3.1'
       node: '16'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - id: cache-vale
         uses: actions/cache@v2

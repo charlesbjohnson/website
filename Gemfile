@@ -14,10 +14,10 @@ gem "rouge", "~> 3.28"
 gem "ssg", path: "ssg"
 
 group :development do
-  gem "debug", "~> 1.4", require: false
-  gem "rubocop", "~> 1.25", require: false
-  gem "rubocop-minitest", "~> 0.17", require: false
-  gem "standard", "~> 1.7", require: false
+  gem "debug", "~> 1.5", require: false
+  gem "rubocop", "~> 1.26", require: false
+  gem "rubocop-minitest", "~> 0.18", require: false
+  gem "standard", "~> 1.9", require: false
 end
 
 group :development, :test do
