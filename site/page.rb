@@ -20,6 +20,6 @@ class Page < SSG::Page
   end
 
   def render?
-    self.class != Page
+    self.class.name != Page.name
   end
 end
