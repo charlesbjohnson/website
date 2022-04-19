@@ -13,32 +13,23 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
-    <link rel="stylesheet" href="/stylesheets/style-d8cc553ec646c9036c739.css" />
+    <link rel="stylesheet" href="/stylesheets/style-f5ebb5278b36de0152ebe.css" />
 
     
-    <style>[data-page="Work"] h2 a,
-[data-page="Work"] h3 a,
-[data-page="Work"] h4 a,
-[data-page="Work"] h5 a,
-[data-page="Work"] h6 a {
+    <style>[data-page="Work"] :is(h2, h3, h4, h5, h6) a {
   color: inherit;
-  margin-right: 0.5rem;
   text-decoration: none;
 }
 
-[data-page="Work"] h2 a:is(:hover, :focus),
-[data-page="Work"] h3 a:is(:hover, :focus),
-[data-page="Work"] h4 a:is(:hover, :focus),
-[data-page="Work"] h5 a:is(:hover, :focus),
-[data-page="Work"] h6 a:is(:hover, :focus) {
+[data-page="Work"] :is(h2, h3, h4, h5, h6) a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
 [data-page="Work"] h2 {
   font-style: italic;
+  margin-bottom: 1.5em;
   text-align: center;
   text-decoration: underline;
-  margin: 1.5em 0;
 }
 
 [data-page="Work"] section > :last-child {
@@ -49,7 +40,7 @@
   margin-bottom: 2rem;
 }
 
-[data-page="Work"] article > * {
+[data-page="Work"] article > *:not(article) {
   margin-bottom: 1rem;
 }
 
@@ -123,8 +114,7 @@
   margin: 0 0 0.25rem;
 }
 
-[data-page="Work"] article dl dt,
-[data-page="Work"] article dl dd {
+[data-page="Work"] article dl :is(dt, dd) {
   margin-left: 0;
 }
 
@@ -155,30 +145,35 @@
 }
 
 @media screen {
-  [hidden="print"] {
-    display: block;
+  [data-hidden-for="print"] {
+    display: revert;
   }
 
-  [hidden="screen"] {
+  [data-hidden-for="screen"] {
     display: none;
   }
 }
 
 @media print {
   :root {
-    --f-sz-base: 0.7;
+    --f-sz-base: 0.8;
   }
 
-  [hidden="print"] {
+  [data-hidden-for="print"] {
     display: none;
   }
 
-  [hidden="screen"] {
-    display: block;
+  [data-hidden-for="screen"] {
+    display: revert;
+  }
+
+  [data-page-break] {
+    page-break-after: always;
   }
 
   [data-page="Work"] {
     margin: 0;
+    padding: 0;
     width: 100%;
   }
 
@@ -186,12 +181,24 @@
     display: none;
   }
 
-  [data-page="Work"] main > div + div > h1 {
-    margin-bottom: 0.5rem;
+  [data-page="Work"] :is(h1, p) {
+    margin-bottom: 0.5em;
   }
 
-  [data-page="Work"] main > div + div > address {
-    margin: 1rem 0;
+  [data-page="Work"] h1 ~ address {
+    margin: 0.5rem 0;
+  }
+
+  [data-page="Work"] h2 {
+    margin: 0.75em 0;
+  }
+
+  [data-page="Work"] article {
+    margin-bottom: 1rem;
+  }
+
+  [data-page="Work"] article > *:not(article) {
+    margin-bottom: 0.5rem;
   }
 }
 </style>
@@ -214,7 +221,7 @@
 
     <main>
       
-    <div hidden="print">
+    <div data-hidden-for="print">
       <h1>Work</h1>
 
       <p>
@@ -256,7 +263,7 @@
       <hr/>
     </div>
 
-    <div hidden="screen">
+    <div data-hidden-for="screen">
       <h1>Charles B Johnson</h1>
       <strong>Engineer of Soft Wares</strong>
 
@@ -298,14 +305,16 @@ I&#8217;m looking for a team that shares these values.</p>
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
+        <div data-hidden-for="print">
+          <p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
 I was a consultant for two of their clients and I also built one of the company&#8217;s products.</p>
 
+        </div>
 
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.
@@ -339,7 +348,10 @@ The product was a V1, but the technical foundation was mature.</p>
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Designed and built an e-commerce product for a software consultancy.</p>
           </details>
 
@@ -385,7 +397,7 @@ The product was a V1, but the technical foundation was mature.</p>
         <article id="experience-firesqueak-2">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.
@@ -425,7 +437,10 @@ The project was a success and we exceeded the client&#8217;s expectations with t
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built the frontend of a new e-commerce site for a footwear brand.</p>
           </details>
 
@@ -460,7 +475,7 @@ The project was a success and we exceeded the client&#8217;s expectations with t
         <article id="experience-firesqueak-3">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details hidden="print">
+          <details data-hidden-for="print">
             <summary>Description</summary>
             <div>
               <p>I built an <abbr title="Extract, Transform, Load">ETL</abbr> pipeline for the finance team of a popular, eco-friendly footwear brand.
@@ -468,15 +483,18 @@ The client operated several Shopify sites but needed to collect transaction and 
 They had a single in-house engineer and a business stakeholder that I partnered with, but otherwise I worked independently yet transparently.</p>
 
 <p>In the first week I was able to create a technical spec from loose business requirements and by the following week I had a functioning V1.
-I was able to deliver well ahead-of-time with no production issues.
-The client saved tens of thousands of dollars that they would have otherwise needed to pay to SAP consultants.</p>
+I delivered well ahead-of-schedule with zero production issues.
+The client saved hundreds of thousands of dollars that they would have otherwise needed to pay to SAP consultants.</p>
 
 
             </div>
           </details>
 
           <details open>
-            <summary>TL;DR</summary>
+            <summary>
+              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="screen">Summary</span>
+            </summary>
             <p>Built an ETL pipeline for a footwear brand.</p>
           </details>
 
@@ -499,6 +517,8 @@ The client saved tens of thousands of dollars that they would have otherwise nee
         </article>
       </article>
 
+      <div data-hidden-for="screen" data-page-break></div>
+
       <article id="experience-blue-apron">
         <h3><a href="#experience-blue-apron">Blue Apron</a></h3>
 
@@ -511,7 +531,7 @@ The client saved tens of thousands of dollars that they would have otherwise nee
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Blue Apron is a meal-kit delivery company.
@@ -550,7 +570,10 @@ I shifted between several projects that started and stopped as the company&#8217
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained a large, proprietary e-commerce codebase for a popular meal-kit delivery company.</p>
         </details>
 
@@ -607,7 +630,7 @@ I shifted between several projects that started and stopped as the company&#8217
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
@@ -658,7 +681,10 @@ I departed the company before I could deliver the V2 of the backend,
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Led DevOps and optimized the fulfillment backend for a startup focused on direct mail.</p>
         </details>
 
@@ -701,7 +727,7 @@ I departed the company before I could deliver the V2 of the backend,
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>@WalmartLabs was the largest organization that I have worked for.
@@ -742,7 +768,10 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Maintained an application that managed product listing pages on <code>walmart.com</code>.</p>
         </details>
 
@@ -786,7 +815,7 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>Sendicate was a startup with a team consisting of just the two co-founders and myself.
@@ -824,7 +853,10 @@ During that time, I:</p>
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Extended and maintained an e-commerce product for a startup focused on email marketing.</p>
         </details>
 
@@ -863,6 +895,8 @@ During that time, I:</p>
         </details>
       </article>
 
+      <div data-hidden-for="screen" data-page-break></div>
+
       <article id="experience-compuweigh">
         <h3><a href="#experience-compuweigh">CompuWeigh</a></h3>
 
@@ -875,7 +909,7 @@ During that time, I:</p>
           </address>
         </header>
 
-        <details hidden="print">
+        <details data-hidden-for="print">
           <summary>Description</summary>
           <div>
             <p>CompuWeigh is a small, though mature, company that specializes in integrated hardware and software for the grain industry.
@@ -892,7 +926,10 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
         </details>
 
         <details open>
-          <summary>TL;DR</summary>
+          <summary>
+            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="screen">Summary</span>
+          </summary>
           <p>Learned real world software engineering at a (hard/soft)ware company in the grain industry.</p>
         </details>
 
