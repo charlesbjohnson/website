@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      vale: '2.15.4'
+      vale: '2.15.5'
       ruby: '3.1'
       node: '16'
 
@@ -30,7 +30,7 @@ jobs:
         with:
           ruby-version: ${{ env.ruby }}
           bundler-cache: true
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node }}
 
