@@ -1,18 +1,9 @@
-[data-page="Work"] h2 a,
-[data-page="Work"] h3 a,
-[data-page="Work"] h4 a,
-[data-page="Work"] h5 a,
-[data-page="Work"] h6 a {
+[data-page="Work"] :is(h2, h3, h4, h5, h6) a {
   color: inherit;
-  margin-right: 0.5rem;
   text-decoration: none;
 }
 
-[data-page="Work"] h2 a:is(:hover, :focus),
-[data-page="Work"] h3 a:is(:hover, :focus),
-[data-page="Work"] h4 a:is(:hover, :focus),
-[data-page="Work"] h5 a:is(:hover, :focus),
-[data-page="Work"] h6 a:is(:hover, :focus) {
+[data-page="Work"] :is(h2, h3, h4, h5, h6) a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
@@ -105,8 +96,7 @@
   margin: 0 0 0.25rem;
 }
 
-[data-page="Work"] article dl dt,
-[data-page="Work"] article dl dd {
+[data-page="Work"] article dl :is(dt, dd) {
   margin-left: 0;
 }
 
@@ -173,8 +163,7 @@
     display: none;
   }
 
-  [data-page="Work"] h1,
-  [data-page="Work"] p {
+  [data-page="Work"] :is(h1, p) {
     margin-bottom: 0.5em;
   }
 

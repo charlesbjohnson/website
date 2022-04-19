@@ -3,38 +3,22 @@
   font-size: 0.9em;
 }
 
-[data-page^="Blog::"] h2,
-[data-page^="Blog::"] h3,
-[data-page^="Blog::"] h4,
-[data-page^="Blog::"] h5,
-[data-page^="Blog::"] h6 {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) {
   display: inline-flex;
   gap: 0.5ch;
   margin: 0.65em 0 0.35em;
 }
 
-[data-page^="Blog::"] h2 a,
-[data-page^="Blog::"] h3 a,
-[data-page^="Blog::"] h4 a,
-[data-page^="Blog::"] h5 a,
-[data-page^="Blog::"] h6 a {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) a {
   color: inherit;
   text-decoration: none;
 }
 
-[data-page^="Blog::"] h2 a:is(:hover, :focus),
-[data-page^="Blog::"] h3 a:is(:hover, :focus),
-[data-page^="Blog::"] h4 a:is(:hover, :focus),
-[data-page^="Blog::"] h5 a:is(:hover, :focus),
-[data-page^="Blog::"] h6 a:is(:hover, :focus) {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
-[data-page^="Blog::"] h2 span,
-[data-page^="Blog::"] h3 span,
-[data-page^="Blog::"] h4 span,
-[data-page^="Blog::"] h5 span,
-[data-page^="Blog::"] h6 span {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) span {
   font-size: 0.8em;
   font-weight: normal;
 }
