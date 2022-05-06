@@ -13,10 +13,10 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
-    <link rel="stylesheet" href="/stylesheets/style-c2a46872829fe10e2274a.css" />
+    <link rel="stylesheet" href="/stylesheets/style-f5ebb5278b36de0152ebe.css" />
 
     
-    <link rel="stylesheet" href="/stylesheets/blog-bdef58026d0e918b45be6.css" />
+    <link rel="stylesheet" href="/stylesheets/blog-f2dd56d3d357e68534e18.css" />
   
 
     <link rel="canonical" href="https://cbjohnson.io/blog/new-teammate-readme/" />
@@ -65,7 +65,7 @@ Obviously it would be difficult to automate the details that are more abstract, 
 <p>Hello! I’m excited to be part of <code>${COMPANY}</code> and I’m delighted to be working with you on the <code>${TEAM}</code> team.
 Thanks for bringing me on board!</p>
 
-<p>I’m looking forward to rummaging through documents, spelunking into the depths of version control history, and the sideways looks that are to come.
+<p>I’m looking forward to rummaging through documents, spelunking the depths of version control history, and the “a-ha!” <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> moments to come.
 Before I get carried away with that, though, I wanted to share a bit about myself that you might find helpful when working with me.</p>
 
 <p>Half of this information is about specific things you’ll see me do on a routine basis.
@@ -82,13 +82,13 @@ I have a lot of experience in this capacity and I think that code review is a gr
 <p>When I review code, I:</p>
 
 <dl>
-  <dt>Scale thoroughness according to impact:</dt>
+  <dt>Scale thoroughness according to impact <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>:</dt>
   <dd>I spend more time reviewing changes that could introduce breakages.</dd>
   <dd>I spend less time reviewing changes that are trivial.</dd>
   <dt>Include justifications for my suggestions:</dt>
   <dd>I want the author to understand and agree with requested changes.</dd>
-  <dt>Use a <a href="https://conventionalcomments.org/">comment convention</a>:</dt>
-  <dd>I include metadata to help the author determine the priority of each of my comments.</dd>
+  <dt>Use a comment convention <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>:</dt>
+  <dd>I include metadata to help the author triage my comments.</dd>
   <dt>Prefer small and focused changes:</dt>
   <dd>It’s easier to detect issues when there is less code to review.</dd>
   <dd>It’s easier to follow along when the changes have fewer goals.</dd>
@@ -105,18 +105,18 @@ Furthermore, writing code is just one part of the challenge of working on a shar
 <p>When I contribute code, I:</p>
 
 <dl>
-  <dt>Arrange commits to show an incremental, linear series of events:</dt>
+  <dt>Arrange commits to show an incremental, linear series of events <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>:</dt>
   <dd>Each commit is a singular, focused change so that the reviewer can assess scope and impact with less effort.</dd>
   <dd>Each commit is a checkpoint along the way to the reviewer’s complete understanding of the changes.</dd>
   <dt>Differentiate between behavioral and non-behavioral changes:</dt>
   <dd>It’s easier to verify that isolated, non-behavioral changes <strong>do not change</strong> behavior.</dd>
   <dd>It’s easier to verify that isolated, behavioral changes <strong>specifically change</strong> behavior in expected ways.</dd>
   <dd>It’s harder to verify that non-behavioral and behavioral, together, are correct.</dd>
-  <dt>Annotate changes using code review comments:</dt>
-  <dd>I write comments on my own pull/merge requests to direct the reviewer’s attention and to provide context for specific changes.</dd>
+  <dt>Annotate changes using code review comments <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>:</dt>
+  <dd>I write comments on <em>my own</em> pull/merge requests to direct the reviewer’s attention and to provide context for specific changes.</dd>
   <dt>Specify manual test cases in the absence of automated tests:</dt>
   <dd>I test every line of code that I write.</dd>
-  <dd>I write down every test that I run, but I don’t write every test using code.</dd>
+  <dd>I write down every test that I run, but I don’t write every test as code.</dd>
 </dl>
 
 <h2 id="as-a-thinker-">As a Thinker 🤔</h2>
@@ -131,14 +131,14 @@ To that end, I’ll share the opinions that influence how I build things.</p>
 <p>As someone that thinks about software, I:</p>
 
 <dl>
-  <dt>Believe that knowledge maintenance is a significant challenge for teams:</dt>
+  <dt>Believe that knowledge maintenance is a significant challenge for any team:</dt>
   <dd>Even small amounts of code in critical paths that no one understands can drag down the productivity of an entire team.</dd>
   <dd>Documentation helps to fill in gaps, but understandable and self-evident software designs are best.</dd>
   <dt>Place more value on prototypes than design documents:</dt>
   <dd>Working software allows stakeholders to interact with their ideas and lets developers prove an initial design. Evidence is better than theory.</dd>
-  <dt>Prefer <a href="http://boringtechnology.club/">boring technology</a>:</dt>
+  <dt>Prefer boring technology <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>:</dt>
   <dd>Boring tools have fewer unexpected issues.</dd>
-  <dd>Fewer unexpected issues means more time spent on your own codebase and less time reporting bugs to someone else’s.</dd>
+  <dd>Fewer unexpected issues means more time spent on your own code and less time spent reporting bugs for someone else’s code.</dd>
 </dl>
 
 <h2 id="end">(END)</h2>
@@ -152,9 +152,33 @@ My hope is that this will inspire you to reflect on the things <em>you do</em> a
 
 <hr />
 
-<p>I haven’t formally shared this with any team yet, but when I do then I’ll return to this post to add an update with my findings.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>No, not <em>that</em> <a href="https://www.youtube.com/watch?v=djV11Xbc914">“a-ha”</a>. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Gunnar Morling has a handy visualization of this in <a href="https://www.morling.dev/blog/the-code-review-pyramid/">“The Code Review Pyramid”</a>. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p><a href="https://conventionalcomments.org/">“Conventional Comments”</a> gets the job done and has other nice properties.</p>
 
-<p>In the meantime, please let me know what you think and if you have tried something like this before.</p>
+      <p><a href="https://gerrit-review.googlesource.com/Documentation/config-labels.html">“Gerrit Code Review - Review Labels”</a> is a similar system,
+  though more constrained. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>Greg Tatum goes into detail about this in <a href="https://gregtatum.com/writing/2020/rewriting-git-history-for-nice-commits/">“Better Code Reviews with Git History Rewriting”</a>.</p>
+
+      <p>Maisie Johnson also has a great write-up in <a href="https://blog.maisie.ink/code-review-experience">“5 or 6 Ways to Design a Code Review Experience”</a>. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>See Maisie Johnson’s <a href="https://blog.maisie.ink/code-review-experience/#call-to-action-comments=">“Call-to-action comments”</a> in the same post from <sup id="fnref:4:1" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>See Dan McKinley’s classic <a href="http://boringtechnology.club/">“Choose Boring Technology”</a>. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 
     </article>

@@ -3,38 +3,22 @@
   font-size: 0.9em;
 }
 
-[data-page^="Blog::"] h2,
-[data-page^="Blog::"] h3,
-[data-page^="Blog::"] h4,
-[data-page^="Blog::"] h5,
-[data-page^="Blog::"] h6 {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) {
   display: inline-flex;
   gap: 0.5ch;
   margin: 0.65em 0 0.35em;
 }
 
-[data-page^="Blog::"] h2 a,
-[data-page^="Blog::"] h3 a,
-[data-page^="Blog::"] h4 a,
-[data-page^="Blog::"] h5 a,
-[data-page^="Blog::"] h6 a {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) a {
   color: inherit;
   text-decoration: none;
 }
 
-[data-page^="Blog::"] h2 a:is(:hover, :focus),
-[data-page^="Blog::"] h3 a:is(:hover, :focus),
-[data-page^="Blog::"] h4 a:is(:hover, :focus),
-[data-page^="Blog::"] h5 a:is(:hover, :focus),
-[data-page^="Blog::"] h6 a:is(:hover, :focus) {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) a:is(:hover, :focus) {
   text-decoration: underline;
 }
 
-[data-page^="Blog::"] h2 span,
-[data-page^="Blog::"] h3 span,
-[data-page^="Blog::"] h4 span,
-[data-page^="Blog::"] h5 span,
-[data-page^="Blog::"] h6 span {
+[data-page^="Blog::"] :is(h2, h3, h4, h5, h6) span {
   font-size: 0.8em;
   font-weight: normal;
 }
@@ -50,14 +34,18 @@ dl dt + dt {
   margin-top: 0;
 }
 
-dl dt + dd,
-dl dd + dd {
+dl :is(dt, dd) + dd {
   margin-top: 0.5rem;
 }
 
 /* Components::Code, Components::Image, Components::Quote */
 figure {
   margin: 0 0 1rem;
+}
+
+/* Components::FootNote */
+.footnote, .reversefootnote {
+  text-decoration: none;
 }
 
 /* Components::Code */
@@ -79,9 +67,11 @@ pre {
   margin-top: unset;
 }
 
-pre code,
-pre samp {
+pre :is(code, kbd, samp) {
   border: none;
+}
+
+pre :is(code, samp) {
   color: unset;
   display: block;
   padding: 0.5rem;
@@ -89,19 +79,16 @@ pre samp {
 }
 
 pre kbd {
-  border: none;
   font-weight: var(--f-w-bold);
   padding: 0;
 }
 
-[data-component="Code"] code[data-name],
-[data-component="Code"] code[data-lang] {
+[data-component="Code"] code:is([data-name], [data-lang]) {
   position: relative;
   padding-top: calc((0.9em + (0.5rem * 2)) + 0.5rem);
 }
 
-[data-component="Code"] code[data-name]::before,
-[data-component="Code"] code[data-lang]::before {
+[data-component="Code"] code:is([data-name], [data-lang])::before {
   background-color: var(--background-color, inherit);
   color: var(--color, inherit);
   content: attr(data-name);
@@ -121,26 +108,22 @@ pre kbd {
   text-transform: uppercase;
 }
 
-[data-component="Code"] code[data-name$=".css"]::before,
-[data-component="Code"] code[data-lang="css"]::before {
+[data-component="Code"] code:is([data-name$=".css"], [data-lang="css"])::before {
   --background-color: #563d7c;
   --color: var(--c-white);
 }
 
-[data-component="Code"] code[data-name$=".html"]::before,
-[data-component="Code"] code[data-lang="html"]::before {
+[data-component="Code"] code:is([data-name$=".html"], [data-lang="html"])::before {
   --background-color: #e34c26;
   --color: var(--c-white);
 }
 
-[data-component="Code"] code[data-name$=".js"]::before,
-[data-component="Code"] code[data-lang="js"]::before {
+[data-component="Code"] code:is([data-name$=".js"], [data-lang="js"])::before {
   --background-color: #f1e05a;
   --color: var(--c-black);
 }
 
-[data-component="Code"] code[data-name$=".rb"]::before,
-[data-component="Code"] code[data-lang="ruby"]::before {
+[data-component="Code"] code:is([data-name$=".rb"], [data-lang="ruby"])::before {
   --background-color: #701516;
   --color: var(--c-white);
 }
