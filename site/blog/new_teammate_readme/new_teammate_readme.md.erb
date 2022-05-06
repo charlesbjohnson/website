@@ -22,7 +22,7 @@ Here's my first draft…
 Hello! I’m excited to be part of `${COMPANY}` and I'm delighted to be working with you on the `${TEAM}` team.
 Thanks for bringing me on board!
 
-I'm looking forward to rummaging through documents, spelunking the depths of version control history, and the "Aha!" moments to come.
+I'm looking forward to rummaging through documents, spelunking the depths of version control history, and the "a-ha!" [^1] moments to come.
 Before I get carried away with that, though, I wanted to share a bit about myself that you might find helpful when working with me.
 
 Half of this information is about specific things you'll see me do on a routine basis.
@@ -38,14 +38,14 @@ I have a lot of experience in this capacity and I think that code review is a gr
 
 When I review code, I:
 
-Scale thoroughness according to impact:
+Scale thoroughness according to impact [^2]:
 : I spend more time reviewing changes that could introduce breakages.
 : I spend less time reviewing changes that are trivial.
 
 Include justifications for my suggestions:
 : I want the author to understand and agree with requested changes.
 
-Use a [comment convention](https://conventionalcomments.org/):
+Use a comment convention [^3]:
 : I include metadata to help the author triage my comments.
 
 Prefer small and focused changes:
@@ -62,7 +62,7 @@ _Packaging_ refers to the work that goes into making code changes reviewable and
 
 When I contribute code, I:
 
-Arrange commits to show an incremental, linear series of events:
+Arrange commits to show an incremental, linear series of events [^4]:
 : Each commit is a singular, focused change so that the reviewer can assess scope and impact with less effort.
 : Each commit is a checkpoint along the way to the reviewer's complete understanding of the changes.
 
@@ -71,7 +71,7 @@ Differentiate between behavioral and non-behavioral changes:
 : It's easier to verify that isolated, behavioral changes **specifically change** behavior in expected ways.
 : It's harder to verify that non-behavioral and behavioral, together, are correct.
 
-Annotate changes using code review comments:
+Annotate changes using code review comments [^5]:
 : I write comments on _my own_ pull/merge requests to direct the reviewer's attention and to provide context for specific changes.
 
 Specify manual test cases in the absence of automated tests:
@@ -89,16 +89,16 @@ To that end, I'll share the opinions that influence how I build things.
 
 As someone that thinks about software, I:
 
-Believe that knowledge maintenance is a significant challenge for teams:
+Believe that knowledge maintenance is a significant challenge for any team:
 : Even small amounts of code in critical paths that no one understands can drag down the productivity of an entire team.
 : Documentation helps to fill in gaps, but understandable and self-evident software designs are best.
 
 Place more value on prototypes than design documents:
 : Working software allows stakeholders to interact with their ideas and lets developers prove an initial design. Evidence is better than theory.
 
-Prefer [boring technology](http://boringtechnology.club/):
+Prefer boring technology [^6]:
 : Boring tools have fewer unexpected issues.
-: Fewer unexpected issues means more time spent on your own codebase and less time reporting bugs to someone else's.
+: Fewer unexpected issues means more time spent on your own code and less time spent reporting bugs for someone else's code.
 
 ## (END)
 
@@ -108,3 +108,22 @@ My hope is that this will inspire you to reflect on the things _you do_ and the 
 Thanks for reading! I’m looking forward to doing great work with you.
 
 -- _Charlie_
+
+---
+
+[^1]: No, not _that_ ["a-ha"](https://www.youtube.com/watch?v=djV11Xbc914).
+
+[^2]: Gunnar Morling has a handy visualization of this in ["The Code Review Pyramid"](https://www.morling.dev/blog/the-code-review-pyramid/).
+
+[^3]: ["Conventional Comments"](https://conventionalcomments.org/) gets the job done and has other nice properties.
+
+      ["Gerrit Code Review - Review Labels"](https://gerrit-review.googlesource.com/Documentation/config-labels.html) is a similar system,
+      though more constrained.
+
+[^4]: Greg Tatum goes into detail about this in ["Better Code Reviews with Git History Rewriting"](https://gregtatum.com/writing/2020/rewriting-git-history-for-nice-commits/).
+
+      Maisie Johnson also has a great write-up in ["5 or 6 Ways to Design a Code Review Experience"](https://blog.maisie.ink/code-review-experience/).
+
+[^5]: See Maisie Johnson's ["Call-to-action comments"](https://blog.maisie.ink/code-review-experience/#call-to-action-comments=) in the same post from [^4].
+
+[^6]: See Dan McKinley's classic ["Choose Boring Technology"](https://boringtechnology.club/).
