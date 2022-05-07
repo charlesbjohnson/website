@@ -3,17 +3,17 @@
 module SSG
   class Server
     def initialize
-      self.lock = Concurrent::ReadWriteLock.new
+      self.lock = Thread::Mutex.new
 
       self.http = WEBrick::HTTPServer.new(BindAddress: Site.config.serve_host, Port: Site.config.serve_port)
       http.mount_proc("/") do |request, response|
-        lock.with_read_lock do
+        lock.synchronize do
           handle(request, response)
         end
       end
 
       self.listener = Listen.to(Site.config.dir_in) do
-        lock.with_write_lock do
+        lock.synchronize do
           reload
         end
       end

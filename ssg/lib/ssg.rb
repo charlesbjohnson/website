@@ -10,7 +10,6 @@ require "strscan"
 
 require "active_support"
 require "active_support/all"
-require "concurrent"
 require "listen"
 require "webrick"
 require "zeitwerk"
