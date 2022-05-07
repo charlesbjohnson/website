@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "debug"
 Bundler.require(:default, SSG::Site.config.env)
 
 require_relative "./site"
