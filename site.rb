@@ -23,7 +23,7 @@ class Site
     end
 
     def uri
-      production? ? URI::HTTPS.build(host: domain) : SSG::Site.config.serve_uri
+      production? ? URI::HTTPS.build(host: domain) : URI::HTTP.build(host: "localhost", port: SSG::Site.config.serve_port)
     end
 
     def development?

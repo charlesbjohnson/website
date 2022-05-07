@@ -35,11 +35,6 @@ module SSG
         @serve_port ||= Integer(ENV.fetch("SSG_PORT", 4000))
       end
 
-      # @return [URI::HTTP]
-      def serve_uri
-        URI::HTTP.build(host: serve_host, port: serve_port)
-      end
-
       private
 
       def dir

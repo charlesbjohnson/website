@@ -58,12 +58,12 @@
 
         <div>
           <span>🌐</span>
-          <a href="https://<%= ::Site.domain %>"><%= ::Site.domain %></a>
+          <a href="<%= ::Site.uri %>"><%= ::Site.domain %></a>
         </div>
 
         <div>
           <span>💻</span>
-          <a href="<%= ::Site.github_url %>"><%= ::Site.github_url.to_s.gsub("https://", "") %></a>
+          <a href="<%= ::Site.github_url %>"><%= ::Site.github_url.to_s.gsub("#{::Site.github_url.scheme}://", "") %></a>
         </div>
       </address>
 
