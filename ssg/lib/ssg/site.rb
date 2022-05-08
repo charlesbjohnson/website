@@ -4,17 +4,32 @@ module SSG
   class Site
     include Singleton
 
+    using(Module.new do
+      refine Class do
+        # @return [Array<Class>]
+        def descendants
+          rec = ->(klass) {
+            (klass == self ? [] : [klass]) + klass.subclasses.flat_map { |child| rec.call(child) }
+          }
+
+          rec.call(self)
+        end
+      end
+    end)
+
     class << self
+      extend Forwardable
+
       # @return [SSG::Config]
-      delegate :config, to: :instance
+      delegate config: :instance
 
       # @return [Hash<String, SSG::File::StaticFile>]
-      delegate :files, to: :instance
+      delegate files: :instance
 
       # @return [Array<SSG::Page>]
-      delegate :pages, to: :instance
+      delegate pages: :instance
 
-      delegate :boot, :reboot, to: :instance
+      delegate [:boot, :reboot] => :instance
 
       def build
         instance.clean
@@ -91,7 +106,9 @@ module SSG
 
     # @return [Hash<String, SSG::File::StaticFile>]
     def files
-      File.glob(config.dir_in.join("**/*")).select(&:static?).index_by { |file| file.rel_path.to_s }
+      File.glob(config.dir_in.join("**/*")).each_with_object({}) { |file, h|
+        h[file.rel_path.to_s] = file if file.static?
+      }
     end
 
     # @return [Array<SSG::Page>]

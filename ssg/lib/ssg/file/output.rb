@@ -3,8 +3,10 @@
 module SSG
   class File
     class Output
+      extend Forwardable
+
       # @return [URI::Generic]
-      delegate :uri, to: :file
+      delegate uri: :file
 
       # @param [SSG::File]
       def initialize(file)

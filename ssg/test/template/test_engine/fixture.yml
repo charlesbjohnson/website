@@ -483,7 +483,7 @@
     a
       <%= (fixture do %>
         b
-      <% end).indent(2) %>
+      <% end).split("\n").map { |s| (" " * 2) + s }.join("\n") %>
     c
   - |
     a

@@ -2,7 +2,6 @@ PATH
   remote: ssg
   specs:
     ssg (0.0.1)
-      activesupport (~> 7.0)
       listen (~> 3.7)
       webrick (~> 1.7)
       zeitwerk (~> 2.5)

@@ -4,17 +4,18 @@ require "rubygems"
 
 require "date"
 require "fileutils"
+require "forwardable"
 require "pathname"
 require "singleton"
 require "strscan"
 
-require "active_support"
-require "active_support/all"
 require "listen"
 require "webrick"
 require "zeitwerk"
 
 module SSG
+  require "ssg/inflect"
+
   require "ssg/template"
   require "ssg/template/engine"
 

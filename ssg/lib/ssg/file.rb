@@ -2,6 +2,17 @@
 
 module SSG
   class File
+    extend Forwardable
+
+    using(Module.new do
+      refine String do
+        # @return [String]
+        def dasherize
+          SSG::Inflect.dasherize(self)
+        end
+      end
+    end)
+
     class << self
       # @param [String, #to_s] pattern
       # @return [Array<SSG::File::StaticFile, SSG::File::TemplateFile>]
@@ -20,7 +31,7 @@ module SSG
     attr_reader :abs_path
 
     # @return [String]
-    delegate :to_s, to: :content
+    delegate to_s: :content
 
     # @param [Pathname] abs_path
     def initialize(abs_path)

@@ -2,6 +2,20 @@
 
 module SSG
   class Component
+    using(Module.new do
+      refine String do
+        # @return [String]
+        def demodulize
+          SSG::Inflect.demodulize(self)
+        end
+
+        # @return [String]
+        def underscore
+          SSG::Inflect.underscore(self)
+        end
+      end
+    end)
+
     class << self
       # @return [Hash<String, SSG::File::StaticFile>]
       def files

@@ -2,6 +2,20 @@
 
 module SSG
   class Page < Component
+    using(Module.new do
+      refine String do
+        # @return [String]
+        def dasherize
+          SSG::Inflect.dasherize(self)
+        end
+
+        # @return [String]
+        def underscore
+          SSG::Inflect.underscore(self)
+        end
+      end
+    end)
+
     # @return [String]
     def date
       created_at.to_date

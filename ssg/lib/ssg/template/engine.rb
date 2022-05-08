@@ -42,6 +42,13 @@ module SSG
     # since many of them are depdendent on an explicit #capture method.
     class Engine
       using(Module.new do
+        refine String do
+          # @return [Boolean]
+          def blank?
+            empty? || BLANK_REGEXP.match?(self)
+          end
+        end
+
         refine StringScanner do
           # UTF-8 compatible version of #pos=
           # @param [Integer] n
@@ -56,6 +63,8 @@ module SSG
           end
         end
       end)
+
+      BLANK_REGEXP = /\A\s*\z/
 
       DEFAULT_REGEXP = /<%(=)?(-|_)?(.*?)(-|_)?%>/m
 
