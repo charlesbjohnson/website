@@ -9,7 +9,6 @@
 
 [data-page="Work"] h2 {
   font-style: italic;
-  margin-bottom: 1.5em;
   text-align: center;
   text-decoration: underline;
 }
@@ -22,7 +21,7 @@
   margin-bottom: 2rem;
 }
 
-[data-page="Work"] article > *:not(article) {
+[data-page="Work"] article > :not(article) {
   margin-bottom: 1rem;
 }
 
@@ -92,12 +91,17 @@
   display: block;
 }
 
+[data-page="Work"] article dl {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85em;
+  row-gap: 0.25rem;
+}
+
 [data-page="Work"] article dl > div {
-  column-gap: 0.5ch;
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.85em;
-  margin: 0 0 0.25rem;
+  gap: 0.25rem 0.5ch;
 }
 
 [data-page="Work"] article dl :is(dt, dd) {
@@ -120,9 +124,8 @@
 }
 
 @media screen and (max-width: 475px) {
-  [data-page="Work"] article dl > div {
-    gap: 0.5ch;
-    margin-bottom: 0.5rem;
+  [data-page="Work"] article dl {
+    row-gap: 0.5rem;
   }
 
   [data-page="Work"] article dl dt {
@@ -183,7 +186,7 @@
     margin-bottom: 1rem;
   }
 
-  [data-page="Work"] article > *:not(article) {
+  [data-page="Work"] article > :not(article) {
     margin-bottom: 0.5rem;
   }
 }
