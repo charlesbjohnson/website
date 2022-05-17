@@ -1,16 +1,16 @@
 I built the V1 of an e-commerce product for Firesqueak with one other engineer.
-Inspired by the shops that sold out of remote work equipment at the start of the COVID-19 pandemic,
-    we decided to build a product that would provide stores with in-stock notification behavior.
-We started with support for Shopify stores first, but we designed the app to work with any e-commerce platform.
+Inspired by shops that had sold out of remote work equipment at the start of the COVID-19 pandemic,
+    we decided to build a product that would give stores the ability to provide in-stock notifications.
+We started with support for Shopify but designed the app with other e-commerce platforms in-mind.
 
 I researched, designed, and developed the app. The core features were:
 
 - Support for SMS in-stock notifications.
-- An optional code snippet to add an in-stock notification UI to a PDP.
+- An optional JavaScript snippet to add an in-stock notification UI to a PDP.
 - A REST API backend that the in-stock notification UI integrated with.
 - A SPA dashboard for the merchant admin experience, which included:
     - Templating to customize the notification messaging.
-    - Previewing to trial the app and to verify template customizations.
+    - Message previewing to verify template customizations.
     - Reporting to highlight the most in-demand products.
     - Charting to display the number of messages sent per day.
     - JWT authentication to embed the UI within Shopify's admin dashboard.

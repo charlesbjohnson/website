@@ -134,12 +134,8 @@
 }
 
 @media screen {
-  [data-hidden-for="print"] {
-    display: revert;
-  }
-
   [data-hidden-for="screen"] {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -149,11 +145,7 @@
   }
 
   [data-hidden-for="print"] {
-    display: none;
-  }
-
-  [data-hidden-for="screen"] {
-    display: revert;
+    display: none !important;
   }
 
   [data-page-break] {
