@@ -4,34 +4,9 @@
   <% end %>
 
   <%= c.main do %>
-    <div data-hidden-for="print">
+    <section data-hidden-for="print">
       <h1><%= title %></h1>
-
-      <p>
-        I'm currently seeking opportunities as a full-stack or backend engineer.
-
-        My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
-      </p>
-
-      <ul>
-        <li>Open Communication</li>
-        <li>Remote OK</li>
-        <li>Flexible Work Arrangements</li>
-        <li>Work/Life Balance</li>
-      </ul>
-
-      <p>
-        Are you a manager considering hiring me? <a href="<%= Blog::NewManagerReadme.uri %>">Here's a post</a> to help you learn more about me.
-      </p>
-
-      <p>
-        Are you an engineer considering working with me? I <a href="<%= Blog::NewTeammateReadme.uri %>">have a post</a> for you
-        and a <a href="<%= ::Site.github_url %>">GitHub profile</a> that you can take a look at.
-      </p>
-
-      <p>
-        Please <a href="mailto:<%= ::Site.email %>">email me</a> for more information.
-      </p>
+      <%= content("introduction", "[data-screen]") %>
 
       <!--
          ██   ██ ███████ ██    ██ ██
@@ -42,11 +17,9 @@
 
         If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
       -->
+    </section>
 
-      <hr/>
-    </div>
-
-    <div data-hidden-for="screen">
+    <section data-hidden-for="screen">
       <h1>Charles B Johnson</h1>
       <strong>Engineer of Soft Wares</strong>
 
@@ -67,10 +40,10 @@
         </div>
       </address>
 
-      <%= Components::Markdown.new.render do %>
-        <%= templates["introduction.md.erb"].render(self) %>
-      <% end %>
-    </div>
+      <%= content("introduction", "[data-print]") %>
+    </section>
+
+    <hr data-hidden-for="print" />
 
     <section>
       <h2>Experience</h2>
@@ -84,30 +57,23 @@
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <div data-hidden-for="print">
-          <%= Components::Markdown.new.render do %>
-            <%= templates["firesqueak.md.erb"].render(self) %>
-          <% end %>
-        </div>
+        <div data-hidden-for="print"><%= content("firesqueak") %></div>
 
         <article id="experience-firesqueak-1">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details data-hidden-for="print">
-            <summary>Description</summary>
-            <div>
-              <%= Components::Markdown.new.render do %>
-                <%= templates["firesqueak_1.md.erb"].render(self) %>
-              <% end %>
-            </div>
+          <details open data-hidden-for="print">
+            <summary>TL;DR</summary>
+            <%= content("firesqueak_1", "[data-tldr]") %>
           </details>
 
-          <details open>
+          <details>
             <summary>
-              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="print">Description</span>
               <span data-hidden-for="screen">Summary</span>
             </summary>
-            <p>Designed and built an e-commerce product for a software consultancy.</p>
+            <div data-hidden-for="print"><%= content("firesqueak_1", "[data-screen]") %></div>
+            <div data-hidden-for="screen"><%= content("firesqueak_1", "[data-tldr]") %></div>
           </details>
 
           <details open>
@@ -154,21 +120,18 @@
         <article id="experience-firesqueak-2">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details data-hidden-for="print">
-            <summary>Description</summary>
-            <div>
-              <%= Components::Markdown.new.render do %>
-                <%= templates["firesqueak_2.md.erb"].render(self) %>
-              <% end %>
-            </div>
+          <details open data-hidden-for="print">
+            <summary>TL;DR</summary>
+            <%= content("firesqueak_2", "[data-tldr]") %>
           </details>
 
-          <details open>
+          <details>
             <summary>
-              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="print">Description</span>
               <span data-hidden-for="screen">Summary</span>
             </summary>
-            <p>Built and evolved the frontend of an e-commerce site for a footwear brand.</p>
+            <div data-hidden-for="print"><%= content("firesqueak_2", "[data-screen]") %></div>
+            <div data-hidden-for="screen"><%= content("firesqueak_2", "[data-tldr]") %></div>
           </details>
 
           <details open>
@@ -202,21 +165,18 @@
         <article id="experience-firesqueak-3">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details data-hidden-for="print">
-            <summary>Description</summary>
-            <div>
-              <%= Components::Markdown.new.render do %>
-                <%= templates["firesqueak_3.md.erb"].render(self) %>
-              <% end %>
-            </div>
+          <details open data-hidden-for="print">
+            <summary>TL;DR</summary>
+            <%= content("firesqueak_3", "[data-tldr]") %>
           </details>
 
-          <details open>
+          <details>
             <summary>
-              <span data-hidden-for="print">TL;DR</span>
+              <span data-hidden-for="print">Description</span>
               <span data-hidden-for="screen">Summary</span>
             </summary>
-            <p>Built an e-commerce ETL pipeline for a footwear brand.</p>
+            <div data-hidden-for="print"><%= content("firesqueak_3", "[data-screen]") %></div>
+            <div data-hidden-for="screen"><%= content("firesqueak_3", "[data-tldr]") %></div>
           </details>
 
           <details open>
@@ -252,21 +212,18 @@
           </address>
         </header>
 
-        <details data-hidden-for="print">
-          <summary>Description</summary>
-          <div>
-            <%= Components::Markdown.new.render do %>
-              <%= templates["blue_apron.md.erb"].render(self) %>
-            <% end %>
-          </div>
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <%= content("blue_apron", "[data-tldr]") %>
         </details>
 
-        <details open>
+        <details>
           <summary>
-            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="print">Description</span>
             <span data-hidden-for="screen">Summary</span>
           </summary>
-          <p>Contributed to a large e-commerce codebase for a meal-kit delivery company.</p>
+          <div data-hidden-for="print"><%= content("blue_apron", "[data-screen]") %></div>
+          <div data-hidden-for="screen"><%= content("blue_apron", "[data-tldr]") %></div>
         </details>
 
         <details open>
@@ -327,21 +284,18 @@
           </address>
         </header>
 
-        <details data-hidden-for="print">
-          <summary>Description</summary>
-          <div>
-            <%= Components::Markdown.new.render do %>
-              <%= templates["lob.md.erb"].render(self) %>
-            <% end %>
-          </div>
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <%= content("lob", "[data-tldr]") %>
         </details>
 
-        <details open>
+        <details>
           <summary>
-            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="print">Description</span>
             <span data-hidden-for="screen">Summary</span>
           </summary>
-          <p>Led DevSecOps and fulfillment optimizations for a direct mail API startup.</p>
+          <div data-hidden-for="print"><%= content("lob", "[data-screen]") %></div>
+          <div data-hidden-for="screen"><%= content("lob", "[data-tldr]") %></div>
         </details>
 
         <details open>
@@ -384,21 +338,18 @@
           </address>
         </header>
 
-        <details data-hidden-for="print">
-          <summary>Description</summary>
-          <div>
-            <%= Components::Markdown.new.render do %>
-              <%= templates["walmart_labs.md.erb"].render(self) %>
-            <% end %>
-          </div>
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <%= content("walmart_labs", "[data-tldr]") %>
         </details>
 
-        <details open>
+        <details>
           <summary>
-            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="print">Description</span>
             <span data-hidden-for="screen">Summary</span>
           </summary>
-          <p>Revamped an application that managed product listing pages on walmart.com.</p>
+          <div data-hidden-for="print"><%= content("walmart_labs", "[data-screen]") %></div>
+          <div data-hidden-for="screen"><%= content("walmart_labs", "[data-tldr]") %></div>
         </details>
 
         <details open>
@@ -445,21 +396,18 @@
           </address>
         </header>
 
-        <details data-hidden-for="print">
-          <summary>Description</summary>
-          <div>
-            <%= Components::Markdown.new.render do %>
-              <%= templates["sendicate.md.erb"].render(self) %>
-            <% end %>
-          </div>
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <%= content("sendicate", "[data-tldr]") %>
         </details>
 
-        <details open>
+        <details>
           <summary>
-            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="print">Description</span>
             <span data-hidden-for="screen">Summary</span>
           </summary>
-          <p>Extended an email marketing e-commerce product for a startup.</p>
+          <div data-hidden-for="print"><%= content("sendicate", "[data-screen]") %></div>
+          <div data-hidden-for="screen"><%= content("sendicate", "[data-tldr]") %></div>
         </details>
 
         <details open>
@@ -512,21 +460,18 @@
           </address>
         </header>
 
-        <details data-hidden-for="print">
-          <summary>Description</summary>
-          <div>
-            <%= Components::Markdown.new.render do %>
-              <%= templates["compuweigh.md.erb"].render(self) %>
-            <% end %>
-          </div>
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <%= content("compuweigh", "[data-tldr]") %>
         </details>
 
-        <details open>
+        <details>
           <summary>
-            <span data-hidden-for="print">TL;DR</span>
+            <span data-hidden-for="print">Description</span>
             <span data-hidden-for="screen">Summary</span>
           </summary>
-          <p>Learned real-world {hard,soft}ware development at a company in the grain industry.</p>
+          <div data-hidden-for="print"><%= content("compuweigh", "[data-screen]") %></div>
+          <div data-hidden-for="screen"><%= content("compuweigh", "[data-tldr]") %></div>
         </details>
 
         <details open>

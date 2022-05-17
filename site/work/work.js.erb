@@ -5,7 +5,7 @@ class Work {
         continue;
       }
 
-      let [$description, $tldr] = $experience.querySelectorAll("details");
+      let [$tldr, $description] = $experience.querySelectorAll("details");
       $description = $description.querySelector("summary");
       $tldr = $tldr.querySelector("p");
 

@@ -101,6 +101,7 @@ DEPENDENCIES
   kramdown (~> 2.4)
   kramdown-parser-gfm (~> 1.1)
   minitest (~> 5.15)
+  nokogiri (~> 1.13)
   rouge (~> 3.28)
   rubocop (~> 1.29)
   rubocop-minitest (~> 0.19)
