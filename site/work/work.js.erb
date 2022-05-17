@@ -1,0 +1,29 @@
+class Work {
+  static setup() {
+    for (const $experience of this.$experiences) {
+      if ($experience.querySelector("article")) {
+        continue;
+      }
+
+      let [$description, $tldr] = $experience.querySelectorAll("details");
+      $description = $description.querySelector("summary");
+      $tldr = $tldr.querySelector("p");
+
+      $description.id = `${$experience.id}-description`;
+      $tldr.insertAdjacentHTML(
+        "beforeend",
+        `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
+      );
+    }
+  }
+
+  static get $experiences() {
+    return this.$page.querySelectorAll(`article[id^="experience-"]`);
+  }
+
+  static get $page() {
+    return document.querySelector(`[data-page^="Work"]`);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => Work.setup());

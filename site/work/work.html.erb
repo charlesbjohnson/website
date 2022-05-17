@@ -556,4 +556,8 @@
       </article>
     </section>
   <% end %>
+
+  <%= c.scripts do %>
+    <script type="module"><%= templates["work.js.erb"].render(self) %></script>
+  <% end %>
 <% end.render %>
