@@ -15,9 +15,9 @@ gem "ssg", path: "ssg"
 
 group :development do
   gem "debug", "~> 1.5", require: false
-  gem "rubocop", "~> 1.28", require: false
+  gem "rubocop", "~> 1.29", require: false
   gem "rubocop-minitest", "~> 0.19", require: false
-  gem "standard", "~> 1.11", require: false
+  gem "standard", "~> 1.12", require: false
 end
 
 group :development, :test do
