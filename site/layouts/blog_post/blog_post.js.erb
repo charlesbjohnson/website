@@ -10,21 +10,14 @@ class BlogPost {
 
       const match = this.REGEXP.exec($heading.textContent);
 
-      const $fragment = document.createDocumentFragment();
-      const $anchor = document.createElement("a");
-
-      $anchor.href = `#${$heading.id}`;
-      $anchor.textContent = match.groups.text.trim();
-
-      $fragment.append($anchor);
-      if (match.groups.emoji) {
-        const $span = document.createElement("span");
-        $span.textContent = match.groups.emoji;
-        $fragment.append($span);
-      }
+      const $template = document.createElement("template");
+      $template.innerHTML = `
+        <a href="#${$heading.id}">${match.groups.text.trim()}</a>
+        ${match.groups.emoji ? `<span>${match.groups.emoji}</span>` : ''}
+      `
 
       $heading.textContent = null;
-      $heading.append($fragment);
+      $heading.append($template.content);
     }
   }
 
