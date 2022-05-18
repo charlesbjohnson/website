@@ -5,26 +5,26 @@ Led DevSecOps and fulfillment optimizations for a direct mail API startup.
 <div data-screen>
 Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
 The company offers a SAAS product in the form of RESTful APIs for sending physical mail and verifying addresses.
-The Print & Mail API handled thousands of requests per day.
+The Print & Mail API handled tens of thousands of requests per day.
 
 The engineering team was small and without defined roles so we self-assigned responsibilities based on interest and capability.
 I had more experience with cloud infrastructure, so I took DevSecOps responsibilities.
 
 One of the first projects I worked on was to setup auto-scaling for the Print & Mail API infrastructure.
-This turned out to be a larger than expected task given that everything was manually managed through the AWS web interface.
+This turned out to be a larger than expected task given that all the infrastructure was manually managed through the AWS web interface.
 My approach was to:
 
 - Introduce Terraform to get a handle on critical infrastructure.
-- Dockerize the application to automate provisioning.
-- Setup a parallel set of infrastructure to use AWS ECS for scheduling containers.
+- Containerize the application using Docker to automate provisioning.
+- Setup a parallel set of infrastructure using AWS ECS for scheduling containers.
 - Cut-over from the old infrastructure to the new infrastructure.
 
-The migration completed without any issues and we were able to leverage AWS features to manage auto-scaling with almost no custom code.
+The migration completed without any issues and we were able to leverage AWS to manage auto-scaling with minimal glue code.
 There were other benefits and improvements from this approach, including:
 
-- Codified infrastructure with hardened security policies.
-- Explicit, documented provisioning.
-- Automated deployments with immediate rollbacks.
+- Codified and hardened infrastructure with a paper-trail for auditing changes.
+- Explicit, documented, and packaged provisioning to mitigate risks from dependencies.
+- Automated deployments with immediate rollbacks to limit downtime when resolving regressions.
 
 Aside from leading DevSecOps, I also became the lead for the _Partner Operations_ team.
 The Partner Operations team was responsible for optimally routing requests on the backend to the Partners that fulfilled them.
@@ -33,8 +33,8 @@ Geographic proximity, capability, and available capacity were some of the factor
 My role on the Partner Operations team was to increase throughput and improve service reliability.
 This involved:
 
-- Handling and resolving routing failures as part of an on-call schedule.
-- Identifying and reducing bottlenecks in the codebase, infrastructure, and manual procedures.
+- Reducing bottlenecks and single-points-of-failure through partitioning and scaling.
+- Handling and resolving failures as part of an on-call schedule.
 - Researching, designing, and prototyping a V2 of the backend architecture.
 
 This was a difficult role since the on-call burden was high.
@@ -42,7 +42,8 @@ I was not able to deliver a V2 of the backend, but I exhausted most optimization
 </div>
 
 <div data-print>
-- Led development on the Partner Operations team,
-    improving throughput and reliability of fulfillment services through routing and processing optimizations.
-- Instantiated a DevSecOps culture by codifying, automating, and hardening all cloud infrastructure.
+- Led the Partner Operations team; optimized job routing and processing; partitioned and scaled fulfillment services.
+- Instantiated a DevSecOps culture by codifying, automating, and hardening infrastructure;
+    increased the average uptime of the Print & Mail API from 96.1% to 99.8%.
+- Mentored junior engineers and interns.
 </div>

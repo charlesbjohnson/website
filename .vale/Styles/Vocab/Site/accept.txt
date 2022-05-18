@@ -5,9 +5,10 @@ mailto
 www
 url
 
-[Uu]serbase
-[Tt]oolchain
 [Oo]nboard
+[Tt]oolchain
+[Uu]serbase
+[Ww]eekly
 
 (?i)docker
 (?i)github
