@@ -149,7 +149,7 @@
 
 @media print {
   :root {
-    --f-sz-base: 0.675;
+    --f-sz-base: 0.575;
   }
 
   [data-hidden-for="print"] {
@@ -165,6 +165,10 @@
     display: none;
   }
 
+  [data-page="Work"] :is(h1, h2) {
+    color: var(--c-blue);
+  }
+
   [data-page="Work"] :is(h1, p) {
     margin-bottom: 0.5em;
   }
@@ -174,8 +178,7 @@
   }
 
   [data-page="Work"] h2 {
-    border-bottom: 0.125em solid var(--c-gray);
-    color: var(--c-gray);
+    border-bottom: 0.125em solid var(--c-blue);
     margin: 0.75em 0;
     text-align: left;
     text-decoration: none;
