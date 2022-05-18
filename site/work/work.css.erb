@@ -131,7 +131,7 @@
 
 @media print {
   :root {
-    --f-sz-base: 0.8;
+    --f-sz-base: 0.6;
   }
 
   [data-hidden-for="print"] {
@@ -151,8 +151,8 @@
     color: var(--c-blue);
   }
 
-  [data-page="Work"] :is(h1, p) {
-    margin-bottom: 0.5em;
+  [data-page="Work"] :is(h1, p, article) {
+    margin-bottom: 0;
   }
 
   [data-page="Work"] section:nth-of-type(2) > address {
@@ -161,17 +161,13 @@
 
   [data-page="Work"] h2 {
     border-bottom: 0.125em solid var(--c-blue);
-    margin: 0.75em 0;
+    margin: 0.5em 0;
     text-align: left;
     text-decoration: none;
   }
 
-  [data-page="Work"] article {
-    margin-bottom: 0;
-  }
-
   [data-page="Work"] article > :not(article) {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   [data-page="Work"] article > header > time {
@@ -179,7 +175,9 @@
   }
 
   [data-page="Work"] article ul {
+    list-style-position: inside;
     margin: 0;
+    padding-left: 0.75ex;
   }
 
   [data-page="Work"] section:nth-of-type(4) > div {
