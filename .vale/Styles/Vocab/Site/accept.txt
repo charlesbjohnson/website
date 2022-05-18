@@ -3,12 +3,14 @@ charlesbjohnson
 html
 mailto
 www
+url
 
 [Uu]serbase
 [Tt]oolchain
 [Oo]nboard
 
 (?i)docker
+(?i)github
 (?i)https?
 (?i)middleman
 (?i)npm

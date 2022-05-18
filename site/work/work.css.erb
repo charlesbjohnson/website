@@ -144,10 +144,6 @@
     display: none !important;
   }
 
-  [data-page-break] {
-    page-break-after: always;
-  }
-
   [data-page="Work"] {
     margin: 0;
     padding: 0;
@@ -171,10 +167,14 @@
   }
 
   [data-page="Work"] article {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   [data-page="Work"] article > :not(article) {
     margin-bottom: 0.5rem;
+  }
+
+  [data-page="Work"] article ul {
+    margin: 0;
   }
 }

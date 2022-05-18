@@ -57,23 +57,19 @@
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <div data-hidden-for="print"><%= content("firesqueak") %></div>
+        <div data-hidden-for="print"><%= content("firesqueak", "[data-screen]") %></div>
 
-        <article id="experience-firesqueak-1">
+        <article id="experience-firesqueak-1" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details open data-hidden-for="print">
+          <details open>
             <summary>TL;DR</summary>
             <%= content("firesqueak_1", "[data-tldr]") %>
           </details>
 
           <details>
-            <summary>
-              <span data-hidden-for="print">Description</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <div data-hidden-for="print"><%= content("firesqueak_1", "[data-screen]") %></div>
-            <div data-hidden-for="screen"><%= content("firesqueak_1", "[data-tldr]") %></div>
+            <summary>Description</summary>
+            <div><%= content("firesqueak_1", "[data-screen]") %></div>
           </details>
 
           <details open>
@@ -117,21 +113,17 @@
           </details>
         </article>
 
-        <article id="experience-firesqueak-2">
+        <article id="experience-firesqueak-2" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details open data-hidden-for="print">
+          <details open>
             <summary>TL;DR</summary>
             <%= content("firesqueak_2", "[data-tldr]") %>
           </details>
 
           <details>
-            <summary>
-              <span data-hidden-for="print">Description</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <div data-hidden-for="print"><%= content("firesqueak_2", "[data-screen]") %></div>
-            <div data-hidden-for="screen"><%= content("firesqueak_2", "[data-tldr]") %></div>
+            <summary>Description</summary>
+            <div><%= content("firesqueak_2", "[data-screen]") %></div>
           </details>
 
           <details open>
@@ -162,21 +154,17 @@
           </details>
         </article>
 
-        <article id="experience-firesqueak-3">
+        <article id="experience-firesqueak-3" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details open data-hidden-for="print">
+          <details open>
             <summary>TL;DR</summary>
             <%= content("firesqueak_3", "[data-tldr]") %>
           </details>
 
           <details>
-            <summary>
-              <span data-hidden-for="print">Description</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <div data-hidden-for="print"><%= content("firesqueak_3", "[data-screen]") %></div>
-            <div data-hidden-for="screen"><%= content("firesqueak_3", "[data-tldr]") %></div>
+            <summary>Description</summary>
+            <div><%= content("firesqueak_3", "[data-screen]") %></div>
           </details>
 
           <details open>
@@ -196,9 +184,11 @@
             </dl>
           </details>
         </article>
-      </article>
 
-      <div data-hidden-for="screen" data-page-break></div>
+        <div data-hidden-for="screen">
+          <%= content("firesqueak", "[data-print]") %>
+        </div>
+      </article>
 
       <article id="experience-blue-apron">
         <h3><a href="#experience-blue-apron">Blue Apron</a></h3>
@@ -217,16 +207,12 @@
           <%= content("blue_apron", "[data-tldr]") %>
         </details>
 
-        <details>
-          <summary>
-            <span data-hidden-for="print">Description</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <div data-hidden-for="print"><%= content("blue_apron", "[data-screen]") %></div>
-          <div data-hidden-for="screen"><%= content("blue_apron", "[data-tldr]") %></div>
+        <details data-hidden-for="print">
+          <summary>Description</summary>
+          <div><%= content("blue_apron", "[data-screen]") %></div>
         </details>
 
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -270,6 +256,10 @@
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <%= content("blue_apron", "[data-print]") %>
+        </div>
       </article>
 
       <article id="experience-lob">
@@ -289,16 +279,12 @@
           <%= content("lob", "[data-tldr]") %>
         </details>
 
-        <details>
-          <summary>
-            <span data-hidden-for="print">Description</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <div data-hidden-for="print"><%= content("lob", "[data-screen]") %></div>
-          <div data-hidden-for="screen"><%= content("lob", "[data-tldr]") %></div>
+        <details data-hidden-for="print">
+          <summary>Description</summary>
+          <div><%= content("lob", "[data-screen]") %></div>
         </details>
 
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -324,6 +310,10 @@
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <%= content("lob", "[data-print]") %>
+        </div>
       </article>
 
       <article id="experience-walmartlabs">
@@ -343,16 +333,12 @@
           <%= content("walmart_labs", "[data-tldr]") %>
         </details>
 
-        <details>
-          <summary>
-            <span data-hidden-for="print">Description</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <div data-hidden-for="print"><%= content("walmart_labs", "[data-screen]") %></div>
-          <div data-hidden-for="screen"><%= content("walmart_labs", "[data-tldr]") %></div>
+        <details data-hidden-for="print">
+          <summary>Description</summary>
+          <div><%= content("walmart_labs", "[data-screen]") %></div>
         </details>
 
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -382,6 +368,10 @@
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <%= content("walmart_labs", "[data-print]") %>
+        </div>
       </article>
 
       <article id="experience-sendicate">
@@ -401,16 +391,12 @@
           <%= content("sendicate", "[data-tldr]") %>
         </details>
 
-        <details>
-          <summary>
-            <span data-hidden-for="print">Description</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <div data-hidden-for="print"><%= content("sendicate", "[data-screen]") %></div>
-          <div data-hidden-for="screen"><%= content("sendicate", "[data-tldr]") %></div>
+        <details data-hidden-for="print">
+          <summary>Description</summary>
+          <div><%= content("sendicate", "[data-screen]") %></div>
         </details>
 
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -444,9 +430,11 @@
             </div>
           </dl>
         </details>
-      </article>
 
-      <div data-hidden-for="screen" data-page-break></div>
+        <div data-hidden-for="screen">
+          <%= content("sendicate", "[data-print]") %>
+        </div>
+      </article>
 
       <article id="experience-compuweigh">
         <h3><a href="#experience-compuweigh">CompuWeigh</a></h3>
@@ -465,16 +453,12 @@
           <%= content("compuweigh", "[data-tldr]") %>
         </details>
 
-        <details>
-          <summary>
-            <span data-hidden-for="print">Description</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <div data-hidden-for="print"><%= content("compuweigh", "[data-screen]") %></div>
-          <div data-hidden-for="screen"><%= content("compuweigh", "[data-tldr]") %></div>
+        <details data-hidden-for="print">
+          <summary>Description</summary>
+          <div><%= content("compuweigh", "[data-screen]") %></div>
         </details>
 
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -495,6 +479,10 @@
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <%= content("compuweigh", "[data-print]") %>
+        </div>
       </article>
     </section>
 
