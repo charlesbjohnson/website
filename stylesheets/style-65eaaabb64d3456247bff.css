@@ -166,7 +166,7 @@ details summary ~ * {
   border-left: 0.1rem dashed var(--c-gray);
   margin-left: 0.5ch;
   margin-top: 0.5rem;
-  padding: 0 1.5ch;
+  padding-left: 1.5ch;
 }
 
 /* Components::HorizontalRule */

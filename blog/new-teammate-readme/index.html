@@ -13,7 +13,7 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
-    <link rel="stylesheet" href="/stylesheets/style-f5ebb5278b36de0152ebe.css" />
+    <link rel="stylesheet" href="/stylesheets/style-65eaaabb64d3456247bff.css" />
 
     
     <link rel="stylesheet" href="/stylesheets/blog-f2dd56d3d357e68534e18.css" />
@@ -198,21 +198,14 @@ My hope is that this will inspire you to reflect on the things <em>you do</em> a
 
       const match = this.REGEXP.exec($heading.textContent);
 
-      const $fragment = document.createDocumentFragment();
-      const $anchor = document.createElement("a");
-
-      $anchor.href = `#${$heading.id}`;
-      $anchor.textContent = match.groups.text.trim();
-
-      $fragment.append($anchor);
-      if (match.groups.emoji) {
-        const $span = document.createElement("span");
-        $span.textContent = match.groups.emoji;
-        $fragment.append($span);
-      }
+      const $template = document.createElement("template");
+      $template.innerHTML = `
+        <a href="#${$heading.id}">${match.groups.text.trim()}</a>
+        ${match.groups.emoji ? `<span>${match.groups.emoji}</span>` : ''}
+      `
 
       $heading.textContent = null;
-      $heading.append($fragment);
+      $heading.append($template.content);
     }
   }
 

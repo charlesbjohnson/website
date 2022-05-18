@@ -13,7 +13,7 @@
 
 
     <link rel="stylesheet" href="https://unpkg.com/modern-normalize" />
-    <link rel="stylesheet" href="/stylesheets/style-f5ebb5278b36de0152ebe.css" />
+    <link rel="stylesheet" href="/stylesheets/style-65eaaabb64d3456247bff.css" />
 
     
     <style>[data-page="Work"] :is(h2, h3, h4, h5, h6) a {
@@ -27,76 +27,76 @@
 
 [data-page="Work"] h2 {
   font-style: italic;
-  margin-bottom: 1.5em;
   text-align: center;
   text-decoration: underline;
 }
 
-[data-page="Work"] section > :last-child {
-  margin-bottom: 0;
+[data-page="Work"] [data-emoji]::before {
+  content: attr(data-emoji);
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 1ch;
+}
+
+[data-page="Work"] section:nth-of-type(2) address {
+  display: flex;
+  flex-direction: column;
 }
 
 [data-page="Work"] article {
   margin-bottom: 2rem;
 }
 
-[data-page="Work"] article > *:not(article) {
+[data-page="Work"] article > :not(article) {
   margin-bottom: 1rem;
 }
 
-[data-page="Work"] article > header {
+[data-page="Work"] article header {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr minmax(11ch, auto);
 }
 
-[data-page="Work"] article > header > * {
+[data-page="Work"] article header > * {
   display: inline-flex;
   font-size: 0.85em;
   font-weight: var(--f-w-bold);
 }
 
-[data-page="Work"] article > header > :nth-child(1) {
+[data-page="Work"] article header > :nth-child(1) {
   grid-column: 1;
   grid-row: 1;
 }
 
-[data-page="Work"] article > header > time {
+[data-page="Work"] article header time {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
 }
 
-[data-page="Work"] article > header > address {
+[data-page="Work"] article header address {
   grid-column: 1;
   grid-row: 2;
 }
 
 @media screen and (max-width: 375px) {
-  [data-page="Work"] article > header > :nth-child(n) {
+  [data-page="Work"] article header > :nth-child(n) {
     grid-column: 1 / -1;
   }
 
-  [data-page="Work"] article > header > time {
+  [data-page="Work"] article header time {
     grid-row: 2;
     justify-self: unset;
   }
 
-  [data-page="Work"] article > header > address {
+  [data-page="Work"] article header address {
     grid-row: 3;
   }
 }
 
-[data-page="Work"] article > header > [data-emoji]::before {
-  content: attr(data-emoji);
-  font-size: 0.85em;
-  font-weight: normal;
-  margin-right: 1ch;
-}
-
 [data-page="Work"]
   article
-  > header
-  > address
+  header
+  address
   > :first-child:not(:last-child)::after {
   content: ",";
   margin-right: 0.5ch;
@@ -106,73 +106,62 @@
   font-weight: var(--f-w-bold);
 }
 
-[data-page="Work"] article dl > div {
-  column-gap: 0.5ch;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.85em;
-  margin: 0 0 0.25rem;
+[data-page="Work"] article details:first-of-type a {
+  display: block;
 }
 
-[data-page="Work"] article dl :is(dt, dd) {
+[data-page="Work"] article details:last-of-type dl {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85em;
+  row-gap: 0.25rem;
+}
+
+[data-page="Work"] article details:last-of-type dl div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5ch;
+}
+
+[data-page="Work"] article details:last-of-type dl :is(dt, dd) {
   margin-left: 0;
 }
 
-[data-page="Work"] article dl dt {
+[data-page="Work"] article details:last-of-type dl dt {
   flex-grow: 1;
-  font-style: normal;
-  margin-top: 0;
 }
 
-[data-page="Work"] article dl dd {
+[data-page="Work"] article details:last-of-type dl dd {
   border: 0.0625rem solid var(--c-gray);
   padding: 0 0.5ch;
 }
 
-[data-page="Work"] article dl dd + dd {
-  margin-top: 0;
-}
-
 @media screen and (max-width: 475px) {
-  [data-page="Work"] article dl > div {
-    gap: 0.5ch;
-    margin-bottom: 0.5rem;
+  [data-page="Work"] article details:last-of-type dl {
+    row-gap: 0.5rem;
   }
 
-  [data-page="Work"] article dl dt {
+  [data-page="Work"] article details:last-of-type dl dt {
     flex-basis: 100%;
   }
 }
 
 @media screen {
-  [data-hidden-for="print"] {
-    display: revert;
-  }
-
   [data-hidden-for="screen"] {
-    display: none;
+    display: none !important;
   }
 }
 
 @media print {
   :root {
-    --f-sz-base: 0.8;
+    --f-sz-base: 0.585;
   }
 
   [data-hidden-for="print"] {
-    display: none;
-  }
-
-  [data-hidden-for="screen"] {
-    display: revert;
-  }
-
-  [data-page-break] {
-    page-break-after: always;
+    display: none !important;
   }
 
   [data-page="Work"] {
-    margin: 0;
     padding: 0;
     width: 100%;
   }
@@ -181,24 +170,56 @@
     display: none;
   }
 
-  [data-page="Work"] :is(h1, p) {
-    margin-bottom: 0.5em;
+  [data-page="Work"] :is(h1, h2) {
+    color: var(--c-blue);
   }
 
-  [data-page="Work"] h1 ~ address {
+  [data-page="Work"] :is(h1, p, article) {
+    margin-bottom: 0;
+  }
+
+  [data-page="Work"] section:nth-of-type(2) address {
     margin: 0.5rem 0;
   }
 
   [data-page="Work"] h2 {
-    margin: 0.75em 0;
+    border-bottom: 0.125em solid var(--c-blue);
+    margin: 0.5em 0;
+    text-align: left;
+    text-decoration: none;
   }
 
-  [data-page="Work"] article {
-    margin-bottom: 1rem;
+  [data-page="Work"] article > :not(article) {
+    margin-bottom: 0.35rem;
   }
 
-  [data-page="Work"] article > *:not(article) {
-    margin-bottom: 0.5rem;
+  [data-page="Work"] article header time {
+    justify-self: unset;
+  }
+
+  [data-page="Work"] article :last-child ul {
+    list-style-position: inside;
+    margin: 0;
+    padding-left: 0.75ex;
+  }
+
+  [data-page="Work"] section:nth-of-type(4) > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  [data-page="Work"] section:nth-of-type(4) > div dl {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  [data-page="Work"] section:nth-of-type(4) > div dl dt {
+    font-weight: var(--f-w-bolder);
+  }
+
+  [data-page="Work"] section:nth-of-type(4) > div dl dd {
+    margin-left: 0;
   }
 }
 </style>
@@ -221,34 +242,25 @@
 
     <main>
       
-    <div data-hidden-for="print">
+    <section data-hidden-for="print">
       <h1>Work</h1>
+      <p>I’m seeking opportunities as a full-stack or backend engineer.
+My requirements for a new role (using terminology from <a href="https://www.keyvalues.com">Key Values</a>) are:</p>
 
-      <p>
-        I'm currently seeking opportunities as a full-stack or backend engineer.
+<ul>
+  <li>Open Communication</li>
+  <li>Remote OK</li>
+  <li>Flexible Work Arrangements</li>
+  <li>Work/Life Balance</li>
+</ul>
 
-        My requirements for a new role (using terminology from <a href="https://www.keyvalues.com/" target="_blank">Key Values</a>) are:
-      </p>
+<p>Are you a manager considering hiring me? <a href="/blog/new-manager-readme/">Here’s a post</a> to help you learn more about me.</p>
 
-      <ul>
-        <li>Open Communication</li>
-        <li>Remote OK</li>
-        <li>Flexible Work Arrangements</li>
-        <li>Work/Life Balance</li>
-      </ul>
+<p>Are you an engineer considering working with me? I <a href="/blog/new-teammate-readme/">have a post</a> for you
+and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.</p>
 
-      <p>
-        Are you a manager considering hiring me? <a href="/blog/new-manager-readme/">Here's a post</a> to help you learn more about me.
-      </p>
+<p>Please <a href="mailto:mail@cbjohnson.io">email me</a> for more information.</p>
 
-      <p>
-        Are you an engineer considering working with me? I <a href="/blog/new-teammate-readme/">have a post</a> for you
-        and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.
-      </p>
-
-      <p>
-        Please <a href="mailto:mail@cbjohnson.io">email me</a> for more information.
-      </p>
 
       <!--
          ██   ██ ███████ ██    ██ ██
@@ -259,39 +271,27 @@
 
         If you're reading this and you've decided to contact me then make sure to include a 🔬 in your message so that I know to prioritize your inquiry!
       -->
+    </section>
 
-      <hr/>
-    </div>
-
-    <div data-hidden-for="screen">
+    <section data-hidden-for="screen">
       <h1>Charles B Johnson</h1>
       <strong>Engineer of Soft Wares</strong>
 
       <address>
-        <div>
-          <span>📭</span>
-          <a href="mailto:mail@cbjohnson.io">mail@cbjohnson.io</a>
-        </div>
-
-        <div>
-          <span>🌐</span>
-          <a href="https://cbjohnson.io">cbjohnson.io</a>
-        </div>
-
-        <div>
-          <span>💻</span>
-          <a href="https://github.com/charlesbjohnson">github.com/charlesbjohnson</a>
-        </div>
+        <a href="mailto:mail@cbjohnson.io" rel="nofollow" data-emoji="📭">mail@cbjohnson.io</a>
+        <span data-emoji="🗺">Austin, TX</span>
+        <a href="tel:+12035362706" rel="nofollow" data-emoji="☎">+1 (203) 536 2706</a>
+        <a href="https://cbjohnson.io" data-emoji="🌐">cbjohnson.io</a>
+        <a href="https://github.com/charlesbjohnson" data-emoji="💻">github.com/charlesbjohnson</a>
+        <a href="https://www.linkedin.com/in/charles-johnson-89250a111" data-emoji="💬">linkedin.com/in/charles-johnson-89250a111</a>
       </address>
 
-      <p>Hi, I&#8217;m Charlie. I&#8217;m a software engineer with nearly 10 years of experience.</p>
+      <p>Full-stack software engineer with nearly 10 years of experience, 6 years of experience in the e-commerce space,
+    and a history of delivering value across a variety of projects.</p>
 
-<p>I build things for the web often in the e-commerce space, but I primarily just care about making <em>good software</em> and <em>making software</em> good.
-I&#8217;m looking for a team that shares these values.</p>
+    </section>
 
-<p>Please <a href="https://cbjohnson.io/work/">visit my website</a> to learn more about my work history and consider <a href="mailto:mail@cbjohnson.io">sending me an email</a>.</p>
-
-    </div>
+    <hr data-hidden-for="print" />
 
     <section>
       <h2>Experience</h2>
@@ -305,54 +305,49 @@ I&#8217;m looking for a team that shares these values.</p>
           <address data-emoji="🗺">Remote</address>
         </header>
 
-        <div data-hidden-for="print">
-          <p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
-I was a consultant for two of their clients and I also built one of the company&#8217;s products.</p>
+        <div data-hidden-for="print"><p>Firesqueak is an e-commerce consultancy that I worked with as a contractor and later as an employee.
+I was a consultant for two of their clients and I also built one of the company’s products.</p>
+</div>
 
-        </div>
-
-        <article id="experience-firesqueak-1">
+        <article id="experience-firesqueak-1" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-1">E-Commerce Product</a></h4>
 
-          <details data-hidden-for="print">
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Designed and built an e-commerce product for a software consultancy.</p>
+
+          </details>
+
+          <details>
             <summary>Description</summary>
-            <div>
-              <p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.
-Inspired by the shops that sold out of remote work equipment at the start of the COVID-19 pandemic,
-    we decided to build a product that would provide stores with in-stock notification behavior.
-We started with support for Shopify stores first, but we designed the app to work with any e-commerce platform.</p>
+            <div><p>I built the V1 of an e-commerce product for Firesqueak with one other engineer.</p>
+
+<p>Inspired by shops that had sold out of remote work equipment at the start of the COVID-19 pandemic,
+    we decided to build a product that would give stores the ability to provide in-stock notifications.
+We started with support for Shopify but designed the app with other e-commerce platforms in-mind.</p>
 
 <p>I researched, designed, and developed the app. The core features were:</p>
 
 <ul>
   <li>Support for SMS in-stock notifications.</li>
-  <li>An optional code snippet to add an in-stock notification UI to a <abbr title="Product Detail Page">PDP</abbr>.</li>
+  <li>An optional JavaScript snippet to add an in-stock notification UI to a <abbr title="Product Detail Page">PDP</abbr>.</li>
   <li>A REST API backend that the in-stock notification UI integrated with.</li>
   <li>A <abbr title="Single Page Application">SPA</abbr> dashboard for the merchant admin experience, which included:
     <ul>
       <li>Templating to customize the notification messaging.</li>
-      <li>Previewing to trial the app and to verify template customizations.</li>
+      <li>Message previewing to verify template customizations.</li>
       <li>Reporting to highlight the most in-demand products.</li>
       <li>Charting to display the number of messages sent per day.</li>
-      <li><abbr title="JSON Web Token">JWT</abbr> authentication to embed the UI within Shopify&#8217;s admin dashboard.</li>
+      <li><abbr title="JSON Web Token">JWT</abbr> authentication to embed the UI within Shopify’s admin dashboard.</li>
     </ul>
   </li>
-  <li><abbr title="Open Authorization">OAuth</abbr> authorization to support Shopify&#8217;s app installation flow.</li>
+  <li><abbr title="Open Authorization">OAuth</abbr> authorization to support Shopify’s app installation flow.</li>
 </ul>
 
 <p>I also handled the operational work by setting up hosting, provisioning, <abbr title="Continuous Integration">CI</abbr>/<abbr title="Continuous Deployment">CD</abbr>, and monitoring.
 The product was a V1, but the technical foundation was mature.</p>
 
-
-            </div>
-          </details>
-
-          <details open>
-            <summary>
-              <span data-hidden-for="print">TL;DR</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <p>Designed and built an e-commerce product for a software consultancy.</p>
+</div>
           </details>
 
           <details open>
@@ -360,9 +355,10 @@ The product was a V1, but the technical foundation was mature.</p>
             <dl>
               <div>
                 <dt>Frontend (Front)</dt>
+                <dd>HTML</dd>
+                <dd>CSS</dd>
                 <dd>JavaScript</dd>
                 <dd>React</dd>
-                <dd>GraphQL</dd>
               </div>
 
               <div>
@@ -370,6 +366,7 @@ The product was a V1, but the technical foundation was mature.</p>
                 <dd>JavaScript</dd>
                 <dd>Node</dd>
                 <dd>Next</dd>
+                <dd>Fastify</dd>
               </div>
 
               <div>
@@ -394,16 +391,22 @@ The product was a V1, but the technical foundation was mature.</p>
           </details>
         </article>
 
-        <article id="experience-firesqueak-2">
+        <article id="experience-firesqueak-2" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-2">Client Project - Footwear Brand</a></h4>
 
-          <details data-hidden-for="print">
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Built, iterated, and maintained the frontend of an e-commerce site for a footwear brand.</p>
+
+          </details>
+
+          <details>
             <summary>Description</summary>
-            <div>
-              <p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.
-The client had an existing e-commerce site but, due to the limitations of their platform,
-    they had issues with content management when developing new campaigns.
-I worked with one other Firesqueak engineer to build the Shopify theme frontend and to help the client setup their integration between Shopify and SAP on the backend.</p>
+            <div><p>I built a new Shopify site for a footwear brand that specializes in work-wear and clothing for outdoor activities.</p>
+
+<p>The client had an existing e-commerce site but, due to the limitations of their platform,
+    they had issues with velocity and content management.
+I worked with one other Firesqueak engineer to build the Shopify theme frontend and to support the client’s Shopify/SAP integration on the backend.</p>
 
 <p>This project was a test of my frontend development skills, but my teammate and I divided work based on front-of-the-frontend vs back-of-the-frontend lines.
 I focused on the back-of-the-frontend by:</p>
@@ -430,18 +433,9 @@ I focused on the back-of-the-frontend by:</p>
 </ul>
 
 <p>The project was intense but we delivered to spec, on-time, and with no production issues.
-The project was a success and we exceeded the client&#8217;s expectations with the site&#8217;s extensibility and robustness.</p>
+The project was a success and we exceeded the client’s expectations with the site’s extensibility and robustness.</p>
 
-
-            </div>
-          </details>
-
-          <details open>
-            <summary>
-              <span data-hidden-for="print">TL;DR</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <p>Built the frontend of a new e-commerce site for a footwear brand.</p>
+</div>
           </details>
 
           <details open>
@@ -472,30 +466,27 @@ The project was a success and we exceeded the client&#8217;s expectations with t
           </details>
         </article>
 
-        <article id="experience-firesqueak-3">
+        <article id="experience-firesqueak-3" data-hidden-for="print">
           <h4><a href="#experience-firesqueak-3">Client Project - Footwear Brand</a></h4>
 
-          <details data-hidden-for="print">
+          <details open>
+            <summary>TL;DR</summary>
+            <p>Built an e-commerce ETL pipeline for a footwear brand.</p>
+
+          </details>
+
+          <details>
             <summary>Description</summary>
-            <div>
-              <p>I built an <abbr title="Extract, Transform, Load">ETL</abbr> pipeline for the finance team of a popular, eco-friendly footwear brand.
-The client operated several Shopify sites but needed to collect transaction and payment data into SAP as a single source of truth for accounting.
+            <div><p>I built an <abbr title="Extract, Transform, Load">ETL</abbr> pipeline for the finance team of a popular, eco-friendly footwear brand.</p>
+
+<p>The client operated several geographically distinct Shopify sites but needed to collect all transaction and payment data into SAP as a single source of truth for accounting.
 They had a single in-house engineer and a business stakeholder that I partnered with, but otherwise I worked independently yet transparently.</p>
 
 <p>In the first week I was able to create a technical spec from loose business requirements and by the following week I had a functioning V1.
 I delivered well ahead-of-schedule with zero production issues.
 The client saved hundreds of thousands of dollars that they would have otherwise needed to pay to SAP consultants.</p>
 
-
-            </div>
-          </details>
-
-          <details open>
-            <summary>
-              <span data-hidden-for="print">TL;DR</span>
-              <span data-hidden-for="screen">Summary</span>
-            </summary>
-            <p>Built an ETL pipeline for a footwear brand.</p>
+</div>
           </details>
 
           <details open>
@@ -515,9 +506,19 @@ The client saved hundreds of thousands of dollars that they would have otherwise
             </dl>
           </details>
         </article>
-      </article>
 
-      <div data-hidden-for="screen" data-page-break></div>
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Designed and built a Shopify app for inventory notifications targeting medium-to-large sized stores.</li>
+  <li>Led a small team in the development, integration, and maintenance of a Shopify site for a footwear brand;
+  generated $1,000,000+ in client revenue in 3 months of launch.</li>
+  <li>Created a Shopify to ERP integration for a footwear brand;
+  saved the client $250,000+ in SAP consultant fees and months of development time.</li>
+  <li>Met with clients, wrote specifications, and estimated development effort during initial contract engagements.</li>
+</ul>
+
+        </div>
+      </article>
 
       <article id="experience-blue-apron">
         <h3><a href="#experience-blue-apron">Blue Apron</a></h3>
@@ -531,23 +532,29 @@ The client saved hundreds of thousands of dollars that they would have otherwise
           </address>
         </header>
 
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <p>Contributed to a large e-commerce codebase for a meal-kit delivery company.</p>
+
+        </details>
+
         <details data-hidden-for="print">
           <summary>Description</summary>
-          <div>
-            <p>Blue Apron is a meal-kit delivery company.
-The engineering organization had fewer than 100 employees when I joined as a Backend Engineer.
+          <div><p>Blue Apron is a meal-kit delivery company.
+The engineering organization had fewer than 100 employees when I joined as a Backend Engineer on the <em>Consumer</em> team.
 I joined the <em>Delight</em> squad but the team was later rolled into the <em>Engagement</em> squad.
-Delight&#8217;s priorities were a subset of Engagement&#8217;s; the former focused on customer retention while the latter prioritized it alongside monetization.</p>
+Delight’s priorities were a subset of Engagement’s; the former focused on customer retention while the latter prioritized retention alongside monetization.</p>
 
 <p>One of the biggest challenges at Blue Apron was in maintaining the written-from-scratch e-commerce engine.
 The custom-built nature of the engine allowed the storefront to be deeply integrated with fulfillment on the backend,
-    but it came at the cost of quality-of-life features.
-With this in mind, I took ownership over <em>Address Management</em> since it had been historically overlooked or de-prioritized.
+    but at the expense of missing standard features and coupling to vast amounts of tech debt.
+With this in mind, I took ownership over <em>Address Management</em> since it had been historically overlooked and de-prioritized.
 I worked on:</p>
 
 <ul>
   <li>Leading the implementation of <em>Temporary Address Change</em> for deliveries.</li>
-  <li>Fixing design issues and bugs that had been the cause of frequent meal-kit mis-deliveries.</li>
+  <li>Fixing design issues and bugs that had been the cause of frequent mis-deliveries.</li>
+  <li>Coordinating with the WMS team on the backend to setup address verification before shipping label generation.</li>
 </ul>
 
 <p>Temporary Address Change was a conceptually simple feature, it allowed customers to change the delivery address of a single order without having to change their subscription.
@@ -556,32 +563,26 @@ I implemented the backend of the feature and I was also the tech lead for the We
 <p>Aside from Address Management, I acted as a technical leader by:</p>
 
 <ul>
-  <li>Refactoring trickier parts of the codebase that were not well-understood.</li>
-  <li>Actively reviewing code to unblock my peers, regardless of their team.</li>
+  <li>Refactoring complicated parts of the codebase that were not well-understood.</li>
   <li>Documenting older parts of the codebase that were not well-known.</li>
+  <li>Offering guidance to peers in architecture/design reviews, regardless of team.</li>
+  <li>Reviewing code to unblock peers, regardless of team.</li>
   <li>Mentoring junior engineers.</li>
 </ul>
 
-<p>My experience at Blue Apron was chaotic since I joined in-between two rounds of layoffs.
-I shifted between several projects that started and stopped as the company&#8217;s priorities changed,
-    so I did not have the opportunity to complete some of the projects that I worked on.</p>
-
-          </div>
+<p>My experience at Blue Apron was chaotic since I joined in-between rounds of layoffs.
+I shifted between several projects that started and stopped as the company’s priorities changed,
+    so I did not have the opportunity to complete every project that I worked on.</p>
+</div>
         </details>
 
-        <details open>
-          <summary>
-            <span data-hidden-for="print">TL;DR</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <p>Maintained a large, proprietary e-commerce codebase for a popular meal-kit delivery company.</p>
-        </details>
-
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
               <dt>Frontend</dt>
+              <dd>HTML</dd>
+              <dd>CSS</dd>
               <dd>JavaScript</dd>
               <dd>React</dd>
               <dd>Redux</dd>
@@ -607,15 +608,29 @@ I shifted between several projects that started and stopped as the company&#8217
               <dd>PostgreSQL</dd>
               <dd>Redis</dd>
               <dd>Kafka</dd>
+              <dd>BigQuery</dd>
+              <dd>Elasticsearch</dd>
             </div>
 
             <div>
               <dt>Platform</dt>
-              <dd>K8S</dd>
+              <dd>Docker</dd>
+              <dd>Kubernetes</dd>
               <dd>GCP</dd>
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Owned feature development and maintenance of Address Management on the Consumer team;
+  eliminated tech debt and reduced address-related CX issues by 90%.</li>
+  <li>Built address validation reporting for 50,000,000+ addresses;
+  enabled WMS team to verify addresses before shipping label generation to avoid wasting shipments.</li>
+  <li>Participated in architecture and design reviews for all Consumer engineering projects.</li>
+</ul>
+
+        </div>
       </article>
 
       <article id="experience-lob">
@@ -630,65 +645,60 @@ I shifted between several projects that started and stopped as the company&#8217
           </address>
         </header>
 
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <p>Led DevSecOps and fulfillment optimizations for a direct mail API startup.</p>
+
+        </details>
+
         <details data-hidden-for="print">
           <summary>Description</summary>
-          <div>
-            <p>Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
-The company offers a SAAS product in the form of RESTful APIs for sending physical mail and validating addresses.
-The Print &amp; Mail API handled several million requests per month.</p>
+          <div><p>Lob is a startup that had less than 20 employees when I joined; I was one of 4 engineers on the team.
+The company offers a SAAS product in the form of RESTful APIs for sending physical mail and verifying addresses.
+The Print &amp; Mail API handled tens of thousands of requests per day.</p>
 
 <p>The engineering team was small and without defined roles so we self-assigned responsibilities based on interest and capability.
-I had more experience with cloud infrastructure, so I took DevOps responsibilities.</p>
+I had more experience with cloud infrastructure, so I took DevSecOps responsibilities.</p>
 
 <p>One of the first projects I worked on was to setup auto-scaling for the Print &amp; Mail API infrastructure.
-This turned out to be a larger than expected task given that everything was manually managed through the AWS web interface.
+This turned out to be a larger than expected task given that all the infrastructure was manually managed through the AWS web interface.
 My approach was to:</p>
 
 <ul>
-  <li>Introduce Terraform to get a handle on the critical infrastructure.</li>
-  <li>Dockerize the application to automate provisioning.</li>
-  <li>Setup a parallel set of infrastructure to use AWS ECS for scheduling containers.</li>
+  <li>Introduce Terraform to get a handle on critical infrastructure.</li>
+  <li>Containerize the application using Docker to automate provisioning.</li>
+  <li>Setup a parallel set of infrastructure using AWS ECS for scheduling containers.</li>
   <li>Cut-over from the old infrastructure to the new infrastructure.</li>
 </ul>
 
-<p>The migration completed without any issues and we were able to leverage AWS features to manage auto-scaling with almost no custom code.
+<p>The migration completed without any issues and we were able to leverage AWS to manage auto-scaling with minimal glue code.
 There were other benefits and improvements from this approach, including:</p>
 
 <ul>
-  <li>Codified infrastructure.</li>
-  <li>Explicit, documented provisioning.</li>
-  <li>Automated deployments with immediate rollbacks.</li>
+  <li>Codified and hardened infrastructure with a paper-trail for auditing changes.</li>
+  <li>Explicit, documented, and packaged provisioning to mitigate risks from dependencies.</li>
+  <li>Automated deployments with immediate rollbacks to limit downtime when resolving regressions.</li>
 </ul>
 
-<p>Aside from leading DevOps initiatives, I also became the team lead for the <em>Partner Operations</em> team.
+<p>Aside from leading DevSecOps, I also became the lead for the <em>Partner Operations</em> team.
 The Partner Operations team was responsible for optimally routing requests on the backend to the Partners that fulfilled them.
 Geographic proximity, capability, and available capacity were some of the factors considered when routing to a Partner.</p>
 
-<p>My role on the Partner Operations team was to increase throughput and reduce failure rates.
+<p>My role on the Partner Operations team was to increase throughput and improve service reliability.
 This involved:</p>
 
 <ul>
-  <li>Handling and resolving routing failures as part of an on-call schedule.</li>
-  <li>Identifying and reducing bottlenecks in the codebase, infrastructure, and manual procedures.</li>
+  <li>Reducing bottlenecks and single-points-of-failure through partitioning and scaling.</li>
+  <li>Handling and resolving failures as part of an on-call schedule.</li>
   <li>Researching, designing, and prototyping a V2 of the backend architecture.</li>
 </ul>
 
 <p>This was a difficult role since the on-call burden was high.
-I departed the company before I could deliver the V2 of the backend,
-    but I left the team with my blueprints after having already exhausted the optimizations to the existing code and infrastructure.</p>
-
-          </div>
+I was not able to deliver a V2 of the backend, but I exhausted most optimization opportunities of the existing code and infrastructure.</p>
+</div>
         </details>
 
-        <details open>
-          <summary>
-            <span data-hidden-for="print">TL;DR</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <p>Led DevOps and optimized the fulfillment backend for a startup focused on direct mail.</p>
-        </details>
-
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -696,6 +706,7 @@ I departed the company before I could deliver the V2 of the backend,
               <dd>JavaScript</dd>
               <dd>Node</dd>
               <dd>Hapi</dd>
+              <dd>Go</dd>
             </div>
 
             <div>
@@ -713,6 +724,16 @@ I departed the company before I could deliver the V2 of the backend,
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Led the Partner Operations team; optimized job routing and processing; partitioned and scaled fulfillment services.</li>
+  <li>Instantiated a DevSecOps culture by codifying, automating, and hardening infrastructure;
+  increased average uptime of the core Print &amp; Mail API from 96.1% to 99.8%.</li>
+  <li>Mentored junior engineers and interns.</li>
+</ul>
+
+        </div>
       </article>
 
       <article id="experience-walmartlabs">
@@ -727,27 +748,32 @@ I departed the company before I could deliver the V2 of the backend,
           </address>
         </header>
 
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <p>Revamped an application that managed product listing pages on walmart.com.</p>
+
+        </details>
+
         <details data-hidden-for="print">
           <summary>Description</summary>
-          <div>
-            <p>@WalmartLabs was the largest organization that I have worked for.
-I joined the SEO team as a frontend engineer, but what I actually did was full-stack web development.
-The majority of my teammates were data engineers, so I learned that <em>frontend</em> was a relative term.</p>
+          <div><p>@WalmartLabs was the largest organization that I have worked for.
+I joined the <em>SEO</em> team as a frontend engineer, but what I actually did was full-stack web development.
+Most of my teammates were data engineers, so I learned that <em>frontend</em> was a relative term.</p>
 
 <p>The SEO team had several responsibilities, but most of the work centered around support for the <em>Topic Page</em> platform.
-Topic Pages were a large set of product listing pages on <code>walmart.com</code> that were automatically generated based on data about frequently searched keywords.</p>
+Topic Pages were a large set of product listing pages on walmart.com that were automatically generated based on data about frequently searched keywords.</p>
 
-<p>Topic Pages were too narrow and too great in number to fit into the site&#8217;s category-based navigation, but they ranked highly in organic search engine results.
-They drove hundreds of thousands of visits in traffic and hundreds of thousands of dollars in revenue to <code>walmart.com</code> every day.</p>
+<p>Topic Pages were too narrow and too great in number to fit into the site’s category-based navigation, but they ranked highly in organic search engine results.
+They drove hundreds of thousands of visits in traffic and hundreds of thousands of dollars in revenue to walmart.com every day.</p>
 
-<p>The Topic Page platform consisted of dozens of services, so every member of the team acted as a custodian of at least one service.
+<p>The Topic Page platform consisted of dozens of services, so every member of the team acted as a custodian of at least one or two services.
 One of the services I maintained was an internal application known as <em>Mason</em>, a CMS-like tool for Topic Pages.</p>
 
-<p>Mason was on maintenance mode when I first started working on it.
+<p>Mason was on life support when I first started working on it.
 The app was buggy, hard to use, and almost no one understood its purpose or its capabilities.
 The SEO team mainly used it as a manual override for when there were issues with the generation of certain Topic Pages.</p>
 
-<p>When the SEO team started to port the Topic Page platform to support <code>samsclub.com</code> it became clear that Mason would need significant rework.
+<p>When the SEO team started to port the Topic Page platform to support samsclub.com it became clear that Mason needed significant rework.
 As part of the porting effort, I:</p>
 
 <ul>
@@ -759,27 +785,20 @@ As part of the porting effort, I:</p>
   <li>Migrated from <em>pet</em> servers to automated, internal cloud hosting.</li>
 </ul>
 
-<p>I was able to make Mason multi-tenant to support Sam&#8217;s Club while simultaneously increasing usage among the Site Merchandising team on the Walmart side.
-Mason became a go-to tool for setting up campaigns in partnership with large brands; a new use case and source of revenue that became possible as a direct result of my efforts.</p>
+<p>I was able to make Mason multi-tenant to support Sam’s Club while simultaneously increasing usage among Walmart’s Site Merchandising team.
+Mason became a go-to tool for setting up campaigns in partnership with large brands; a new use case for Mason and a new revenue source that became possible as a direct result of my efforts.</p>
 
-<p>Aside from Mason, I was also contributor to the customer-facing frontend of Topic Pages on <code>walmart.com</code> and the backing web services.</p>
-
-          </div>
+<p>Aside from Mason, I was also contributor to the customer-facing frontend of Topic Pages on walmart.com and the backing web services.</p>
+</div>
         </details>
 
-        <details open>
-          <summary>
-            <span data-hidden-for="print">TL;DR</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <p>Maintained an application that managed product listing pages on <code>walmart.com</code>.</p>
-        </details>
-
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
               <dt>Frontend</dt>
+              <dd>HTML</dd>
+              <dd>CSS</dd>
               <dd>JavaScript</dd>
               <dd>Angular</dd>
               <dd>Backbone</dd>
@@ -796,11 +815,25 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
             <div>
               <dt>Data</dt>
               <dd>MongoDB</dd>
+              <dd>Redis</dd>
+              <dd>Memcached</dd>
               <dd>Cassandra</dd>
               <dd>MySQL</dd>
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Revamped the Topic page CMS on the SEO team; implemented multi-tenancy for walmart.com and samsclub.com.</li>
+  <li>Drove increased usage from Site Merchandisers; enabled brand-partnership campaigns on walmart.com via Topic pages.</li>
+  <li>Squashed bugs and created user documentation for the Topic page CMS;
+  reduced weekly internal support requests by 60%.</li>
+  <li>Implemented caching in the Topic page frontend services layer, lowering p99 latency by 400%.</li>
+  <li>Mentored junior engineers and interns.</li>
+</ul>
+
+        </div>
       </article>
 
       <article id="experience-sendicate">
@@ -815,11 +848,16 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
           </address>
         </header>
 
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <p>Extended an email marketing e-commerce product for a startup.</p>
+
+        </details>
+
         <details data-hidden-for="print">
           <summary>Description</summary>
-          <div>
-            <p>Sendicate was a startup with a team consisting of just the two co-founders and myself.
-The company&#8217;s main product was a competitor to Mailchimp, but I joined to work on a new product called <em>Sellout</em>.
+          <div><p>Sendicate was a startup with a team consisting of just the two co-founders and myself.
+The company’s main product was a competitor to Mailchimp, but I joined to work on a new product called <em>Sellout</em>.
 Sellout was an automated email marketing app for Shopify and Bigcommerce stores.</p>
 
 <p>The headline feature I delivered was <em>Manual Emails</em>.
@@ -830,7 +868,7 @@ With this project, I:</p>
 
 <ul>
   <li>Selected a minimal, conceptually simple set of dependencies.</li>
-  <li>Made my first contribution to the <abbr title="Open Source Software">OSS</abbr> community via an improvement to one of the Bootstrap framework&#8217;s interactive components.</li>
+  <li>Made my first contribution to the <abbr title="Open Source Software">OSS</abbr> community via an improvement to one of the Bootstrap framework’s interactive components.</li>
 </ul>
 
 <p>This was my first large JavaScript project, but I was able to ship and the feature launch was a success.</p>
@@ -845,26 +883,19 @@ During that time, I:</p>
   <li>Fixed bugs and fielded technical customer support.</li>
 </ul>
 
-<p>I didn&#8217;t ship any new features,
+<p>I didn’t ship any new features,
     but I learned a great deal about operating a SAAS product while I was on my own.</p>
 
-
-          </div>
+</div>
         </details>
 
-        <details open>
-          <summary>
-            <span data-hidden-for="print">TL;DR</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <p>Extended and maintained an e-commerce product for a startup focused on email marketing.</p>
-        </details>
-
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
               <dt>Frontend</dt>
+              <dd>HTML</dd>
+              <dd>CSS</dd>
               <dd>JavaScript</dd>
               <dd>Backbone</dd>
               <dd>Vue</dd>
@@ -892,9 +923,14 @@ During that time, I:</p>
             </div>
           </dl>
         </details>
-      </article>
 
-      <div data-hidden-for="screen" data-page-break></div>
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Extended and maintained an email marketing app targeting small-sized Shopify and Bigcommerce stores.</li>
+</ul>
+
+        </div>
+      </article>
 
       <article id="experience-compuweigh">
         <h3><a href="#experience-compuweigh">CompuWeigh</a></h3>
@@ -908,10 +944,15 @@ During that time, I:</p>
           </address>
         </header>
 
+        <details open data-hidden-for="print">
+          <summary>TL;DR</summary>
+          <p>Learned real-world {hard,soft}ware development at a company in the grain industry.</p>
+
+        </details>
+
         <details data-hidden-for="print">
           <summary>Description</summary>
-          <div>
-            <p>CompuWeigh is a small, though mature, company that specializes in integrated hardware and software for the grain industry.
+          <div><p>CompuWeigh is a small, mature, company that specializes in integrated hardware and software for the grain industry.
 Their products are for industrial automation or logistics management.</p>
 
 <p>Given that this was my first job as a software engineer, this role was more of a learning opportunity for me.
@@ -920,19 +961,10 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
 <p>In one of my last projects I was able to tinker with creating a web service for a .NET Micro Framework device (akin to MicroPython or Arduino),
     which served as my introduction to web development.</p>
 
-
-          </div>
+</div>
         </details>
 
-        <details open>
-          <summary>
-            <span data-hidden-for="print">TL;DR</span>
-            <span data-hidden-for="screen">Summary</span>
-          </summary>
-          <p>Learned real world software engineering at a (hard/soft)ware company in the grain industry.</p>
-        </details>
-
-        <details open>
+        <details open data-hidden-for="print">
           <summary>Tech</summary>
           <dl>
             <div>
@@ -953,7 +985,72 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
             </div>
           </dl>
         </details>
+
+        <div data-hidden-for="screen">
+          <ul>
+  <li>Learned real-world software engineering at a hardware/software company.</li>
+</ul>
+
+        </div>
       </article>
+    </section>
+
+    <section data-hidden-for="screen">
+      <h2>Skills</h2>
+
+      <div>
+        <dl>
+          <dt>Programming</dt>
+          <dd>Ruby</dd>
+          <dd>JavaScript</dd>
+          <dd>Bash</dd>
+          <dd>Lua</dd>
+        </dl>
+
+        <dl>
+          <dt>Frontend (front)</dt>
+          <dd>HTML</dd>
+          <dd>CSS, SCSS, SASS</dd>
+          <dd>Stimulus, React</dd>
+          <dd>Accessibility, SEO</dd>
+        </dl>
+
+        <dl>
+          <dt>Frontend (back)</dt>
+          <dd>Rollup, Webpack</dd>
+          <dd>Next</dd>
+        </dl>
+
+        <dl>
+          <dt>Backend</dt>
+          <dd>Rails</dd>
+          <dd>Node</dd>
+          <dd>Express, Fastify</dd>
+        </dl>
+
+        <dl>
+          <dt>Data</dt>
+          <dd>SQL, NoSQL</dd>
+          <dd>PostgreSQL, MySQL</dd>
+          <dd>Redis</dd>
+        </dl>
+
+        <dl>
+          <dt>Platform</dt>
+          <dd>Amazon Web Services</dd>
+          <dd>Docker</dd>
+          <dd>Terraform</dd>
+          <dd>GNU/Linux, UNIX</dd>
+        </dl>
+
+        <dl>
+          <dt>Other</dt>
+          <dd>OOP</dd>
+          <dd>APIs</dd>
+          <dd>REST, GraphQL</dd>
+          <dd>Git, GitHub, JIRA</dd>
+        </dl>
+      </div>
     </section>
 
     <section>
@@ -976,6 +1073,37 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
     </main>
 
     
+    <script type="module">class Work {
+  static setup() {
+    for (const $experience of this.$experiences) {
+      if ($experience.querySelector("article")) {
+        continue;
+      }
+
+      let [$tldr, $description] = $experience.querySelectorAll("details");
+      $description = $description.querySelector("summary");
+      $tldr = $tldr.querySelector("p");
+
+      $description.id = `${$experience.id}-description`;
+      $tldr.insertAdjacentHTML(
+        "beforeend",
+        `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
+      );
+    }
+  }
+
+  static get $experiences() {
+    return this.$page.querySelectorAll(`article[id^="experience-"]`);
+  }
+
+  static get $page() {
+    return document.querySelector(`[data-page^="Work"]`);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => Work.setup());
+</script>
+  
   </body>
 </html>
 
