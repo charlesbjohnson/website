@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      PHONE: '${{ secrets.PHONE }}'
       ruby: '3.1'
 
     steps:

@@ -24,20 +24,11 @@
       <strong>Engineer of Soft Wares</strong>
 
       <address>
-        <div>
-          <span>📭</span>
-          <a href="mailto:<%= :: Site.email %>"><%= ::Site.email %></a>
-        </div>
-
-        <div>
-          <span>🌐</span>
-          <a href="<%= ::Site.uri %>"><%= ::Site.domain %></a>
-        </div>
-
-        <div>
-          <span>💻</span>
-          <a href="<%= ::Site.github_url %>"><%= ::Site.github_url.to_s.gsub("#{::Site.github_url.scheme}://", "") %></a>
-        </div>
+        <a href="mailto:<%= ::Site.email %>" rel="nofollow" data-emoji="📭"><%= ::Site.email %></a>
+        <span data-emoji="🗺">Austin, TX</span>
+        <a href="tel:<%= ::Site.phone.tr("() ", "") %>" rel="nofollow" data-emoji="☎"><%= ::Site.phone %></a>
+        <a href="<%= ::Site.uri %>" data-emoji="🌐"><%= ::Site.domain %></a>
+        <a href="<%= ::Site.github_url %>" data-emoji="💻"><%= ::Site.github_url.to_s.gsub("#{::Site.github_url.scheme}://", "") %></a>
       </address>
 
       <%= content("introduction", "[data-print]") %>

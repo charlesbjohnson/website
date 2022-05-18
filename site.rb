@@ -18,6 +18,10 @@ class Site
       "mail@#{domain}"
     end
 
+    def phone
+      ENV.fetch("PHONE", "+1 (000) 000 000")
+    end
+
     def github_url
       @github ||= URI::HTTPS.build(host: "github.com", path: "/charlesbjohnson")
     end

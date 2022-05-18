@@ -13,6 +13,18 @@
   text-decoration: underline;
 }
 
+[data-page="Work"] [data-emoji]::before {
+  content: attr(data-emoji);
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 1ch;
+}
+
+[data-page="Work"] section:nth-of-type(2) > address {
+  display: flex;
+  flex-direction: column;
+}
+
 [data-page="Work"] article {
   margin-bottom: 2rem;
 }
@@ -61,13 +73,6 @@
   [data-page="Work"] article > header > address {
     grid-row: 3;
   }
-}
-
-[data-page="Work"] article > header > [data-emoji]::before {
-  content: attr(data-emoji);
-  font-size: 0.85em;
-  font-weight: normal;
-  margin-right: 1ch;
 }
 
 [data-page="Work"]
