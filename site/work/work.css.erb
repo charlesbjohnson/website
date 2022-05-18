@@ -23,7 +23,7 @@
 
 [data-page="Work"] article > header {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr minmax(11ch, auto);
 }
 
 [data-page="Work"] article > header > * {
@@ -165,6 +165,10 @@
 
   [data-page="Work"] article > :not(article) {
     margin-bottom: 0.5rem;
+  }
+
+  [data-page="Work"] article > header > time {
+    justify-self: unset;
   }
 
   [data-page="Work"] article ul {
