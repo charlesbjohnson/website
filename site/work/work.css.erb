@@ -83,7 +83,7 @@
   font-weight: var(--f-w-bold);
 }
 
-[data-page="Work"] article details:first-of-type summary + p a {
+[data-page="Work"] article details:first-of-type p > a {
   display: block;
 }
 
@@ -106,17 +106,11 @@
 
 [data-page="Work"] article dl dt {
   flex-grow: 1;
-  font-style: normal;
-  margin-top: 0;
 }
 
 [data-page="Work"] article dl dd {
   border: 0.0625rem solid var(--c-gray);
   padding: 0 0.5ch;
-}
-
-[data-page="Work"] article dl dd + dd {
-  margin-top: 0;
 }
 
 @media screen and (max-width: 475px) {
@@ -145,7 +139,6 @@
   }
 
   [data-page="Work"] {
-    margin: 0;
     padding: 0;
     width: 100%;
   }
@@ -158,7 +151,7 @@
     margin-bottom: 0.5em;
   }
 
-  [data-page="Work"] h1 ~ address {
+  [data-page="Work"] section:nth-of-type(2) > address {
     margin: 0.5rem 0;
   }
 
