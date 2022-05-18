@@ -20,7 +20,7 @@
   margin-right: 1ch;
 }
 
-[data-page="Work"] section:nth-of-type(2) > address {
+[data-page="Work"] section:nth-of-type(2) address {
   display: flex;
   flex-direction: column;
 }
@@ -33,52 +33,52 @@
   margin-bottom: 1rem;
 }
 
-[data-page="Work"] article > header {
+[data-page="Work"] article header {
   display: grid;
   grid-template-columns: 1fr minmax(11ch, auto);
 }
 
-[data-page="Work"] article > header > * {
+[data-page="Work"] article header > * {
   display: inline-flex;
   font-size: 0.85em;
   font-weight: var(--f-w-bold);
 }
 
-[data-page="Work"] article > header > :nth-child(1) {
+[data-page="Work"] article header > :nth-child(1) {
   grid-column: 1;
   grid-row: 1;
 }
 
-[data-page="Work"] article > header > time {
+[data-page="Work"] article header time {
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
 }
 
-[data-page="Work"] article > header > address {
+[data-page="Work"] article header address {
   grid-column: 1;
   grid-row: 2;
 }
 
 @media screen and (max-width: 375px) {
-  [data-page="Work"] article > header > :nth-child(n) {
+  [data-page="Work"] article header > :nth-child(n) {
     grid-column: 1 / -1;
   }
 
-  [data-page="Work"] article > header > time {
+  [data-page="Work"] article header time {
     grid-row: 2;
     justify-self: unset;
   }
 
-  [data-page="Work"] article > header > address {
+  [data-page="Work"] article header address {
     grid-row: 3;
   }
 }
 
 [data-page="Work"]
   article
-  > header
-  > address
+  header
+  address
   > :first-child:not(:last-child)::after {
   content: ",";
   margin-right: 0.5ch;
@@ -88,42 +88,42 @@
   font-weight: var(--f-w-bold);
 }
 
-[data-page="Work"] article details:first-of-type p > a {
+[data-page="Work"] article details:first-of-type a {
   display: block;
 }
 
-[data-page="Work"] article dl {
+[data-page="Work"] article details:last-of-type dl {
   display: flex;
   flex-direction: column;
   font-size: 0.85em;
   row-gap: 0.25rem;
 }
 
-[data-page="Work"] article dl > div {
+[data-page="Work"] article details:last-of-type dl div {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 0.5ch;
 }
 
-[data-page="Work"] article dl :is(dt, dd) {
+[data-page="Work"] article details:last-of-type dl :is(dt, dd) {
   margin-left: 0;
 }
 
-[data-page="Work"] article dl dt {
+[data-page="Work"] article details:last-of-type dl dt {
   flex-grow: 1;
 }
 
-[data-page="Work"] article dl dd {
+[data-page="Work"] article details:last-of-type dl dd {
   border: 0.0625rem solid var(--c-gray);
   padding: 0 0.5ch;
 }
 
 @media screen and (max-width: 475px) {
-  [data-page="Work"] article dl {
+  [data-page="Work"] article details:last-of-type dl {
     row-gap: 0.5rem;
   }
 
-  [data-page="Work"] article dl dt {
+  [data-page="Work"] article details:last-of-type dl dt {
     flex-basis: 100%;
   }
 }
@@ -160,7 +160,7 @@
     margin-bottom: 0;
   }
 
-  [data-page="Work"] section:nth-of-type(2) > address {
+  [data-page="Work"] section:nth-of-type(2) address {
     margin: 0.5rem 0;
   }
 
@@ -175,11 +175,11 @@
     margin-bottom: 0.35rem;
   }
 
-  [data-page="Work"] article > header > time {
+  [data-page="Work"] article header time {
     justify-self: unset;
   }
 
-  [data-page="Work"] article ul {
+  [data-page="Work"] article :last-child ul {
     list-style-position: inside;
     margin: 0;
     padding-left: 0.75ex;
