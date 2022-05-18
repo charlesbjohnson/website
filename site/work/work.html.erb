@@ -29,6 +29,7 @@
         <a href="tel:<%= ::Site.phone.tr("() ", "") %>" rel="nofollow" data-emoji="☎"><%= ::Site.phone %></a>
         <a href="<%= ::Site.uri %>" data-emoji="🌐"><%= ::Site.domain %></a>
         <a href="<%= ::Site.github_url %>" data-emoji="💻"><%= ::Site.github_url.to_s.gsub("#{::Site.github_url.scheme}://", "") %></a>
+        <a href="<%= ::Site.linkedin_url %>" data-emoji="💬"><%= ::Site.linkedin_url.to_s.gsub("#{::Site.linkedin_url.scheme}://www.", "") %></a>
       </address>
 
       <%= content("introduction", "[data-print]") %>

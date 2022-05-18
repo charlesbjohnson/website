@@ -23,7 +23,11 @@ class Site
     end
 
     def github_url
-      @github ||= URI::HTTPS.build(host: "github.com", path: "/charlesbjohnson")
+      @github_url ||= URI::HTTPS.build(host: "github.com", path: "/charlesbjohnson")
+    end
+
+    def linkedin_url
+      @linkedin_url ||= URI::HTTPS.build(host: "www.linkedin.com", path: "/in/charles-johnson-89250a111")
     end
 
     def uri
