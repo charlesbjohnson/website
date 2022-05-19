@@ -1,5 +1,6 @@
 class Work {
   static setup() {
+    // Add "read more" links to TL;DRs
     for (const $experience of this.$experiences) {
       if ($experience.querySelector("article")) {
         continue;
@@ -15,10 +16,25 @@ class Work {
         `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
       );
     }
+
+    // Hide heading links in print
+    for (const $anchor of this.$anchors) {
+      $anchor.setAttribute("data-hidden-for", "print");
+      $anchor.insertAdjacentHTML(
+        "afterend",
+        `<span data-hidden-for="screen">${$anchor.textContent}</span>`
+      );
+    }
   }
 
   static get $experiences() {
     return this.$page.querySelectorAll(`article[id^="experience-"]`);
+  }
+
+  static get $anchors() {
+    return this.$page.querySelectorAll(
+      `:is(h1, h2, h3, h4, h5, h6) a[href^="#"]`
+    );
   }
 
   static get $page() {
