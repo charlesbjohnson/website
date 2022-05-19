@@ -85,7 +85,7 @@
 
   [data-page="Work"] article header time {
     grid-row: 2;
-    justify-self: unset;
+    justify-self: revert;
   }
 
   [data-page="Work"] article header address {
@@ -186,7 +186,7 @@
     border-bottom: 0.125em solid var(--c-blue);
     margin: 0.5em 0;
     text-align: left;
-    text-decoration: none;
+    text-decoration: revert;
   }
 
   [data-page="Work"] article > :not(article) {
@@ -194,7 +194,7 @@
   }
 
   [data-page="Work"] article header time {
-    justify-self: unset;
+    justify-self: revert;
   }
 
   [data-page="Work"] article :last-child ul {
@@ -511,7 +511,7 @@ The client saved hundreds of thousands of dollars that they would have otherwise
           <ul>
   <li>Designed and built a Shopify app for inventory notifications targeting medium-to-large sized stores.</li>
   <li>Led a small team in the development, integration, and maintenance of a Shopify site for a footwear brand;
-  generated $1,000,000+ in client revenue in 3 months of launch.</li>
+  generated $1,000,000+ of client revenue within 3 months of launch.</li>
   <li>Created a Shopify to ERP integration for a footwear brand;
   saved the client $250,000+ in SAP consultant fees and months of development time.</li>
   <li>Met with clients, wrote specifications, and estimated development effort during initial contract engagements.</li>
@@ -626,7 +626,7 @@ I shifted between several projects that started and stopped as the company’s p
   <li>Owned feature development and maintenance of Address Management on the Consumer team;
   eliminated tech debt and reduced address-related CX issues by 90%.</li>
   <li>Built address validation reporting for 50,000,000+ addresses;
-  enabled WMS team to verify addresses before shipping label generation to avoid wasting shipments.</li>
+  enabled WMS team to verify addresses before shipping label generation to avoid wasted shipments.</li>
   <li>Participated in architecture and design reviews for all Consumer engineering projects.</li>
 </ul>
 
@@ -729,7 +729,7 @@ I was not able to deliver a V2 of the backend, but I exhausted most optimization
           <ul>
   <li>Led the Partner Operations team; optimized job routing and processing; partitioned and scaled fulfillment services.</li>
   <li>Instantiated a DevSecOps culture by codifying, automating, and hardening infrastructure;
-  increased average uptime of the core Print &amp; Mail API from 96.1% to 99.8%.</li>
+  increased the average uptime of the Print &amp; Mail API from 96.1% to 99.8%.</li>
   <li>Mentored junior engineers and interns.</li>
 </ul>
 
@@ -826,7 +826,7 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
         <div data-hidden-for="screen">
           <ul>
   <li>Revamped the Topic page CMS on the SEO team; implemented multi-tenancy for walmart.com and samsclub.com.</li>
-  <li>Drove increased usage from Site Merchandisers; enabled brand-partnership campaigns on walmart.com via Topic pages.</li>
+  <li>Drove increased usage from Site Merchandisers; enabled Topic pages to host brand-partnership campaigns on walmart.com.</li>
   <li>Squashed bugs and created user documentation for the Topic page CMS;
   reduced weekly internal support requests by 60%.</li>
   <li>Implemented caching in the Topic page frontend services layer, lowering p99 latency by 400%.</li>
@@ -1075,6 +1075,7 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
     
     <script type="module">class Work {
   static setup() {
+    // Add "read more" links to TL;DRs
     for (const $experience of this.$experiences) {
       if ($experience.querySelector("article")) {
         continue;
@@ -1090,10 +1091,25 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
         `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
       );
     }
+
+    // Hide heading links in print
+    for (const $anchor of this.$anchors) {
+      $anchor.setAttribute("data-hidden-for", "print");
+      $anchor.insertAdjacentHTML(
+        "afterend",
+        `<span data-hidden-for="screen">${$anchor.textContent}</span>`
+      );
+    }
   }
 
   static get $experiences() {
     return this.$page.querySelectorAll(`article[id^="experience-"]`);
+  }
+
+  static get $anchors() {
+    return this.$page.querySelectorAll(
+      `:is(h1, h2, h3, h4, h5, h6) a[href^="#"]`
+    );
   }
 
   static get $page() {
