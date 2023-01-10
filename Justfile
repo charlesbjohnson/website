@@ -7,6 +7,7 @@ help: default
 # Build the project
 build:
     @bin/bundle install
+    @npm install
 
 # Remove build artifacts
 clean:
@@ -25,11 +26,11 @@ fmt-rb *OPTS:
 
 # Run the formatter for CSS
 fmt-css *OPTS:
-    @npx --yes prettier site/**/*.css.* --parser css --write {{ OPTS }}
+    @npx prettier --parser css --write {{ OPTS }} site/**/*.css.*
 
 # Run the formatter for JavaScript
 fmt-js *OPTS:
-    @npx --yes prettier site/**/*.js.* --parser typescript --write {{ OPTS }}
+    @npx prettier --parser typescript --write {{ OPTS }} site/**/*.js.*
 
 # Generate the site
 generate *OPTS:
@@ -44,11 +45,11 @@ lint-rb *OPTS:
 
 # Run the linter for CSS
 lint-css *OPTS:
-    @npx --yes prettier site/**/*.css.* --parser css --check {{ OPTS }}
+    @npx prettier --parser css --check {{ OPTS }} site/**/*.css.*
 
 # Run the linter for JavaScript
 lint-js *OPTS:
-    @npx --yes prettier site/**/*.js.* --parser typescript --check {{ OPTS }}
+    @npx prettier --parser typescript --check {{ OPTS }} site/**/*.js.*
 
 # Run the linter for Markdown
 lint-md *OPTS:
