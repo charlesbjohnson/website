@@ -1,30 +1,11 @@
-charlesbjohnson
-
-html
-mailto
-www
-url
-
-[Oo]nboard
 [Tt]oolchain
-[Uu]serbase
 [Ww]eekly
 
-(?i)docker
-(?i)github
-(?i)https?
-(?i)middleman
-(?i)npm
-(?i)posthtml
-(?i)vue
-(?i)webpack
+(?i)api
+(?i)oauth
 
 Bigcommerce
 Firesqueak
 Mailchimp
 Sendicate
 Shopify
-Twilio
-
-Gerrit
-Morling

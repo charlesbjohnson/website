@@ -51,8 +51,8 @@ lint-js *OPTS:
     @npx --yes prettier site/**/*.js.* --parser typescript --check {{ OPTS }}
 
 # Run the linter for Markdown
-lint-md *OPTS=".":
-    @vale {{ OPTS }}
+lint-md *OPTS:
+    @vale --glob "!*style_guide.md.*" site/**/*.md.*
 
 # Run the tests
 test *OPTS:
