@@ -1,8 +1,8 @@
-default:
-    @just --list
+_default:
+    @just --list --unsorted
 
 # Print this help message
-help: default
+help: _default
 
 # Build the project
 build:
@@ -18,7 +18,7 @@ fmt: fmt-just fmt-rb fmt-css fmt-js
 
 # Run the formatter for Just
 fmt-just *OPTS:
-    @just --unstable --fmt {{ OPTS }}
+    @just --unstable --fmt --quiet {{ OPTS }}
 
 # Run the formatter for Ruby
 fmt-rb *OPTS:
