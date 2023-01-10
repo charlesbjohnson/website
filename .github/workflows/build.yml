@@ -7,31 +7,29 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      vale: '2.17.0'
-      ruby: '3.1'
-      node: '16'
+      node: '18'
+      ruby: '3.2'
+      vale: '2.22.0'
 
     steps:
       - uses: actions/checkout@v3
 
-      - id: cache-vale
-        uses: actions/cache@v2
+      - uses: supplypike/setup-bin@v3
         with:
-          path: /usr/local/bin/vale
-          key: setup-vale-cache-${{ runner.os }}-${{ env.vale }}
-
-      - if: steps.cache-vale.outputs.cache-hit != 'true'
-        uses: ./.github/actions/setup-vale
-        with:
+          uri: https://github.com/errata-ai/vale/releases/download/v${{ env.vale }}/vale_${{ env.vale }}_Linux_64-bit.tar.gz
+          name: vale
           version: ${{ env.vale }}
 
       - uses: extractions/setup-just@v1
+
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.ruby }}
           bundler-cache: true
+          ruby-version: ${{ env.ruby }}
+
       - uses: actions/setup-node@v3
         with:
+          cache: npm
           node-version: ${{ env.node }}
 
       - run: just lint

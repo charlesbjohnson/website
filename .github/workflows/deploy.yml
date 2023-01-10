@@ -13,12 +13,13 @@ jobs:
 
     env:
       PHONE: '${{ secrets.PHONE }}'
-      ruby: '3.1'
+      ruby: '3.2'
 
     steps:
       - uses: actions/checkout@v3
 
       - uses: extractions/setup-just@v1
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.ruby }}
