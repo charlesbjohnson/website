@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir.glob(["lib/**/*"])
   s.executables = ["ssg"]
 
-  s.add_runtime_dependency "listen", "~> 3.7"
+  s.add_runtime_dependency "listen", "~> 3.8"
   s.add_runtime_dependency "webrick", "~> 1.7"
-  s.add_runtime_dependency "zeitwerk", "~> 2.5"
+  s.add_runtime_dependency "zeitwerk", "~> 2.6"
 end

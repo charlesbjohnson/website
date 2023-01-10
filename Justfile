@@ -21,7 +21,7 @@ fmt-just *OPTS:
 
 # Run the formatter for Ruby
 fmt-rb *OPTS:
-    @bin/rubocop --auto-correct {{ OPTS }}
+    @bin/rubocop --autocorrect {{ OPTS }}
 
 # Run the formatter for CSS
 fmt-css *OPTS:
