@@ -7,7 +7,7 @@ module SSG
         # @param [Pathname] path
         # @return [SSG::File::TemplateFile, nil]
         def locate(path)
-          path.file? && path.extname == ".erb" ? new(path) : nil
+          (path.file? && path.extname == ".erb") ? new(path) : nil
         end
       end
 

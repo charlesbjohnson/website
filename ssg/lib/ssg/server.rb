@@ -65,7 +65,7 @@ module SSG
           @routes[uri] = page
 
           if uri.end_with?("/")
-            @routes[uri.chomp("/")] = uri == "/" ? page : uri
+            @routes[uri.chomp("/")] = (uri == "/") ? page : uri
           end
         end
       end

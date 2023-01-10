@@ -57,7 +57,7 @@ module SSG
       return @uri if defined?(@uri)
 
       @uri = URI.parse(self.class.name.casecmp("index").zero? ? "" : "/#{slug}")
-      @uri.path += extension == "html" ? "/" : ".#{extension}"
+      @uri.path += (extension == "html") ? "/" : ".#{extension}"
 
       @uri
     end

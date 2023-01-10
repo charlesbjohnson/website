@@ -7,7 +7,7 @@ module SSG
         # @param [Pathname] path
         # @return [SSG::File::StaticFile, nil]
         def locate(path)
-          path.file? && ![".rb", ".erb"].include?(path.extname) ? new(path) : nil
+          (path.file? && ![".rb", ".erb"].include?(path.extname)) ? new(path) : nil
         end
       end
 

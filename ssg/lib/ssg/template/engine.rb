@@ -173,7 +173,7 @@ module SSG
           if r_strip
             r_space = ""
           elsif r_slurp
-            r_space = r_space_end_pos + 1 < n_line_pos ? "" : "\n"
+            r_space = (r_space_end_pos + 1 < n_line_pos) ? "" : "\n"
           end
 
           output << "#{buffer_var} << #{text.dump}\n"

@@ -9,7 +9,7 @@ module SSG
         # @return [Array<Class>]
         def descendants
           rec = ->(klass) {
-            (klass == self ? [] : [klass]) + klass.subclasses.flat_map { |child| rec.call(child) }
+            ((klass == self) ? [] : [klass]) + klass.subclasses.flat_map { |child| rec.call(child) }
           }
 
           rec.call(self)
