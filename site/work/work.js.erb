@@ -2,15 +2,16 @@ class Work {
   static setup() {
     // Add "read more" links to TL;DRs
     for (const $experience of this.$experiences) {
-      if ($experience.querySelector("article")) {
+      if (!$experience.querySelector(":scope > details")) {
         continue;
       }
 
       let [$tldr, $description] = $experience.querySelectorAll("details");
-      $description = $description.querySelector("summary");
-      $tldr = $tldr.querySelector("p");
 
+      $description = $description.querySelector("summary");
       $description.id = `${$experience.id}-description`;
+
+      $tldr = $tldr.querySelector("p");
       $tldr.insertAdjacentHTML(
         "beforeend",
         `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
