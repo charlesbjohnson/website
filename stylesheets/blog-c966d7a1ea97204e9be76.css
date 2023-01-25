@@ -64,7 +64,7 @@ kbd {
 }
 
 pre {
-  margin-top: unset;
+  margin-top: 0;
 }
 
 pre :is(code, kbd, samp) {
@@ -72,7 +72,6 @@ pre :is(code, kbd, samp) {
 }
 
 pre :is(code, samp) {
-  color: unset;
   display: block;
   padding: 0.5rem;
   overflow-x: auto;

@@ -67,7 +67,8 @@
   grid-row: 1;
 }
 
-[data-page="Work"] article header time {
+[data-page="Work"] article header > :nth-child(2) {
+  gap: 0.5ch;
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
@@ -83,9 +84,9 @@
     grid-column: 1 / -1;
   }
 
-  [data-page="Work"] article header time {
+  [data-page="Work"] article header > :nth-child(2) {
     grid-row: 2;
-    justify-self: unset;
+    justify-self: revert;
   }
 
   [data-page="Work"] article header address {
@@ -186,15 +187,16 @@
     border-bottom: 0.125em solid var(--c-blue);
     margin: 0.5em 0;
     text-align: left;
-    text-decoration: none;
+    text-decoration: revert;
   }
 
   [data-page="Work"] article > :not(article) {
     margin-bottom: 0.35rem;
   }
 
-  [data-page="Work"] article header time {
-    justify-self: unset;
+  [data-page="Work"] article header > :nth-child(2) {
+    justify-self: revert;
+    min-width: 14ch;
   }
 
   [data-page="Work"] article :last-child ul {
@@ -244,22 +246,19 @@
       
     <section data-hidden-for="print">
       <h1>Work</h1>
-      <p>I’m seeking opportunities as a full-stack or backend engineer.
-My requirements for a new role (using terminology from <a href="https://www.keyvalues.com">Key Values</a>) are:</p>
+      <p>I’m employed full-time but I’m open to part-time contract opportunities in the e-commerce space.</p>
+
+<p>I’ve worked on several different e-commerce projects over the years.
+Whether you’re…</p>
 
 <ul>
-  <li>Open Communication</li>
-  <li>Remote OK</li>
-  <li>Flexible Work Arrangements</li>
-  <li>Work/Life Balance</li>
+  <li>Building out an e-commerce site</li>
+  <li>Integrating with an e-commerce platform</li>
+  <li>Just looking for general development support with Shopify</li>
 </ul>
 
-<p>Are you a manager considering hiring me? <a href="/blog/new-manager-readme/">Here’s a post</a> to help you learn more about me.</p>
-
-<p>Are you an engineer considering working with me? I <a href="/blog/new-teammate-readme/">have a post</a> for you
-and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you can take a look at.</p>
-
-<p>Please <a href="mailto:mail@cbjohnson.io">email me</a> for more information.</p>
+<p>Feel free to <a href="mailto:mail@cbjohnson.io">send me an email</a>.
+There’s a good chance that I can deliver value to your business.</p>
 
 
       <!--
@@ -286,7 +285,7 @@ and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you c
         <a href="https://www.linkedin.com/in/charles-johnson-89250a111" data-emoji="💬">linkedin.com/in/charles-johnson-89250a111</a>
       </address>
 
-      <p>Full-stack software engineer with nearly 10 years of experience, 6 years of experience in the e-commerce space,
+      <p>Full-stack software engineer with 10 years of experience, 6 years of experience in the e-commerce space,
     and a history of delivering value across a variety of projects.</p>
 
     </section>
@@ -296,12 +295,37 @@ and a <a href="https://github.com/charlesbjohnson">GitHub profile</a> that you c
     <section>
       <h2>Experience</h2>
 
+      <article id="experience-heb-digital">
+        <h3><a href="#experience-heb-digital">H-E-B Digital</a></h3>
+
+        <header>
+          <span data-emoji="💼">Senior Software Engineer</span>
+
+          <span>
+            <time data-emoji="📅" datetime="2022">2022</time>
+            <span>-</span>
+            <span>Now</span>
+          </span>
+
+          <address data-emoji="🗺">
+            <span>Austin</span>
+            <span>TX</span>
+          </address>
+        </header>
+      </article>
+
       <article id="experience-firesqueak">
         <h3><a href="#experience-firesqueak">Firesqueak</a></h3>
 
         <header>
           <span data-emoji="💼">Senior Software Engineer</span>
-          <time data-emoji="📅" datetime="2017/2021">2017 - 2021</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2017">2017</time>
+            <span>-</span>
+            <time datetime="2021">2021</time>
+          </span>
+
           <address data-emoji="🗺">Remote</address>
         </header>
 
@@ -525,7 +549,13 @@ The client saved hundreds of thousands of dollars that they would have otherwise
 
         <header>
           <span data-emoji="💼">Senior Software Engineer</span>
-          <time data-emoji="📅" datetime="2018/2019">2018 - 2019</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2018">2018</time>
+            <span>-</span>
+            <time datetime="2019">2019</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>Austin</span>
             <span>TX</span>
@@ -638,7 +668,13 @@ I shifted between several projects that started and stopped as the company’s p
 
         <header>
           <span data-emoji="💼">Senior Software Engineer</span>
-          <time data-emoji="📅" datetime="2016/2017">2016 - 2017</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2016">2016</time>
+            <span>-</span>
+            <time datetime="2017">2017</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>San Francisco</span>
             <span>CA</span>
@@ -741,7 +777,13 @@ I was not able to deliver a V2 of the backend, but I exhausted most optimization
 
         <header>
           <span data-emoji="💼">Software Engineer</span>
-          <time data-emoji="📅" datetime="2014/2016">2014 - 2016</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2014">2014</time>
+            <span>-</span>
+            <time datetime="2016">2016</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>Sunnyvale</span>
             <span>CA</span>
@@ -788,7 +830,7 @@ As part of the porting effort, I:</p>
 <p>I was able to make Mason multi-tenant to support Sam’s Club while simultaneously increasing usage among Walmart’s Site Merchandising team.
 Mason became a go-to tool for setting up campaigns in partnership with large brands; a new use case for Mason and a new revenue source that became possible as a direct result of my efforts.</p>
 
-<p>Aside from Mason, I was also contributor to the customer-facing frontend of Topic Pages on walmart.com and the backing web services.</p>
+<p>Aside from Mason, I was also a contributor to the customer-facing frontend of Topic Pages on walmart.com and the backing web services.</p>
 </div>
         </details>
 
@@ -841,7 +883,11 @@ Mason became a go-to tool for setting up campaigns in partnership with large bra
 
         <header>
           <span data-emoji="💼">Software Engineer</span>
-          <time data-emoji="📅" datetime="2014">2014</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2014">2014</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>New York</span>
             <span>NY</span>
@@ -937,7 +983,13 @@ During that time, I:</p>
 
         <header>
           <span data-emoji="💼">Junior Software Engineer</span>
-          <time data-emoji="📅" datetime="2012/2013">2012 - 2013</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2012">2012</time>
+            <span>-</span>
+            <time datetime="2013">2013</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>Woodbury</span>
             <span>CT</span>
@@ -1061,7 +1113,13 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
 
         <header>
           <span data-emoji="🎓">Fairfield University</span>
-          <time data-emoji="📅" datetime="2008/2012">2008 - 2012</time>
+
+          <span>
+            <time data-emoji="📅" datetime="2008">2008</time>
+            <span>-</span>
+            <time datetime="2012">2012</time>
+          </span>
+
           <address data-emoji="🗺">
             <span>Fairfield</span>
             <span>CT</span>
@@ -1075,25 +1133,42 @@ My contributions were small but I gained a solid foundation in <abbr title="Test
     
     <script type="module">class Work {
   static setup() {
+    // Add "read more" links to TL;DRs
     for (const $experience of this.$experiences) {
-      if ($experience.querySelector("article")) {
+      if (!$experience.querySelector(":scope > details")) {
         continue;
       }
 
       let [$tldr, $description] = $experience.querySelectorAll("details");
-      $description = $description.querySelector("summary");
-      $tldr = $tldr.querySelector("p");
 
+      $description = $description.querySelector("summary");
       $description.id = `${$experience.id}-description`;
+
+      $tldr = $tldr.querySelector("p");
       $tldr.insertAdjacentHTML(
         "beforeend",
         `<a href="#${$description.id}" data-hidden-for="print"><small>(read more)</small></a>`
+      );
+    }
+
+    // Hide heading links in print
+    for (const $anchor of this.$anchors) {
+      $anchor.setAttribute("data-hidden-for", "print");
+      $anchor.insertAdjacentHTML(
+        "afterend",
+        `<span data-hidden-for="screen">${$anchor.textContent}</span>`
       );
     }
   }
 
   static get $experiences() {
     return this.$page.querySelectorAll(`article[id^="experience-"]`);
+  }
+
+  static get $anchors() {
+    return this.$page.querySelectorAll(
+      `:is(h1, h2, h3, h4, h5, h6) a[href^="#"]`
+    );
   }
 
   static get $page() {
